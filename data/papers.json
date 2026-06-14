@@ -1,0 +1,481 @@
+{
+  "generated": "2026-06-14T17:46:42Z",
+  "days": [
+    {
+      "date": "2026-06-14",
+      "papersFrom": "June 13, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-06-13",
+      "papersFrom": "June 12, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-06-12",
+      "papersFrom": "June 11, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "MOSAIC: Modality-Specific Adaptation for Incremental Continual Learning in Parkinson's Disease Gait Assessment",
+          "authors": "Minlin Zeng, Zhipeng Zhou, Yang Qiu, Martin J. McKeown, Zhiqi Shen",
+          "source": "arXiv",
+          "tags": [
+            "cs.AI"
+          ],
+          "summary": "Gait-based Parkinson's disease assessment increasingly relies on heterogeneous sensors, but clinical systems rarely collect all modalities simultaneously. New sensors may arrive through device upgr...",
+          "url": "https://arxiv.org/abs/2606.13258v1"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-11",
+      "papersFrom": "June 10, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Multimodal Ordinal Modeling of Alzheimer's Disease Severity Using Structural MRI and Clinical Data",
+          "authors": "Boris-Stephan Rauchmann, Jonathan Laib, Buse Ercik, Robert Perneczky, Sergio Altares-López",
+          "source": "arXiv",
+          "tags": [
+            "cs.LG",
+            "cs.AI"
+          ],
+          "summary": "Neurodegenerative diseases such as Alzheimer's disease (AD) require accurate and scalable tools for assessing disease severity, yet current clinical staging remains time-intensive and prone to vari...",
+          "url": "https://arxiv.org/abs/2606.11794v1"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-10",
+      "papersFrom": "June 09, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Sleep EEG Signal Criticality as a Non-Invasive Predictor of Cognitive Decline in Dementia",
+          "authors": "Stanisław Narębski, Tomasz Komendziński, Tomasz M. Rutkowski",
+          "source": "arXiv",
+          "tags": [
+            "q-bio.NC",
+            "cs.LG"
+          ],
+          "summary": "Early detection of neurodegeneration remains a critical clinical challenge. This study investigates whether sleep EEG signal criticality, quantified via Multifractal Detrended Fluctuation Analysis ...",
+          "url": "https://arxiv.org/abs/2606.10889v1"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-09",
+      "papersFrom": "June 09, 2026",
+      "total": 9,
+      "papers": [
+        {
+          "title": "Transition-Based Digital Twin Modelling for Alzheimer's Disease under Sparse Longitudinal Data",
+          "authors": "Yinyu Huang, Yilin Zhang, Sofia Michopoulou, Christopher Kipps, Rahman Attar",
+          "source": "arXiv",
+          "tags": [
+            "cs.LG",
+            "cs.AI"
+          ],
+          "summary": "AD progression is highly heterogeneous and observed through sparse/irregular longitudinal data. Proposes transition-based digital twin modelling for personalised monitoring.",
+          "url": "https://arxiv.org/abs/2606.09671v1"
+        },
+        {
+          "title": "Multi-View Speech Representation Learning for Parkinson's Disease Detection Using Context-guided Cross-modal Attention",
+          "authors": "George Theodosiou, Loukas Ilias, Dimitris Askounis",
+          "source": "arXiv",
+          "tags": [
+            "cs.SD",
+            "cs.LG"
+          ],
+          "summary": "PD frequently causes speech impairments (hypokinetic dysarthria). Multi-view speech representation learning with cross-modal attention for PD detection.",
+          "url": "https://arxiv.org/abs/2606.09271v1"
+        },
+        {
+          "title": "Artificial intelligence and machine learning in neurodegenerative disease management: A 21st century paradigm",
+          "authors": "_Neurobiology of Disease, Vol 220, March 2026_",
+          "source": "arXiv",
+          "tags": [],
+          "summary": "Comprehensive review of AI/ML applications in neurodegenerative disease management.",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0969996126000513"
+        },
+        {
+          "title": "Evaluating the Role of AI Assistants in Accelerating Neurodegenerative Disease Research: Opportunities and Translational Challenges",
+          "authors": "_Neuropsychiatric Disease and Treatment, Vol 22_",
+          "source": "arXiv",
+          "tags": [],
+          "summary": "Review of AI assistants for accelerating neurodegenerative disease research.",
+          "url": "https://www.dovepress.com/evaluating-the-role-of-ai-assistants-in-accelerating-neurodegenerative-peer-reviewed-fulltext-article-NDT"
+        },
+        {
+          "title": "Predicting categorical and continuous Alzheimer's disease outcomes from a single MRI scan",
+          "authors": "_Nature Aging, 2026_",
+          "source": "arXiv",
+          "tags": [],
+          "summary": "Deep learning for predicting AD diagnosis AND continuous measures (cognitive scores) from single MRI.",
+          "url": "https://www.nature.com/articles/s43587-026-01121-2"
+        },
+        {
+          "title": "Integrative multi-omics and network-based machine learning for early diagnosis of Parkinson's disease",
+          "authors": "_PLOS One, 2026_",
+          "source": "arXiv",
+          "tags": [],
+          "summary": "Multi-omics integration with network-based ML for early PD diagnosis.",
+          "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0329980"
+        },
+        {
+          "title": "MultimodalCNN-PD: a Parkinson's disease diagnostics framework using multimodal convolutional neural network",
+          "authors": "_Frontiers in Aging Neuroscience, 2026_",
+          "source": "arXiv",
+          "tags": [],
+          "summary": "Multimodal CNN framework combining imaging and electrophysiology for PD diagnosis.",
+          "url": "https://www.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2026.1733075/full"
+        },
+        {
+          "title": "Trajectories of plasma and CSF MTBR-tau243 and phosphorylated-tau species across the Alzheimer's disease continuum",
+          "authors": "_Nature Communications, 2026_",
+          "source": "arXiv",
+          "tags": [],
+          "summary": "Plasma and CSF tau biomarker trajectories for AD staging and prognosis.",
+          "url": "https://www.nature.com/articles/s41467-026-71732-1"
+        },
+        {
+          "title": "Targeted blood proteome profiling using NULISAseq identifies a high-performance biomarker panel for Aβ pathology quantification and staging",
+          "authors": "_Alzheimer's & Dementia, Jan 2026_",
+          "source": "arXiv",
+          "tags": [],
+          "summary": "NULISAseq-based blood proteome panel for Aβ pathology quantification and staging.",
+          "url": "https://www.hkcend.org/wp-content/uploads/2026/02/AlzDem-Targeted-blood-proteome-profiling-using-NULISAseq-identifies-a-high-performance-biomarker-panel-for-A%CE%B2-pathology-quantification-and-staging_Jan-2026.pdf"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-08",
+      "papersFrom": "June 07, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-06-07",
+      "papersFrom": "June 06, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-06-06",
+      "papersFrom": "June 05, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-06-05",
+      "papersFrom": "June 04, 2026",
+      "total": 4,
+      "papers": [
+        {
+          "title": "A Machine Learning-Based Framework for Discovering Huntington's Disease Stages: Integrating Graph Representation Learning and clustering to Uncover Progression Dynamics in Longitudinal Enroll-HD Dataset",
+          "authors": "Lubna M. Abu Zohair, Marta Vallejo, MD Azher Uddin, John R. Woodward, Hind Zantout",
+          "source": "arXiv",
+          "tags": [
+            "cs.LG"
+          ],
+          "summary": "Huntington's disease (HD) is a progressive brain disorder that gradually affects movement, cognitive function, and behavior. Identifying the stage of the disease accurately and consistently is impo...",
+          "url": "https://arxiv.org/abs/2606.06196v1"
+        },
+        {
+          "title": "CoSTA: Cognitive-State-Conditioned TTS Data Augmentation Using ASR Transcripts for Alzheimer's Disease Detection",
+          "authors": "Yin-Long Liu, Yuanchao Li, Yiming Wang, Yue Li, Rui Feng et al. (11 authors)",
+          "source": "arXiv",
+          "tags": [
+            "eess.AS"
+          ],
+          "summary": "Speech-based Alzheimer's Disease (AD) detection is constrained by scarce pathological speech data. To address this, we propose CoSTA, a Text-to-Speech (TTS)-based data augmentation framework. Speci...",
+          "url": "https://arxiv.org/abs/2606.06170v1"
+        },
+        {
+          "title": "Cross-scale spatially-aware generative modeling of transcriptomic programs underlying neurodegenerative brain organization",
+          "authors": "Krishnakumar Vaithianathan",
+          "source": "arXiv",
+          "tags": [
+            "q-bio.NC",
+            "cs.LG",
+            "transcriptom"
+          ],
+          "summary": "Neurodegenerative disorders such as Alzheimer's disease exhibit highly organized patterns of regional brain vulnerability, yet the biological mechanisms underlying this spatial selectivity remain i...",
+          "url": "https://arxiv.org/abs/2606.05870v1"
+        },
+        {
+          "title": "Multilingual Detection of Alzheimer's Disease from Speech: A Cross-Linguistic Transfer Learning Approach",
+          "authors": "Nadine Yasser Abdelhalim, Emmanuel Akinrintoyo, Nicole Salomons",
+          "source": "arXiv",
+          "tags": [
+            "cs.CL"
+          ],
+          "summary": "The development of multilingual Alzheimer's Disease Dementia (AD) detection models presents significant challenges due to the resource-intensive and time-consuming nature of language-specific model...",
+          "url": "https://arxiv.org/abs/2606.05545v1"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-04",
+      "papersFrom": "June 03, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-06-03",
+      "papersFrom": "June 02, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-06-02",
+      "papersFrom": "June 01, 2026",
+      "total": 2,
+      "papers": [
+        {
+          "title": "Bayesian meta-learning for modeling Alzheimer's disease progression",
+          "authors": "Clara Hoffmann, Nadja Klein",
+          "source": "arXiv",
+          "tags": [
+            "stat.ML",
+            "cs.CV"
+          ],
+          "summary": "Predicting whether an individual with Alzheimer's disease will experience mild or severe disease progression is essential for personalized treatment. Typically, practitioners seek to predict the di...",
+          "url": "https://arxiv.org/abs/2606.02228v1"
+        },
+        {
+          "title": "Unveiling the shared grey matter signature between Alzheimer's and Parkinson's Disease",
+          "authors": "Vishaak Gangasandra, Finn Blain, Elise Delzant, Michelle Lupton, Miguel Rentería et al. (7 authors)",
+          "source": "arXiv",
+          "tags": [
+            "q-bio.NC"
+          ],
+          "summary": "INTRODUCTION. This study presents the first quantification of vertex-level grey-matter associations between Alzheimer's disease (AD) and Parkinson's disease (PD) using highresolution brain maps agg...",
+          "url": "https://arxiv.org/abs/2606.02099v1"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-01",
+      "papersFrom": null,
+      "total": 14,
+      "papers": []
+    },
+    {
+      "date": "2026-05-31",
+      "papersFrom": "May 30, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-05-30",
+      "papersFrom": "May 29, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-05-29",
+      "papersFrom": "May 28, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Treatment-Conditioned Diffusion for Forecasting Neurodegenerative Disease Progression",
+          "authors": "Danylo Boiko, Viktoriia Mishkurova",
+          "source": "arXiv",
+          "tags": [
+            "cs.LG",
+            "cs.CV"
+          ],
+          "summary": "Forecasting the progression of neurodegenerative diseases, such as Parkinson's disease, is essential for effective long-term planning and personalized therapeutic intervention. Existing systems typ...",
+          "url": "https://arxiv.org/abs/2605.29932v1"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-18",
+      "papersFrom": "May 17, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-05-17",
+      "papersFrom": "May 16, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-05-16",
+      "papersFrom": "May 15, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-05-15",
+      "papersFrom": "May 14, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "DeepTokenEEG Enhancing Mild Cognitive Impairment and Alzheimers Classification via Tokenized EEG Features",
+          "authors": "Thinh Nguyen-Quang, Minh Long Ngo, Ngoc-Son Nguyen, Nguyen Thanh Vinh, Huy-Dung Han et al. (10 authors)",
+          "source": "arXiv",
+          "tags": [
+            "cs.LG"
+          ],
+          "summary": "The detection of Alzheimers disease (AD) is considered crucial, as timely intervention can improve patient outcomes. Electroencephalogram (EEG)-based diagnosis has been recognized as a non-invasive...",
+          "url": "https://arxiv.org/abs/2605.15009v1"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-14",
+      "papersFrom": "May 13, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "PRA-PoE: Robust Alzheimer's Diagnosis with Arbitrary Missing Modalities",
+          "authors": "Guangqian Yang, Ye Du, Wenlong Hou, Qian Niu, Shujun Wang",
+          "source": "arXiv",
+          "tags": [
+            "cs.CV"
+          ],
+          "summary": "Missing modalities are prevalent in real-world Alzheimer's disease (AD) assessment and pose a significant challenge to multimodal learning, particularly when the distribution of observed modality s...",
+          "url": "https://arxiv.org/abs/2605.13081v1"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-13",
+      "papersFrom": "May 12, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-05-12",
+      "papersFrom": "May 11, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-05-11",
+      "papersFrom": "May 10, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-05-10",
+      "papersFrom": "May 09, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-05-09",
+      "papersFrom": "May 08, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-05-08",
+      "papersFrom": "May 07, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-05-07",
+      "papersFrom": "May 06, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-05-06",
+      "papersFrom": "May 05, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-05-05",
+      "papersFrom": "May 04, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-05-04",
+      "papersFrom": "May 03, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-05-03",
+      "papersFrom": "May 02, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-05-02",
+      "papersFrom": "May 01, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-05-01",
+      "papersFrom": "April 30, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "PROMISE-AD: Progression-aware Multi-horizon Survival Estimation for Alzheimer's Disease Progression and Dynamic Tracking",
+          "authors": "Qing Lyu, Jeremy Hudson, Mohammad Kawas, Yuming Jiang, Chenyu You et al. (6 authors)",
+          "source": "arXiv",
+          "tags": [
+            "cs.LG",
+            "cs.AI"
+          ],
+          "summary": "Individualized Alzheimer's disease (AD) progression prediction requires models that use irregular visits, account for censoring, avoid diagnostic leakage, and provide calibrated horizon risks. We p...",
+          "url": "https://arxiv.org/abs/2604.28055v1"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-30",
+      "papersFrom": "April 29, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-04-29",
+      "papersFrom": "April 28, 2026",
+      "total": 0,
+      "papers": []
+    },
+    {
+      "date": "2026-04-28",
+      "papersFrom": "April 27, 2026",
+      "total": 2,
+      "papers": [
+        {
+          "title": "Task-guided Spatiotemporal Network with Diffusion Augmentation for EEG-based Dementia Diagnosis and MMSE Prediction",
+          "authors": "Xiaoyu Zheng, Xu Tian, Bin Jiao, Kunbo Cui, Hanhe Lin et al. (7 authors)",
+          "source": "arXiv",
+          "tags": [
+            "cs.LG",
+            "cs.AI"
+          ],
+          "summary": "Patients with dementia typically exhibit cognitive impairment, which is routinely assessed using the Mini-Mental State Examination (MMSE). Concurrently, their underlying neurophysiological abnormal...",
+          "url": "https://arxiv.org/abs/2604.23964v1"
+        },
+        {
+          "title": "Robust and Clinically Reliable EEG Biomarkers: A Cross Population Framework for Generalizable Parkinson's Disease Detection",
+          "authors": "Nicholas R. Rasmussen, Longwei Wang, Rodrigue Rizk, Md Rezwanul Akter Pallab, Samuel Stuwart et al. (8 authors)",
+          "source": "arXiv",
+          "tags": [
+            "cs.LG",
+            "eess.SP"
+          ],
+          "summary": "Developing robust and clinically reliable EEG biomarkers requires evaluation frameworks that explicitly address cross population generalization in multi site settings such as Parkinsons disease (PD...",
+          "url": "https://arxiv.org/abs/2604.23933v1"
+        }
+      ]
+    }
+  ]
+}
