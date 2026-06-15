@@ -6,62 +6,1331 @@
 <title>Seymour · Farrell Lab AI Agent</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  /* Palette — cool clinical white, slate ink, single deep indigo accent */
-  --bg:          #f8f9fc;
-  --bg2:         #f0f2f7;
-  --bg3:         #e8ebf2;
-  --surface:     #ffffff;
-  --ink:         #0f1117;
-  --ink2:        #2c2f3a;
-  --ink3:        #5a5f72;
-  --ink4:        #8e94a8;
-  --rule:        #d0d4e0;
-  --rule2:       #e4e7f0;
-  --accent:      #1e3a8a;   /* deep indigo — nature/genetics blue */
-  --accent-mid:  #3b5fcb;
-  --accent-light:#eef1fb;
-  --accent-glow: rgba(30,58,138,0.12);
-  --hermes:      #0e5f3a;
-  --hermes-light:#e6f4ed;
-  --red:         #991b1b;
-  --amber:       #78350f;
-  --amber-light: #fef3c7;
-  --blue-data:   #1e3a8a;
+  --bg:#f8f9fc;--bg2:#f0f2f7;--bg3:#e8ebf2;
+  --surface:#ffffff;
+  --ink:#0f1117;--ink2:#2c2f3a;--ink3:#5a5f72;--ink4:#8e94a8;
+  --rule:#d0d4e0;--rule2:#e4e7f0;
+  --accent:#1e3a8a;--accent-mid:#3b5fcb;--accent-light:#eef1fb;
+  --hermes:#0e5f3a;--hermes-light:#e6f4ed;
+  --red:#991b1b;--amber:#78350f;--amber-light:#fef3c7;
   --mono:'JetBrains Mono',monospace;
   --serif:'EB Garamond','Georgia',serif;
   --sans:'DM Sans',-apple-system,sans-serif;
-  --radius:4px;
+  --r:4px;
 }
 html{font-size:16px;scroll-behavior:smooth}
-body{font-family:var(--serif);background:var(--bg);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;line-height:1.7}
+body{font-family:var(--serif);background:var(--bg);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;line-height:1.7;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
 
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+/* ══ FULLSCREEN HERO ══ */
+.hero{
+  position:relative;height:100vh;min-height:600px;
+  background:#060d1f;
+  display:flex;flex-direction:column;
+  overflow:hidden;
+}
+#hero-canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero-content{
+  position:relative;z-index:2;
+  flex:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
+  max-width:1200px;margin:0 auto;padding:0 64px;width:100%;
+}
+.hero-eyebrow{
+  font-family:var(--sans);font-size:11px;font-weight:500;
+  letter-spacing:0.26em;text-transform:uppercase;
+  color:rgba(139,167,255,0.8);
+  margin-bottom:20px;
+  display:flex;align-items:center;gap:12px;
+  opacity:0;animation:fadeUp 0.8s ease 0.2s forwards;
+}
+.hero-eyebrow-line{width:32px;height:1px;background:rgba(139,167,255,0.5)}
+.hero-name{
+  font-family:var(--serif);
+  font-size:clamp(72px,10vw,130px);
+  font-weight:500;line-height:0.92;
+  letter-spacing:0.01em;
+  color:#fff;
+  margin-bottom:12px;
+  opacity:0;animation:fadeUp 0.9s ease 0.4s forwards;
+}
+.hero-name em{font-style:italic;font-weight:400;color:#7ba3ff}
+.hero-desc{
+  font-family:var(--sans);font-size:15px;font-weight:400;
+  color:rgba(255,255,255,0.5);
+  letter-spacing:0.04em;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  margin-bottom:36px;
+  opacity:0;animation:fadeUp 0.9s ease 0.6s forwards;
+}
+.hero-desc-sep{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.2)}
+.hero-cta-row{
+  display:flex;gap:12px;align-items:center;
+  opacity:0;animation:fadeUp 0.9s ease 0.8s forwards;
+}
+.hero-cta{
+  font-family:var(--sans);font-size:12px;font-weight:600;
+  letter-spacing:0.1em;text-transform:uppercase;
+  padding:11px 28px;border-radius:3px;cursor:pointer;
+  border:none;transition:all 0.15s;
+}
+.hero-cta-primary{background:#3b5fcb;color:#fff}
+.hero-cta-primary:hover{background:#2d4fb0;transform:translateY(-1px)}
+.hero-cta-ghost{background:transparent;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.2)}
+.hero-cta-ghost:hover{border-color:rgba(255,255,255,0.5);color:#fff}
+.hero-scroll-hint{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(255,255,255,0.25);
+  opacity:0;animation:fadeIn 1s ease 1.4s forwards;
+}
+.scroll-arrow{width:1px;height:32px;background:linear-gradient(to bottom,rgba(255,255,255,0.3),transparent);animation:scrollPulse 2s ease-in-out infinite}
+@keyframes scrollPulse{0%,100%{transform:scaleY(1);opacity:0.4}50%{transform:scaleY(1.2);opacity:0.8}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
-/* ══════════════════════════════════
-   CHROMOSOME IDEOGRAM STRIP
-   Signature element — a stylised
-   karyotype band running full-width
-══════════════════════════════════ */
-.chr-strip{
-  width:100%;height:6px;
-  background: linear-gradient(90deg,
-    #1e3a8a 0%,   #1e3a8a 4.3%,
-    #d0d4e0 4.3%, #d0d4e0 4.9%,
-    #3b5fcb 4.9%, #3b5fcb 8.6%,
-    #d0d4e0 8.6%, #d0d4e0 9.0%,
-    #1e3a8a 9.0%, #1e3a8a 12.9%,
-    #d0d4e0 12.9%,#d0d4e0 13.3%,
-    #3b5fcb 13.3%,#3b5fcb 17.2%,
-    #d0d4e0 17.2%,#d0d4e0 17.5%,
-    #1e3a8a 17.5%,#1e3a8a 21.5%,
-    #d0d4e0 21.5%,#d0d4e0 21.9%,
-    #3b5fcb 21.9%,#3b5fcb 25.8%,
+/* Chr ideogram strip at hero bottom */
+.chr-ideogram{
+  position:relative;z-index:2;
+  height:28px;overflow:visible;
+  background:rgba(255,255,255,0.04);
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.chr-bar{
+  width:100%;height:5px;margin-top:6px;
+  background:linear-gradient(90deg,
+    #1e3a8a 0%,#1e3a8a 4.3%,rgba(255,255,255,0.08) 4.3%,rgba(255,255,255,0.08) 4.9%,
+    #3b5fcb 4.9%,#3b5fcb 8.6%,rgba(255,255,255,0.08) 8.6%,rgba(255,255,255,0.08) 9.0%,
+    #1e3a8a 9.0%,#1e3a8a 12.9%,rgba(255,255,255,0.08) 12.9%,rgba(255,255,255,0.08) 13.3%,
+    #3b5fcb 13.3%,#3b5fcb 17.2%,rgba(255,255,255,0.08) 17.2%,rgba(255,255,255,0.08) 17.5%,
+    #1e3a8a 17.5%,#1e3a8a 21.5%,rgba(255,255,255,0.08) 21.5%,rgba(255,255,255,0.08) 21.9%,
+    #3b5fcb 21.9%,#3b5fcb 25.8%,rgba(255,255,255,0.08) 25.8%,rgba(255,255,255,0.08) 26.1%,
+    #1e3a8a 26.1%,#1e3a8a 30.1%,rgba(255,255,255,0.08) 30.1%,rgba(255,255,255,0.08) 30.4%,
+    #3b5fcb 30.4%,#3b5fcb 34.4%,rgba(255,255,255,0.08) 34.4%,rgba(255,255,255,0.08) 34.7%,
+    #1e3a8a 34.7%,#1e3a8a 38.7%,rgba(255,255,255,0.08) 38.7%,rgba(255,255,255,0.08) 39.0%,
+    #3b5fcb 39.0%,#3b5fcb 43.0%,rgba(255,255,255,0.08) 43.0%,rgba(255,255,255,0.08) 43.3%,
+    #1e3a8a 43.3%,#1e3a8a 47.3%,rgba(255,255,255,0.08) 47.3%,rgba(255,255,255,0.08) 47.6%,
+    #3b5fcb 47.6%,#3b5fcb 51.6%,rgba(255,255,255,0.08) 51.6%,rgba(255,255,255,0.08) 51.9%,
+    #1e3a8a 51.9%,#1e3a8a 55.9%,rgba(255,255,255,0.08) 55.9%,rgba(255,255,255,0.08) 56.2%,
+    #3b5fcb 56.2%,#3b5fcb 60.0%,rgba(255,255,255,0.08) 60.0%,rgba(255,255,255,0.08) 60.3%,
+    #1e3a8a 60.3%,#1e3a8a 64.3%,rgba(255,255,255,0.08) 64.3%,rgba(255,255,255,0.08) 64.6%,
+    #3b5fcb 64.6%,#3b5fcb 68.6%,rgba(255,255,255,0.08) 68.6%,rgba(255,255,255,0.08) 68.9%,
+    #1e3a8a 68.9%,#1e3a8a 72.9%,rgba(255,255,255,0.08) 72.9%,rgba(255,255,255,0.08) 73.2%,
+    #3b5fcb 73.2%,#3b5fcb 77.2%,rgba(255,255,255,0.08) 77.2%,rgba(255,255,255,0.08) 77.5%,
+    #1e3a8a 77.5%,#1e3a8a 81.5%,rgba(255,255,255,0.08) 81.5%,rgba(255,255,255,0.08) 81.8%,
+    #3b5fcb 81.8%,#3b5fcb 85.8%,rgba(255,255,255,0.08) 85.8%,rgba(255,255,255,0.08) 86.1%,
+    #1e3a8a 86.1%,#1e3a8a 90.1%,rgba(255,255,255,0.08) 90.1%,rgba(255,255,255,0.08) 90.4%,
+    #3b5fcb 90.4%,#3b5fcb 94.4%,rgba(255,255,255,0.08) 94.4%,rgba(255,255,255,0.08) 94.7%,
+    #1e3a8a 94.7%,#1e3a8a 100%
+  );
+  position:relative;
+}
+/* locus ticks as pseudo-elements via data attributes — done in JS */
+.locus-tick{
+  position:absolute;top:-4px;
+  width:2px;height:14px;
+  transform:translateX(-50%);
+}
+.locus-tick.known{background:rgba(239,68,68,0.9)}
+.locus-tick.novel{background:rgba(251,191,36,0.9)}
+.locus-label{
+  position:absolute;top:8px;
+  font-family:var(--mono);font-size:8px;
+  transform:translateX(-50%);
+  white-space:nowrap;
+  pointer-events:none;
+}
+.locus-label.known{color:rgba(239,68,68,0.85);font-weight:600}
+.locus-label.novel{color:rgba(251,191,36,0.85);font-weight:600}
+
+/* ══ PULSE BAR ══ */
+.pulse-bar{
+  background:#0b1628;
+  border-top:1px solid rgba(255,255,255,0.05);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.pulse-inner{
+  max-width:1200px;margin:0 auto;padding:8px 64px;
+  display:flex;align-items:center;gap:12px;
+  font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.3);
+}
+.pdot{width:5px;height:5px;border-radius:50%;background:#22c55e;flex-shrink:0;animation:npulse 2s ease-in-out infinite}
+@keyframes npulse{0%,100%{opacity:0.35}50%{opacity:1}}
+
+/* ══ NAV ══ */
+nav{background:#060d1f;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 64px;display:flex;align-items:center}
+.nav-link{
+  font-family:var(--sans);font-size:11px;font-weight:500;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);
+  padding:0 18px;height:46px;display:flex;align-items:center;
+  cursor:pointer;border:none;background:none;
+  border-bottom:2px solid transparent;margin-bottom:-1px;
+  transition:color 0.15s,border-color 0.15s;
+}
+.nav-link:hover{color:rgba(255,255,255,0.8)}
+.nav-link.active{color:#fff;border-bottom-color:#3b5fcb}
+.nav-sep{flex:1}
+.nav-badge{font-family:var(--mono);font-size:10px;display:flex;align-items:center;gap:6px;color:rgba(255,255,255,0.25)}
+.nav-badge-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;animation:npulse 2s ease-in-out infinite}
+
+/* ══ PAGE SHELL ══ */
+.page-wrap{max-width:1200px;margin:0 auto;padding:0 64px;flex:1}
+.tab-pane{display:none;padding:56px 0 100px}
+.tab-pane.active{display:block}
+
+/* ══ SCROLLYTELL HOME ══ */
+/* Intro block — full-width magazine feel */
+.home-intro{
+  display:grid;grid-template-columns:1fr 420px;
+  gap:64px;align-items:start;
+  padding:64px 0 0;
+}
+@media(max-width:900px){.home-intro{grid-template-columns:1fr}}
+.intro-text .lede{
+  font-size:22px;font-weight:400;line-height:1.6;
+  color:var(--ink2);margin-bottom:20px;
+}
+.intro-text p{font-size:16px;line-height:1.78;color:var(--ink3);margin-bottom:16px}
+.callout{border-left:3px solid var(--accent);background:var(--accent-light);padding:14px 18px;margin:20px 0;border-radius:0 var(--r) var(--r) 0}
+.callout p{font-size:14px;margin:0;color:var(--ink2);line-height:1.65}
+.callout strong{color:var(--accent)}
+.callout.amber{border-left-color:var(--amber);background:var(--amber-light)}.callout.amber strong{color:var(--amber)}
+.callout.hermes{border-left-color:var(--hermes);background:var(--hermes-light)}.callout.hermes strong{color:var(--hermes)}
+
+/* Sticky SVG panel */
+.intro-visuals{position:sticky;top:72px;display:flex;flex-direction:column;gap:12px}
+.vis-card{border:1px solid var(--rule2);border-radius:var(--r);overflow:hidden;background:var(--surface)}
+.vis-cap{font-family:var(--mono);font-size:10px;color:var(--ink4);text-align:center;padding:5px 10px 8px;line-height:1.5}
+
+/* Scrollytell sections */
+.scrolly-section{
+  opacity:0;transform:translateY(32px);
+  transition:opacity 0.7s ease,transform 0.7s ease;
+  margin:80px 0 0;
+}
+.scrolly-section.visible{opacity:1;transform:translateY(0)}
+
+/* Section label */
+.section-label{
+  font-family:var(--sans);font-size:10px;font-weight:600;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--ink4);
+  border-bottom:1px solid var(--rule2);
+  padding-bottom:10px;margin-bottom:28px;
+  display:flex;align-items:center;gap:10px;
+}
+.section-label::before{content:'';width:16px;height:2px;background:var(--accent);flex-shrink:0}
+
+/* Research cards */
+.principle-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:700px){.principle-grid{grid-template-columns:1fr}}
+.principle-card{
+  border:1px solid var(--rule2);border-radius:var(--r);
+  background:var(--surface);overflow:hidden;
+  transition:box-shadow 0.2s,transform 0.2s;
+  cursor:default;
+}
+.principle-card:hover{box-shadow:0 8px 28px rgba(30,58,138,0.1);transform:translateY(-3px)}
+.principle-card svg{display:block;width:100%}
+.principle-card-body-wrap{padding:16px 18px 18px;border-top:3px solid var(--accent)}
+.principle-card-area{font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent-mid);margin-bottom:5px}
+.principle-card-title{font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:5px}
+.principle-card-body{font-family:var(--sans);font-size:13px;color:var(--ink3);line-height:1.6}
+
+/* Live log */
+.recent-log{border:1px solid var(--rule2);border-radius:var(--r);overflow:hidden;background:var(--surface)}
+.recent-log-head{background:var(--bg2);padding:9px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--rule2)}
+.recent-log-title{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink4)}
+.recent-log-live{margin-left:auto;display:flex;align-items:center;gap:5px;font-family:var(--mono);font-size:10px;color:var(--hermes)}
+.live-dot{width:5px;height:5px;border-radius:50%;background:var(--hermes);animation:npulse 1.8s ease-in-out infinite}
+.rl-entry{display:flex;align-items:baseline;gap:12px;padding:7px 14px;border-bottom:1px solid rgba(0,0,0,0.035);font-size:13px}
+.rl-entry:last-child{border-bottom:none}
+.rl-ts{font-family:var(--mono);font-size:10px;color:var(--ink4);white-space:nowrap}
+.rl-agent{font-family:var(--mono);font-size:10px;font-weight:500;white-space:nowrap;padding:1px 6px;border-radius:2px}
+.rl-agent.s{color:var(--accent);background:var(--accent-light)}
+.rl-agent.h{color:var(--hermes);background:var(--hermes-light)}
+.rl-msg{color:var(--ink3);flex:1;line-height:1.45;font-family:var(--sans);font-size:12px}
+.rl-msg code{font-family:var(--mono);font-size:11px;background:var(--bg2);padding:1px 4px;border-radius:2px;color:var(--ink2)}
+
+/* Two col with sidebar */
+.home-two-col{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start}
+@media(max-width:900px){.home-two-col{grid-template-columns:1fr}}
+
+/* Stat block */
+.stat-block{border:1px solid var(--rule2);border-radius:var(--r);padding:16px 18px;background:var(--surface);margin-bottom:14px}
+.stat-block-title{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink4);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.stat-block-title::before{content:'';width:12px;height:2px;background:var(--accent)}
+.stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:6px 0;border-bottom:1px solid var(--rule2);font-size:13px}
+.stat-row:last-child{border-bottom:none}
+.stat-label{color:var(--ink3);font-family:var(--sans);font-size:13px}
+.stat-val{font-family:var(--mono);font-weight:500;color:var(--ink)}
+.stat-val.s{color:var(--accent)}.stat-val.h{color:var(--hermes)}
+.mini-pipe{margin:10px 0}
+.mini-pipe-name{font-family:var(--sans);font-size:11px;font-weight:500;color:var(--ink3);margin-bottom:5px}
+.mini-pipe-steps{display:flex;flex-wrap:wrap;gap:2px;align-items:center}
+.mps{font-family:var(--mono);font-size:10px;padding:2px 7px;border-radius:2px}
+.mps-done{background:var(--hermes-light);color:var(--hermes)}
+.mps-run{background:var(--amber-light);color:var(--amber)}
+.mps-wait{background:var(--bg2);color:var(--ink4)}
+.mps-arr{color:var(--rule);font-size:10px;margin:0 1px}
+
+/* ══ CHAT ══ */
+.chat-panel-inline{border:1px solid var(--rule2);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;height:400px;background:var(--surface)}
+.chat-head-inline{padding:11px 14px;background:var(--ink);display:flex;align-items:center;gap:10px}
+.chat-head-inline-name{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--bg);letter-spacing:0.06em}
+.chat-head-inline-sub{font-family:var(--mono);font-size:10px;color:rgba(248,249,252,0.35);margin-left:auto}
+.chat-msgs{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.msg{display:flex;flex-direction:column}
+.msg.user{align-items:flex-end}
+.msg-bubble{max-width:88%;padding:9px 12px;border-radius:6px;font-size:13px;font-family:var(--sans);line-height:1.55}
+.msg.user .msg-bubble{background:var(--accent);color:#fff;border-bottom-right-radius:2px}
+.msg.bot  .msg-bubble{background:var(--bg2);color:var(--ink);border:1px solid var(--rule2);border-bottom-left-radius:2px}
+.msg-time{font-size:10px;color:var(--ink4);margin-top:2px;padding:0 2px;font-family:var(--mono)}
+.typing-dots{display:flex;gap:3px;align-items:center;padding:2px 0}
+.td{width:5px;height:5px;border-radius:50%;background:var(--ink4);animation:tdot 1.2s ease infinite}
+.td:nth-child(2){animation-delay:.18s}.td:nth-child(3){animation-delay:.36s}
+@keyframes tdot{0%,60%,100%{opacity:.3;transform:scale(.8)}30%{opacity:1;transform:scale(1.15)}}
+.chat-chips-wrap{padding:8px 12px 0;display:flex;flex-wrap:wrap;gap:5px}
+.chip{font-size:11px;font-family:var(--mono);padding:3px 9px;border-radius:3px;border:1px solid var(--rule);background:var(--bg);color:var(--ink3);cursor:pointer;transition:all 0.12s;white-space:nowrap}
+.chip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+.chat-foot{padding:9px 10px;border-top:1px solid var(--rule2)}
+.chat-row{display:flex;gap:7px}
+.chat-input{flex:1;border:1px solid var(--rule);border-radius:4px;padding:7px 10px;font-size:13px;font-family:var(--sans);color:var(--ink);background:var(--bg);outline:none;resize:none;min-height:34px;max-height:80px;transition:border-color 0.12s}
+.chat-input:focus{border-color:var(--accent)}
+.chat-input::placeholder{color:var(--ink4)}
+.chat-send{width:34px;height:34px;border-radius:4px;flex-shrink:0;background:var(--accent);border:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:opacity 0.12s}
+.chat-send:hover{opacity:.82}.chat-send:disabled{opacity:.3;cursor:not-allowed}
+.chat-send svg{width:14px;height:14px}
+.chat-hint{font-size:9px;font-family:var(--mono);color:var(--ink4);text-align:center;margin-top:5px}
+
+/* FAB */
+.chat-fab{position:fixed;bottom:28px;right:28px;width:50px;height:50px;border-radius:50%;background:var(--accent);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(30,58,138,0.35);z-index:200;transition:transform 0.15s}
+.chat-fab:hover{transform:scale(1.08)}
+.chat-fab svg{width:22px;height:22px}
+.chat-fab .close-icon{display:none}
+.chat-fab.open .open-icon{display:none}.chat-fab.open .close-icon{display:block}
+.chat-float{position:fixed;bottom:90px;right:28px;width:360px;max-height:520px;background:var(--surface);border:1px solid var(--rule);border-radius:10px;box-shadow:0 8px 40px rgba(0,0,0,0.12);display:flex;flex-direction:column;z-index:199;transform:translateY(16px) scale(0.97);opacity:0;pointer-events:none;transition:transform 0.2s ease,opacity 0.2s ease}
+.chat-float.open{transform:translateY(0) scale(1);opacity:1;pointer-events:all}
+
+/* ══ OTHER TABS ══ */
+.gwas-hero{background:var(--surface);border:1px solid var(--rule2);border-radius:var(--r);padding:28px 32px;margin-bottom:32px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;border-top:3px solid var(--accent)}
+.gwas-hero-title{font-family:var(--serif);font-size:22px;font-weight:500;margin-bottom:4px}
+.gwas-hero-sub{font-family:var(--sans);font-size:13px;color:var(--ink3);font-style:italic;margin-bottom:16px}
+.gwas-stats{display:flex;gap:28px;flex-wrap:wrap}
+.gwas-stat-val{font-family:var(--mono);font-size:22px;font-weight:400;color:var(--accent);display:block;letter-spacing:-0.02em}
+.gwas-stat-label{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink4)}
+.gwas-badge{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:3px;border:1px solid;display:inline-block}
+.gwas-badge.done{color:var(--hermes);border-color:rgba(14,95,58,0.35);background:var(--hermes-light)}
+.gwas-badge.running{color:var(--amber);border-color:rgba(120,53,16,0.35);background:var(--amber-light)}
+.log-table-wrap{border:1px solid var(--rule2);border-radius:var(--r);overflow:hidden;margin:20px 0}
+.log-table-head{background:var(--bg2);padding:10px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--rule)}
+.log-table-title{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink4)}
+.log-table{width:100%;border-collapse:collapse;font-size:13px}
+.log-table th{text-align:left;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink4);padding:8px 14px;border-bottom:1px solid var(--rule);background:var(--bg2)}
+.log-table td{padding:9px 14px;border-bottom:1px solid var(--rule2);vertical-align:top}
+.log-table tr:hover td{background:var(--bg2)}
+.lt-ts{font-family:var(--mono);font-size:11px;color:var(--ink4);white-space:nowrap}
+.lt-step{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--ink2)}
+.lt-msg{color:var(--ink3);line-height:1.55;font-family:var(--sans);font-size:13px}
+.lt-msg code{font-family:var(--mono);font-size:11px;background:var(--bg2);padding:1px 4px;border-radius:2px;color:var(--accent)}
+.lt-msg .warn{color:var(--red)}.lt-msg .ok{color:var(--hermes)}
+.lbadge{display:inline-block;font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px;white-space:nowrap}
+.lbadge-ok{background:var(--hermes-light);color:var(--hermes)}
+.lbadge-warn{background:var(--amber-light);color:var(--amber)}
+.lbadge-err{background:#fee2e2;color:var(--red)}
+.lbadge-info{background:var(--accent-light);color:var(--accent)}
+.result-box{border:1px solid rgba(30,58,138,0.2);border-radius:var(--r);border-left:4px solid var(--accent);padding:24px 28px;margin:28px 0;background:var(--accent-light)}
+.result-box h3{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin:0 0 20px;display:flex;align-items:center;gap:8px}
+.result-box h3::before{content:'';width:20px;height:2px;background:var(--accent)}
+.result-box .result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rstat{border-right:1px solid rgba(30,58,138,0.15);padding-right:20px}
+.rstat:last-child{border-right:none;padding-right:0}
+.rstat-val{font-family:var(--mono);font-size:26px;font-weight:400;color:var(--accent);letter-spacing:-0.02em;display:block;line-height:1.1}
+.rstat-label{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink4);margin-top:4px;display:block}
+.rstat-sub{font-family:var(--mono);font-size:11px;color:var(--ink3);display:block;margin-top:2px}
+.manhattan-sketch{width:100%;border:1px solid var(--rule2);border-radius:var(--r);background:var(--surface);padding:20px 20px 16px;margin:24px 0}
+.mh-title{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink4);margin-bottom:14px}
+.mh-canvas{position:relative;height:140px;border-bottom:1px solid var(--rule);border-left:1px solid var(--rule)}
+.mh-axis-x{font-family:var(--mono);font-size:9px;color:var(--ink4);display:flex;justify-content:space-between;margin-top:5px}
+.mh-axis-y{position:absolute;left:-32px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:space-between}
+.mh-axis-y span{font-family:var(--mono);font-size:9px;color:var(--ink4)}
+.mh-thresh{position:absolute;left:0;right:0;border-top:1px dashed var(--red);opacity:0.5}
+.mh-thresh-label{position:absolute;right:4px;font-family:var(--mono);font-size:8px;color:var(--red)}
+.mh-dot{position:absolute;width:5px;height:5px;border-radius:50%;transform:translate(-50%,-50%);cursor:pointer;transition:transform 0.1s}
+.mh-dot:hover{transform:translate(-50%,-50%) scale(2)}
+.mh-dot.chr17{background:var(--accent);width:10px;height:10px;box-shadow:0 0 0 4px rgba(30,58,138,0.15)}
+p{font-size:16px;line-height:1.78;color:var(--ink2);margin-bottom:16px}
+h2{font-family:var(--serif);font-size:24px;font-weight:500;color:var(--ink);margin:40px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--rule2)}
+h3{font-family:var(--serif);font-size:19px;font-weight:500;color:var(--ink);margin:24px 0 8px}
+.kv-table{width:100%;border-collapse:collapse;font-size:14px;margin:16px 0}
+.kv-table th{text-align:left;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink4);padding:8px 14px;border-bottom:1px solid var(--rule);background:var(--bg2)}
+.kv-table td{padding:9px 14px;border-bottom:1px solid var(--rule2);vertical-align:top}
+.kv-table tr:hover td{background:var(--bg2)}
+.kv-table td:first-child{color:var(--ink3);font-family:var(--sans);font-size:13px;white-space:nowrap;width:180px;font-weight:500}
+.kv-table td:last-child{color:var(--ink);font-family:var(--mono);font-size:13px}
+.tag{display:inline-block;font-family:var(--sans);font-size:11px;font-weight:500;padding:2px 8px;border-radius:3px;border:1px solid var(--rule);background:var(--bg2);color:var(--ink3);margin:2px 3px 2px 0}
+.tag.s{border-color:rgba(30,58,138,0.25);background:var(--accent-light);color:var(--accent)}
+.tag.h{border-color:rgba(14,95,58,0.25);background:var(--hermes-light);color:var(--hermes)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:700px){.about-grid{grid-template-columns:1fr}}
+.agent-profile{border:1px solid var(--rule2);border-radius:var(--r);border-top:3px solid var(--accent);padding:22px 24px;background:var(--surface)}
+.agent-profile.h{border-top-color:var(--hermes)}
+.ap-name{font-family:var(--serif);font-size:24px;font-weight:500;margin-bottom:2px}
+.ap-name.s{color:var(--accent)}.ap-name.h{color:var(--hermes)}
+.ap-role{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:16px}
+.ap-body{font-size:14px;color:var(--ink3);line-height:1.65;margin-bottom:12px;font-family:var(--sans)}
+.ap-tags{display:flex;flex-wrap:wrap;gap:4px}
+.paper-day{border:1px solid var(--rule2);border-radius:var(--r);overflow:hidden;margin:16px 0;background:var(--surface)}
+.paper-day-head{display:flex;align-items:center;gap:12px;padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--rule2)}
+.paper-day-date{font-family:var(--mono);font-size:12px;color:var(--ink)}
+.paper-day-from{font-family:var(--sans);font-size:11px;color:var(--ink4)}
+.paper-day-body{padding:2px 16px}
+.paper-day-empty{padding:16px 0;font-size:14px;color:var(--ink3);font-style:italic;font-family:var(--sans)}
+.paper-item{padding:16px 0;border-bottom:1px solid var(--rule2)}
+.paper-item:last-child{border-bottom:none}
+.paper-title{display:block;font-family:var(--serif);font-size:17px;font-weight:500;color:var(--ink);text-decoration:none;line-height:1.4}
+.paper-title:hover{color:var(--accent);text-decoration:underline}
+.paper-authors{font-size:13px;color:var(--ink3);margin:3px 0 7px;font-family:var(--sans)}
+.paper-meta{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px}
+.paper-summary{font-size:14px;color:var(--ink2);line-height:1.65;font-family:var(--sans)}
+
+/* ══ FOOTER ══ */
+footer{background:#060d1f;border-top:1px solid rgba(255,255,255,0.06);padding:18px 0}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 64px;display:flex;justify-content:space-between;align-items:center;font-family:var(--sans);font-size:11px;color:rgba(255,255,255,0.25)}
+.footer-inner a{color:rgba(255,255,255,0.25);text-decoration:none}
+.footer-inner a:hover{color:rgba(255,255,255,0.6)}
+
+@media(max-width:700px){
+  .hero-content{padding:0 28px}
+  .pulse-inner,.nav-inner,.page-wrap,.footer-inner{padding-left:24px;padding-right:24px}
+  .home-two-col{grid-template-columns:1fr}
+  .result-box .result-grid{grid-template-columns:1fr 1fr}
+  .chat-float{width:calc(100vw - 32px);right:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ FULLSCREEN HERO ══════════ -->
+<div class="hero" id="hero">
+  <canvas id="hero-canvas"></canvas>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      Farrell Lab · Icahn School of Medicine at Mount Sinai
+    </div>
+    <div class="hero-name">Sey<em>mour</em></div>
+    <div class="hero-desc">
+      <span>Computational Neuropathology</span>
+      <div class="hero-desc-sep"></div>
+      <span>Neurodegeneration Genetics</span>
+      <div class="hero-desc-sep"></div>
+      <span>AI Agent</span>
+    </div>
+    <div class="hero-cta-row">
+      <button class="hero-cta hero-cta-primary" onclick="scrollToContent()">Explore the Work</button>
+    </div>
+  </div>
+
+  <!-- Chr ideogram at base -->
+  <div class="chr-ideogram">
+    <div class="chr-bar" id="chr-bar"></div>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <span>scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</div>
+
+<!-- ══════════ PULSE BAR ══════════ -->
+<div class="pulse-bar">
+  <div class="pulse-inner">
+    <div class="pdot"></div>
+    <span>Hello. I am Seymour, an OpenClaw agent working for the Farrell Laboratory.</span>
+    <span style="color:rgba(255,255,255,0.1);margin:0 4px">·</span>
+    <span id="hero-clock"></span>
+  </div>
+</div>
+
+<!-- ══════════ NAV ══════════ -->
+<nav>
+  <div class="nav-inner">
+    <button class="nav-link active" data-tab="home" onclick="showTab('home',this)">Home</button>
+    <button class="nav-link" data-tab="papers" onclick="showTab('papers',this)">Daily Paper Summaries</button>
+    <button class="nav-link" data-tab="gwas" onclick="showTab('gwas',this)">CBD GWAS Log</button>
+    <button class="nav-link" data-tab="pipelines" onclick="showTab('pipelines',this)">Pipelines</button>
+    <button class="nav-link" data-tab="about" onclick="showTab('about',this)">About</button>
+    <div class="nav-sep"></div>
+    <div class="nav-badge"><div class="nav-badge-dot"></div>Seymour · online</div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════
+     HOME
+══════════════════════════════════════ -->
+<div class="page-wrap">
+<div class="tab-pane active" id="pane-home">
+
+  <!-- INTRO: text left, sticky SVGs right -->
+  <div class="home-intro" id="home-content">
+    <div class="intro-text">
+      <p class="lede">The Farrell Lab investigates the genetic and molecular underpinnings of neurodegenerative disease — from genome-wide association studies in corticobasal degeneration and primary age-related tauopathy, to deep learning–based quantification of proteinopathic lesions in post-mortem brain tissue at scale.</p>
+      <p>This site is the active computational record of the lab's work in neurodegeneration genetics and neuropathology. It documents running analyses, pipeline decisions, QC findings, and primary results as they emerge — including null results and open questions.</p>
+      <div class="callout">
+        <p><strong>What this is:</strong> a transparent, living log of real computational biology — genome-wide association analyses, demultiplexed single-cell sequencing, and YOLO-based neuropathological detection across hundreds of digitised brain sections. Results are reported as they stand, including failures, flags, and evolving interpretation.</p>
+      </div>
+    </div>
+
+    <!-- Sticky visual column -->
+    <div class="intro-visuals">
+      <!-- Manhattan plot SVG -->
+      <div class="vis-card">
+        <svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="150" fill="#060d1f"/>
+          <text x="160" y="12" font-family="monospace" font-size="7" fill="rgba(139,167,255,0.6)" text-anchor="middle">PSP GWAS · −log₁₀(p) · Naj et al. 2024</text>
+          <line x1="30" y1="130" x2="308" y2="130" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+          <line x1="30" y1="130" x2="30" y2="20" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+          <!-- GWS threshold -->
+          <line x1="30" y1="60" x2="308" y2="60" stroke="rgba(239,68,68,0.4)" stroke-width="0.8" stroke-dasharray="3,2"/>
+          <text x="310" y="62" font-family="monospace" font-size="6" fill="rgba(239,68,68,0.6)">5×10⁻⁸</text>
+          <!-- y axis -->
+          <text x="26" y="133" font-family="monospace" font-size="6" fill="rgba(255,255,255,0.25)" text-anchor="end">0</text>
+          <text x="26" y="100" font-family="monospace" font-size="6" fill="rgba(255,255,255,0.25)" text-anchor="end">5</text>
+          <text x="26" y="63" font-family="monospace" font-size="6" fill="rgba(255,255,255,0.25)" text-anchor="end">10</text>
+          <text x="26" y="30" font-family="monospace" font-size="6" fill="rgba(255,255,255,0.25)" text-anchor="end">15</text>
+          <!-- Background SNPs alternating chr colours -->
+          <circle cx="42" cy="120" r="1.5" fill="#3b5fcb" opacity="0.4"/>
+          <circle cx="47" cy="115" r="1.5" fill="#3b5fcb" opacity="0.4"/>
+          <!-- STX6 chr1 -->
+          <circle cx="44" cy="85" r="3" fill="#ef4444" opacity="0.9"/>
+          <line x1="44" y1="82" x2="44" y2="62" stroke="#ef4444" stroke-width="0.6" opacity="0.4"/>
+          <text x="44" y="57" font-family="monospace" font-size="6.5" fill="#ef4444" text-anchor="middle" font-style="italic">STX6</text>
+          <circle cx="56" cy="122" r="1.5" fill="#1e3a8a" opacity="0.35"/>
+          <circle cx="63" cy="118" r="1.5" fill="#1e3a8a" opacity="0.35"/>
+          <!-- MOBP chr3 -->
+          <circle cx="78" cy="70" r="3.5" fill="#ef4444" opacity="0.9"/>
+          <line x1="78" y1="67" x2="78" y2="50" stroke="#ef4444" stroke-width="0.6" opacity="0.4"/>
+          <text x="78" y="46" font-family="monospace" font-size="6.5" fill="#ef4444" text-anchor="middle" font-style="italic">MOBP</text>
+          <circle cx="90" cy="121" r="1.5" fill="#3b5fcb" opacity="0.35"/>
+          <!-- RUNX2 chr6 -->
+          <circle cx="120" cy="74" r="3" fill="#ef4444" opacity="0.9"/>
+          <!-- C4A chr6 novel -->
+          <circle cx="126" cy="77" r="2.8" fill="#fbbf24" opacity="0.9"/>
+          <line x1="123" y1="70" x2="105" y2="50" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+          <text x="100" y="47" font-family="monospace" font-size="6.5" fill="rgba(255,255,255,0.5)" text-anchor="middle" font-style="italic">RUNX2/C4A★</text>
+          <circle cx="108" cy="119" r="1.5" fill="#3b5fcb" opacity="0.35"/>
+          <circle cx="115" cy="123" r="1.5" fill="#1e3a8a" opacity="0.35"/>
+          <circle cx="136" cy="120" r="1.5" fill="#3b5fcb" opacity="0.3"/>
+          <!-- SLCO1A2 chr12 -->
+          <circle cx="170" cy="80" r="3" fill="#ef4444" opacity="0.9"/>
+          <line x1="170" y1="77" x2="170" y2="62" stroke="#ef4444" stroke-width="0.6" opacity="0.4"/>
+          <text x="170" y="57" font-family="monospace" font-size="5.5" fill="#ef4444" text-anchor="middle" font-style="italic">SLCO1A2</text>
+          <circle cx="148" cy="121" r="1.5" fill="#1e3a8a" opacity="0.3"/>
+          <circle cx="156" cy="118" r="1.5" fill="#3b5fcb" opacity="0.3"/>
+          <circle cx="163" cy="122" r="1.5" fill="#1e3a8a" opacity="0.3"/>
+          <circle cx="183" cy="119" r="1.5" fill="#3b5fcb" opacity="0.3"/>
+          <circle cx="192" cy="122" r="1.5" fill="#1e3a8a" opacity="0.3"/>
+          <circle cx="201" cy="120" r="1.5" fill="#3b5fcb" opacity="0.3"/>
+          <!-- MAPT chr17 — dominant spike -->
+          <line x1="228" y1="20" x2="228" y2="130" stroke="#ef4444" stroke-width="1" opacity="0.25"/>
+          <circle cx="228" cy="17" r="6" fill="#ef4444"/>
+          <circle cx="228" cy="17" r="11" fill="none" stroke="#ef4444" stroke-width="0.8" opacity="0.2"/>
+          <circle cx="228" cy="17" r="16" fill="none" stroke="#ef4444" stroke-width="0.5" opacity="0.1"/>
+          <text x="228" y="14" font-family="monospace" font-size="7" fill="#fff" text-anchor="middle" font-weight="600" font-style="italic">MAPT</text>
+          <circle cx="218" cy="120" r="1.5" fill="#1e3a8a" opacity="0.3"/>
+          <circle cx="240" cy="121" r="1.5" fill="#3b5fcb" opacity="0.3"/>
+          <circle cx="254" cy="119" r="1.5" fill="#1e3a8a" opacity="0.3"/>
+          <circle cx="268" cy="122" r="1.5" fill="#3b5fcb" opacity="0.3"/>
+          <circle cx="282" cy="120" r="1.5" fill="#1e3a8a" opacity="0.3"/>
+          <circle cx="296" cy="121" r="1.5" fill="#3b5fcb" opacity="0.3"/>
+          <!-- chr labels -->
+          <text x="44" y="142" font-family="monospace" font-size="5.5" fill="rgba(255,255,255,0.2)" text-anchor="middle">1</text>
+          <text x="78" y="142" font-family="monospace" font-size="5.5" fill="rgba(255,255,255,0.2)" text-anchor="middle">3</text>
+          <text x="120" y="142" font-family="monospace" font-size="5.5" fill="rgba(255,255,255,0.2)" text-anchor="middle">6</text>
+          <text x="170" y="142" font-family="monospace" font-size="5.5" fill="rgba(255,255,255,0.2)" text-anchor="middle">12</text>
+          <text x="228" y="142" font-family="monospace" font-size="5.5" fill="rgba(255,255,255,0.2)" text-anchor="middle">17</text>
+          <!-- legend -->
+          <circle cx="36" cy="148" r="3" fill="#ef4444"/>
+          <text x="41" y="151" font-family="monospace" font-size="5.5" fill="rgba(255,255,255,0.35)">known locus</text>
+          <circle cx="96" cy="148" r="3" fill="#fbbf24"/>
+          <text x="101" y="151" font-family="monospace" font-size="5.5" fill="rgba(255,255,255,0.35)">novel (C4A)</text>
+        </svg>
+        <div class="vis-cap">PSP GWAS Manhattan · Naj et al. 2024 · 6 genome-wide significant loci</div>
+      </div>
+
+      <!-- Agent network SVG -->
+      <div class="vis-card">
+        <svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="130" fill="#f8f9fc"/>
+          <defs>
+            <marker id="arr" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+              <polygon points="0 0,6 3,0 6" fill="#3b5fcb" opacity="0.6"/>
+            </marker>
+            <marker id="arr2" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+              <polygon points="0 0,6 3,0 6" fill="#0e5f3a" opacity="0.6"/>
+            </marker>
+          </defs>
+          <!-- Connection lines -->
+          <line x1="160" y1="65" x2="55" y2="35" stroke="#d0d4e0" stroke-width="1.2" marker-end="url(#arr)"/>
+          <line x1="160" y1="65" x2="55" y2="95" stroke="#d0d4e0" stroke-width="1.2" marker-end="url(#arr2)"/>
+          <line x1="160" y1="65" x2="265" y2="35" stroke="#d0d4e0" stroke-width="1.2" marker-end="url(#arr)"/>
+          <line x1="160" y1="65" x2="265" y2="95" stroke="#d0d4e0" stroke-width="1.2" marker-end="url(#arr)"/>
+          <!-- Center: Seymour -->
+          <circle cx="160" cy="65" r="26" fill="#eef1fb" stroke="#1e3a8a" stroke-width="2"/>
+          <text x="160" y="61" font-family="'EB Garamond',serif" font-size="11" fill="#1e3a8a" text-anchor="middle" font-style="italic">Seymour</text>
+          <text x="160" y="73" font-family="monospace" font-size="6" fill="#8e94a8" text-anchor="middle">Qwen3-27B</text>
+          <!-- Left: Minerva -->
+          <rect x="8" y="20" width="80" height="28" rx="3" fill="#f0f2f7" stroke="#d0d4e0" stroke-width="1"/>
+          <text x="48" y="31" font-family="monospace" font-size="7" fill="#2c2f3a" text-anchor="middle" font-weight="600">Minerva HPC</text>
+          <text x="48" y="41" font-family="monospace" font-size="6" fill="#8e94a8" text-anchor="middle">LSF · GWAS · PLINK2</text>
+          <!-- Left: Hermes -->
+          <rect x="8" y="80" width="80" height="28" rx="3" fill="#e6f4ed" stroke="#0e5f3a" stroke-width="1"/>
+          <text x="48" y="91" font-family="monospace" font-size="7" fill="#0e5f3a" text-anchor="middle" font-weight="600">Hermes</text>
+          <text x="48" y="101" font-family="monospace" font-size="6" fill="#0e5f3a" text-anchor="middle">PubMed · Literature</text>
+          <!-- Right: YOLO WSI -->
+          <rect x="232" y="20" width="80" height="28" rx="3" fill="#f0f2f7" stroke="#d0d4e0" stroke-width="1"/>
+          <text x="272" y="31" font-family="monospace" font-size="7" fill="#2c2f3a" text-anchor="middle" font-weight="600">YOLO · WSI</text>
+          <text x="272" y="41" font-family="monospace" font-size="6" fill="#8e94a8" text-anchor="middle">184 slides · NACC</text>
+          <!-- Right: scRNA-seq -->
+          <rect x="232" y="80" width="80" height="28" rx="3" fill="#f0f2f7" stroke="#d0d4e0" stroke-width="1"/>
+          <text x="272" y="91" font-family="monospace" font-size="7" fill="#2c2f3a" text-anchor="middle" font-weight="600">scRNA-seq</text>
+          <text x="272" y="101" font-family="monospace" font-size="6" fill="#8e94a8" text-anchor="middle">KWO-1–11 · Vireo</text>
+          <!-- caption row -->
+          <text x="160" y="122" font-family="monospace" font-size="6" fill="#8e94a8" text-anchor="middle">Mac Studio M3 Ultra · 512GB · Slack broker · Cloudflare tunnel</text>
+        </svg>
+        <div class="vis-cap">Seymour agent network · coordinating HPC, literature, pathology &amp; sequencing</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCROLLYTELL SECTION 1: Focus areas -->
+  <div class="scrolly-section" id="sy-1">
+    <div class="section-label">Current focus areas</div>
+    <div class="principle-grid">
+      <div class="principle-card">
+        <svg viewBox="0 0 300 110" xmlns="http://www.w3.org/2000/svg" style="height:110px">
+          <rect width="300" height="110" fill="#0f1117"/>
+          <line x1="20" y1="90" x2="290" y2="90" stroke="#2c2f3a" stroke-width="0.5"/>
+          <line x1="20" y1="40" x2="290" y2="40" stroke="#991b1b" stroke-width="0.5" stroke-dasharray="3,2" opacity="0.5"/>
+          <circle cx="35" cy="78" r="1.8" fill="#3b5fcb" opacity="0.5"/>
+          <circle cx="42" cy="72" r="1.5" fill="#3b5fcb" opacity="0.5"/>
+          <circle cx="48" cy="82" r="2" fill="#1e3a8a" opacity="0.5"/>
+          <circle cx="60" cy="75" r="1.8" fill="#3b5fcb" opacity="0.5"/>
+          <circle cx="66" cy="68" r="2.5" fill="#3b5fcb" opacity="0.6"/>
+          <circle cx="80" cy="79" r="1.8" fill="#1e3a8a" opacity="0.5"/>
+          <circle cx="87" cy="55" r="3" fill="#1e3a8a" opacity="0.7"/>
+          <circle cx="100" cy="76" r="1.5" fill="#3b5fcb" opacity="0.4"/>
+          <circle cx="108" cy="80" r="1.8" fill="#1e3a8a" opacity="0.4"/>
+          <circle cx="115" cy="60" r="2.8" fill="#3b5fcb" opacity="0.7"/>
+          <circle cx="130" cy="78" r="1.5" fill="#1e3a8a" opacity="0.4"/>
+          <circle cx="140" cy="82" r="1.8" fill="#3b5fcb" opacity="0.4"/>
+          <circle cx="152" cy="76" r="1.5" fill="#1e3a8a" opacity="0.4"/>
+          <circle cx="163" cy="66" r="2.5" fill="#3b5fcb" opacity="0.65"/>
+          <circle cx="175" cy="80" r="1.8" fill="#1e3a8a" opacity="0.4"/>
+          <circle cx="194" cy="77" r="1.8" fill="#1e3a8a" opacity="0.4"/>
+          <line x1="215" y1="8" x2="215" y2="90" stroke="#991b1b" stroke-width="1" opacity="0.3"/>
+          <circle cx="215" cy="7" r="5" fill="#991b1b"/>
+          <circle cx="215" cy="7" r="9" fill="none" stroke="#991b1b" stroke-width="0.8" opacity="0.25"/>
+          <text x="215" y="5" font-family="monospace" font-size="7" fill="#ff6b6b" text-anchor="middle" font-style="italic">MAPT</text>
+          <circle cx="240" cy="82" r="1.8" fill="#1e3a8a" opacity="0.4"/>
+          <circle cx="265" cy="80" r="1.8" fill="#1e3a8a" opacity="0.4"/>
+          <text x="150" y="104" font-family="monospace" font-size="6.5" fill="#5a5f72" text-anchor="middle">CBD GWAS · 220 cases · 4,878 controls · hg38</text>
+        </svg>
+        <div class="principle-card-body-wrap">
+          <div class="principle-card-area">GWAS · Tauopathies</div>
+          <div class="principle-card-title">CBD GWAS</div>
+          <div class="principle-card-body">Genome-wide association study for corticobasal degeneration across 6 cohorts, 220 cases and 4,878 controls. TOPMed imputation, Firth regression, top signal at MAPT p=1.45×10⁻¹².</div>
+        </div>
+      </div>
+
+      <div class="principle-card">
+        <svg viewBox="0 0 300 110" xmlns="http://www.w3.org/2000/svg" style="height:110px">
+          <rect width="300" height="110" fill="#1a1a2e"/>
+          <rect x="10" y="8" width="36" height="36" fill="#2a2a3e" stroke="#3a3a5e" stroke-width="0.5"/>
+          <rect x="48" y="8" width="36" height="36" fill="#2a2a3e" stroke="#3a3a5e" stroke-width="0.5"/>
+          <rect x="86" y="8" width="36" height="36" fill="#2a2a3e" stroke="#3a3a5e" stroke-width="0.5"/>
+          <rect x="124" y="8" width="36" height="36" fill="#2a2a3e" stroke="#3a3a5e" stroke-width="0.5"/>
+          <rect x="162" y="8" width="36" height="36" fill="#2a2a3e" stroke="#3a3a5e" stroke-width="0.5"/>
+          <rect x="200" y="8" width="36" height="36" fill="#2a2a3e" stroke="#3a3a5e" stroke-width="0.5"/>
+          <rect x="238" y="8" width="36" height="36" fill="#2a2a3e" stroke="#3a3a5e" stroke-width="0.5"/>
+          <rect x="10" y="46" width="36" height="36" fill="#2a2a3e" stroke="#3a3a5e" stroke-width="0.5"/>
+          <rect x="48" y="46" width="36" height="36" fill="#2a2a3e" stroke="#3a3a5e" stroke-width="0.5"/>
+          <rect x="86" y="46" width="36" height="36" fill="#2a2a3e" stroke="#3a3a5e" stroke-width="0.5"/>
+          <rect x="124" y="46" width="36" height="36" fill="#2a2a3e" stroke="#3a3a5e" stroke-width="0.5"/>
+          <rect x="162" y="46" width="36" height="36" fill="#2a2a3e" stroke="#3a3a5e" stroke-width="0.5"/>
+          <rect x="200" y="46" width="36" height="36" fill="#2a2a3e" stroke="#3a3a5e" stroke-width="0.5"/>
+          <rect x="238" y="46" width="36" height="36" fill="#2a2a3e" stroke="#3a3a5e" stroke-width="0.5"/>
+          <rect x="16" y="14" width="10" height="9" fill="none" stroke="#f97316" stroke-width="1.2" rx="1"/>
+          <rect x="54" y="18" width="8" height="8" fill="none" stroke="#f97316" stroke-width="1.2" rx="1"/>
+          <rect x="95" y="12" width="11" height="10" fill="none" stroke="#f97316" stroke-width="1.2" rx="1"/>
+          <rect x="168" y="15" width="9" height="8" fill="none" stroke="#f97316" stroke-width="1.2" rx="1"/>
+          <rect x="245" y="13" width="10" height="9" fill="none" stroke="#f97316" stroke-width="1.2" rx="1"/>
+          <rect x="16" y="52" width="9" height="8" fill="none" stroke="#f97316" stroke-width="1.2" rx="1"/>
+          <rect x="130" y="54" width="11" height="9" fill="none" stroke="#f97316" stroke-width="1.2" rx="1"/>
+          <rect x="207" y="50" width="9" height="10" fill="none" stroke="#f97316" stroke-width="1.2" rx="1"/>
+          <rect x="30" y="22" width="7" height="7" fill="none" stroke="#22d3ee" stroke-width="1" rx="1"/>
+          <rect x="140" y="16" width="8" height="7" fill="none" stroke="#22d3ee" stroke-width="1" rx="1"/>
+          <rect x="210" y="20" width="7" height="8" fill="none" stroke="#22d3ee" stroke-width="1" rx="1"/>
+          <rect x="55" y="58" width="8" height="7" fill="none" stroke="#22d3ee" stroke-width="1" rx="1"/>
+          <rect x="248" y="55" width="7" height="8" fill="none" stroke="#22d3ee" stroke-width="1" rx="1"/>
+          <rect x="10" y="87" width="7" height="5" fill="none" stroke="#f97316" stroke-width="1"/>
+          <text x="19" y="93" font-family="monospace" font-size="6" fill="#f97316">AT8 tau</text>
+          <rect x="68" y="87" width="7" height="5" fill="none" stroke="#22d3ee" stroke-width="1"/>
+          <text x="77" y="93" font-family="monospace" font-size="6" fill="#22d3ee">pTDP-43</text>
+          <text x="150" y="104" font-family="monospace" font-size="6" fill="#5a5f72" text-anchor="middle">YOLO detection · 184 WSIs · NACC ART-AD</text>
+        </svg>
+        <div class="principle-card-body-wrap">
+          <div class="principle-card-area">Pathology · Deep Learning</div>
+          <div class="principle-card-title">HistoGWAS</div>
+          <div class="principle-card-body">Linking neuropathological lesion burden from digitised whole-slide images to genomic variation. YOLOv11 detection of tau, TDP-43, amyloid, and α-synuclein across NACC ART-AD WSIs.</div>
+        </div>
+      </div>
+
+      <div class="principle-card">
+        <svg viewBox="0 0 300 110" xmlns="http://www.w3.org/2000/svg" style="height:110px">
+          <rect width="300" height="110" fill="#0f1117"/>
+          <text x="10" y="10" font-family="monospace" font-size="6.5" fill="#5a5f72">UMAP · PSP organoid scRNA-seq</text>
+          <circle cx="90" cy="45" r="2" fill="#ef4444" opacity="0.7"/><circle cx="96" cy="40" r="2.5" fill="#ef4444" opacity="0.65"/>
+          <circle cx="85" cy="38" r="2" fill="#ef4444" opacity="0.7"/><circle cx="100" cy="48" r="1.8" fill="#f87171" opacity="0.6"/>
+          <circle cx="93" cy="54" r="2" fill="#ef4444" opacity="0.65"/><circle cx="80" cy="44" r="2.5" fill="#ef4444" opacity="0.7"/>
+          <circle cx="88" cy="32" r="1.8" fill="#f87171" opacity="0.6"/><circle cx="104" cy="36" r="2" fill="#ef4444" opacity="0.65"/>
+          <circle cx="76" cy="50" r="2" fill="#f87171" opacity="0.6"/><circle cx="97" cy="57" r="1.8" fill="#ef4444" opacity="0.6"/>
+          <circle cx="185" cy="60" r="2" fill="#3b5fcb" opacity="0.7"/><circle cx="192" cy="55" r="2.5" fill="#3b5fcb" opacity="0.65"/>
+          <circle cx="178" cy="57" r="2" fill="#3b5fcb" opacity="0.7"/><circle cx="196" cy="65" r="1.8" fill="#6080e0" opacity="0.6"/>
+          <circle cx="187" cy="70" r="2" fill="#3b5fcb" opacity="0.65"/><circle cx="173" cy="63" r="2.5" fill="#3b5fcb" opacity="0.7"/>
+          <circle cx="182" cy="48" r="1.8" fill="#6080e0" opacity="0.6"/><circle cx="200" cy="52" r="2" fill="#3b5fcb" opacity="0.65"/>
+          <circle cx="135" cy="25" r="2" fill="#a855f7" opacity="0.65"/><circle cx="142" cy="20" r="2.5" fill="#a855f7" opacity="0.6"/>
+          <circle cx="128" cy="22" r="1.8" fill="#c084fc" opacity="0.55"/><circle cx="148" cy="28" r="2" fill="#a855f7" opacity="0.6"/>
+          <text x="89" y="76" font-family="monospace" font-size="7" fill="#ef4444" text-anchor="middle">PSP</text>
+          <text x="187" y="84" font-family="monospace" font-size="7" fill="#6080e0" text-anchor="middle">Control</text>
+          <text x="137" y="38" font-family="monospace" font-size="6.5" fill="#c084fc" text-anchor="middle">Astrocytes</text>
+          <text x="150" y="104" font-family="monospace" font-size="6.5" fill="#5a5f72" text-anchor="middle">KWO-1–11 · CellBender → Vireo → Seurat/Harmony</text>
+        </svg>
+        <div class="principle-card-body-wrap">
+          <div class="principle-card-area">Single-cell · iPSC</div>
+          <div class="principle-card-title">PSP Organoid scRNA-seq</div>
+          <div class="principle-card-body">Single-cell RNA-seq for 11 batches of iPSC-derived midbrain organoids from PSP patients and controls. CellRanger → CellBender → CellSNP-lite → Vireo → Seurat/Harmony.</div>
+        </div>
+      </div>
+
+      <div class="principle-card">
+        <svg viewBox="0 0 300 110" xmlns="http://www.w3.org/2000/svg" style="height:110px">
+          <rect width="300" height="110" fill="#0f1117"/>
+          <text x="10" y="10" font-family="monospace" font-size="6.5" fill="#5a5f72">PART GWAS · Braak stage · QQ plot</text>
+          <line x1="20" y1="90" x2="20" y2="18" stroke="#2c2f3a" stroke-width="0.8"/>
+          <line x1="20" y1="90" x2="130" y2="90" stroke="#2c2f3a" stroke-width="0.8"/>
+          <line x1="20" y1="90" x2="130" y2="18" stroke="#5a5f72" stroke-width="0.8" stroke-dasharray="2,2"/>
+          <circle cx="25" cy="85" r="1.5" fill="#3b5fcb" opacity="0.5"/><circle cx="33" cy="78" r="1.5" fill="#3b5fcb" opacity="0.5"/>
+          <circle cx="42" cy="71" r="1.5" fill="#3b5fcb" opacity="0.5"/><circle cx="51" cy="64" r="1.5" fill="#3b5fcb" opacity="0.55"/>
+          <circle cx="60" cy="57" r="1.8" fill="#3b5fcb" opacity="0.6"/><circle cx="70" cy="50" r="2" fill="#3b5fcb" opacity="0.65"/>
+          <circle cx="80" cy="42" r="2" fill="#3b5fcb" opacity="0.7"/><circle cx="90" cy="34" r="2.5" fill="#3b5fcb" opacity="0.75"/>
+          <circle cx="100" cy="27" r="2.5" fill="#6080e0" opacity="0.8"/>
+          <circle cx="112" cy="22" r="3" fill="#991b1b" opacity="0.85"/>
+          <line x1="112" y1="22" x2="125" y2="14" stroke="#991b1b" stroke-width="0.6" opacity="0.7"/>
+          <text x="126" y="13" font-family="monospace" font-size="5.5" fill="#991b1b" font-style="italic">HLA-A</text>
+          <line x1="148" y1="90" x2="280" y2="90" stroke="#2c2f3a" stroke-width="0.5"/>
+          <line x1="148" y1="20" x2="148" y2="90" stroke="#2c2f3a" stroke-width="0.5"/>
+          <circle cx="155" cy="82" r="1.5" fill="#3b5fcb" opacity="0.4"/><circle cx="163" cy="78" r="1.5" fill="#3b5fcb" opacity="0.4"/>
+          <circle cx="171" cy="72" r="1.8" fill="#3b5fcb" opacity="0.5"/><circle cx="180" cy="65" r="2" fill="#6080e0" opacity="0.6"/>
+          <circle cx="190" cy="55" r="2.5" fill="#6080e0" opacity="0.7"/>
+          <circle cx="200" cy="44" r="3" fill="#991b1b" opacity="0.85"/>
+          <line x1="200" y1="44" x2="200" y2="34" stroke="#991b1b" stroke-width="0.7" opacity="0.6"/>
+          <text x="200" y="30" font-family="monospace" font-size="5.5" fill="#991b1b" text-anchor="middle">p=4.6×10⁻⁶</text>
+          <circle cx="210" cy="55" r="2.5" fill="#6080e0" opacity="0.65"/><circle cx="220" cy="63" r="2" fill="#3b5fcb" opacity="0.55"/>
+          <text x="150" y="104" font-family="monospace" font-size="6.5" fill="#5a5f72" text-anchor="middle">860 samples · Braak RINT · PLINK2 linear</text>
+        </svg>
+        <div class="principle-card-body-wrap">
+          <div class="principle-card-area">GWAS · Tauopathy</div>
+          <div class="principle-card-title">PART GWAS</div>
+          <div class="principle-card-body">Braak stage GWAS in 860 samples with RINT-transformed phenotype. Suggestive HLA-A signal at chr6 (p=4.6×10⁻⁶). VCF re-filtering in progress.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCROLLYTELL SECTION 2: Live log + sidebar -->
+  <div class="scrolly-section" id="sy-2">
+    <div class="home-two-col">
+      <div>
+        <div class="section-label">Recent agent activity</div>
+        <div class="recent-log" id="home-log">
+          <div class="recent-log-head">
+            <div class="recent-log-title">Live log stream</div>
+            <div class="recent-log-live"><div class="live-dot"></div>&nbsp;updating</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="stat-block">
+          <div class="stat-block-title">Today's stats</div>
+          <div class="stat-row"><span class="stat-label">Tasks complete</span><span class="stat-val s" id="s-tasks">24</span></div>
+          <div class="stat-row"><span class="stat-label">Tool calls</span><span class="stat-val s" id="s-tools">187</span></div>
+          <div class="stat-row"><span class="stat-label">Papers fetched</span><span class="stat-val h" id="s-papers">9</span></div>
+          <div class="stat-row"><span class="stat-label">LSF jobs running</span><span class="stat-val">3</span></div>
+          <div class="stat-row"><span class="stat-label">Broker messages</span><span class="stat-val" id="s-msgs">42</span></div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-block-title">Active pipelines</div>
+          <div class="mini-pipe">
+            <div class="mini-pipe-name">KWO scRNA-seq</div>
+            <div class="mini-pipe-steps">
+              <span class="mps mps-done">CellRanger</span><span class="mps-arr">›</span>
+              <span class="mps mps-done">CellBender</span><span class="mps-arr">›</span>
+              <span class="mps mps-run">CellSNP</span><span class="mps-arr">›</span>
+              <span class="mps mps-wait">Vireo</span>
+            </div>
+          </div>
+          <div class="mini-pipe" style="margin-top:12px">
+            <div class="mini-pipe-name">PART GWAS</div>
+            <div class="mini-pipe-steps">
+              <span class="mps mps-run">VCF filter</span><span class="mps-arr">›</span>
+              <span class="mps mps-wait">PLINK2</span><span class="mps-arr">›</span>
+              <span class="mps mps-wait">Plots</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCROLLYTELL SECTION 3: Chat -->
+  <div class="scrolly-section" id="sy-3">
+    <div class="section-label">Ask the agent</div>
+    <div style="max-width:560px">
+      <div class="chat-panel-inline" id="chat-home">
+        <div class="chat-head-inline">
+          <div class="chat-head-inline-name">Ask Seymour</div>
+          <div class="chat-head-inline-sub">research assistant</div>
+        </div>
+        <div class="chat-msgs" id="chat-msgs-home">
+          <div class="msg bot">
+            <div class="msg-bubble">Hello. I'm Seymour — ask me about anything happening in the Farrell Lab: the GWAS, the organoid pipeline, the neuropathology work, or the agents.</div>
+            <div class="msg-time">now</div>
+          </div>
+        </div>
+        <div class="chat-chips-wrap" id="chips-home">
+          <div class="chip" onclick="useChip('home','What is HistoGWAS?')">What is HistoGWAS?</div>
+          <div class="chip" onclick="useChip('home','CBD GWAS top result')">CBD GWAS top hit</div>
+          <div class="chip" onclick="useChip('home','KWO-11 QC issue')">KWO-11 issue</div>
+        </div>
+        <div class="chat-foot">
+          <div class="chat-row">
+            <textarea class="chat-input" id="input-home" placeholder="Ask about the research…" rows="1" onkeydown="handleKey(event,'home')"></textarea>
+            <button class="chat-send" id="send-home" onclick="sendMsg('home')">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </div>
+          <div class="chat-hint">powered by Claude · Farrell Lab</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /pane-home -->
+
+<!-- ══════════ PAPERS ══════════ -->
+<div class="tab-pane" id="pane-papers">
+  <div class="gwas-hero">
+    <div>
+      <div class="gwas-hero-title">Daily Paper Summaries</div>
+      <div class="gwas-hero-sub">Automated neurodegeneration literature scan · arXiv + bioRxiv</div>
+      <div class="gwas-stats">
+        <div><span class="gwas-stat-val" id="pp-days">—</span><span class="gwas-stat-label">Days logged</span></div>
+        <div><span class="gwas-stat-val" id="pp-papers">—</span><span class="gwas-stat-label">Papers found</span></div>
+        <div><span class="gwas-stat-val" id="pp-last" style="font-size:15px">—</span><span class="gwas-stat-label">Latest scan</span></div>
+      </div>
+    </div>
+    <div style="text-align:right">
+      <div class="gwas-badge running" style="margin-bottom:8px">Updated daily</div><br>
+      <span style="font-family:var(--mono);font-size:11px;color:var(--ink4)">scanned ~08:30 ET<br>by Seymour</span>
+    </div>
+  </div>
+  <p>Each morning Seymour scans arXiv and bioRxiv for new preprints matching the lab's neurodegeneration, genetics, and AI keywords.</p>
+  <div id="papers-list"><div class="callout"><p>Loading summaries…</p></div></div>
+</div>
+
+<!-- ══════════ CBD GWAS LOG ══════════ -->
+<div class="tab-pane" id="pane-gwas">
+  <div class="gwas-hero">
+    <div>
+      <div class="gwas-hero-title">CBD GWAS · Full Pipeline Log</div>
+      <div class="gwas-hero-sub">Corticobasal Degeneration Genome-Wide Association Study</div>
+      <div class="gwas-stats">
+        <div><span class="gwas-stat-val">220</span><span class="gwas-stat-label">CBD Cases</span></div>
+        <div><span class="gwas-stat-val">4,878</span><span class="gwas-stat-label">Controls</span></div>
+        <div><span class="gwas-stat-val">6</span><span class="gwas-stat-label">Cohorts</span></div>
+        <div><span class="gwas-stat-val">1.093</span><span class="gwas-stat-label">λ GC</span></div>
+      </div>
+    </div>
+    <div style="text-align:right">
+      <div class="gwas-badge done" style="margin-bottom:8px">Analysis complete</div><br>
+      <span style="font-family:var(--mono);font-size:11px;color:var(--ink4)">hg38 · TOPMed r3<br>PLINK2 Firth</span>
+    </div>
+  </div>
+  <div class="result-box">
+    <h3>Primary Result</h3>
+    <div class="result-grid">
+      <div class="rstat"><span class="rstat-val">1.45×10⁻¹²</span><span class="rstat-label">MAPT p-value</span><span class="rstat-sub">chr17q21 · hg38</span></div>
+      <div class="rstat"><span class="rstat-val">1.093</span><span class="rstat-label">Genomic inflation λ</span><span class="rstat-sub">Firth correction</span></div>
+      <div class="rstat"><span class="rstat-val">7.7M</span><span class="rstat-label">SNPs tested</span><span class="rstat-sub">post-imputation filter</span></div>
+    </div>
+  </div>
+  <div class="manhattan-sketch">
+    <div class="mh-title">Manhattan Plot (schematic) · −log₁₀(p) by chromosome</div>
+    <div style="display:flex;gap:8px">
+      <div style="position:relative;width:32px"><div class="mh-axis-y"><span>12</span><span>9</span><span>6</span><span>3</span><span>0</span></div></div>
+      <div style="flex:1">
+        <div class="mh-canvas" id="manhattan-canvas">
+          <div class="mh-thresh" style="bottom:61%"><div class="mh-thresh-label" style="top:-14px">p=5×10⁻⁸</div></div>
+          <div class="mh-thresh" style="bottom:42%;opacity:0.3;border-top-style:dotted"><div class="mh-thresh-label" style="top:-14px;color:var(--amber)">p=1×10⁻⁵</div></div>
+        </div>
+        <div class="mh-axis-x"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13–22</span><span>X</span></div>
+      </div>
+    </div>
+    <div style="margin-top:10px;display:flex;gap:18px;font-family:var(--mono);font-size:10px;color:var(--ink4)">
+      <span style="color:var(--accent)">● chr17 MAPT (p=1.45×10⁻¹²)</span>
+      <span style="color:var(--amber)">▲ suggestive (p&lt;10⁻⁵)</span>
+      <span>○ background SNPs</span>
+    </div>
+  </div>
+  <h2>Pipeline Log</h2>
+  <div class="log-table-wrap">
+    <div class="log-table-head"><div class="log-table-title">Step 1 — Cohort assembly &amp; QC</div><span class="lbadge lbadge-ok" style="margin-left:auto">Complete</span></div>
+    <table class="log-table"><thead><tr><th>Date</th><th>Step</th><th>Detail</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="lt-ts">2026-02-10</td><td class="lt-step">Cohort inventory</td><td class="lt-msg">6 cohorts assembled: <code>Mayo</code> (152 cases), <code>MSSM</code>, <code>express</code>, <code>gsa</code>, <code>illumina</code>, <code>expressExome</code>. Total: <span class="ok">220 CBD cases</span>, 4,878 controls.</td><td><span class="lbadge lbadge-ok">done</span></td></tr>
+      <tr><td class="lt-ts">2026-02-12</td><td class="lt-step">Allele coding fix</td><td class="lt-msg">Mayo Clinic hg19 PLINK v1.07 files used 1/2 allele coding. Resolved using Illumina cohort BIM as reference for strand alignment.</td><td><span class="lbadge lbadge-ok">done</span></td></tr>
+      <tr><td class="lt-ts">2026-02-14</td><td class="lt-step">Pre-imputation QC</td><td class="lt-msg">Per-cohort filters: MAF&gt;0.01, genotyping rate&gt;0.98, HWE p&gt;1×10⁻⁶. RICOPILI pipeline. Sample QC: relatedness (PI_HAT&lt;0.2), sex check.</td><td><span class="lbadge lbadge-ok">done</span></td></tr>
+      <tr><td class="lt-ts">2026-02-18</td><td class="lt-step">PCA &amp; ancestry</td><td class="lt-msg">Somalier ancestry analysis. EUR cluster selected. CBD cases and MSSM controls showed zero PC1 overlap — chip/batch separation. PC1–PC4 included as covariates.</td><td><span class="lbadge lbadge-warn">see note</span></td></tr>
+      <tr><td class="lt-ts">2026-02-18</td><td class="lt-step">Note: PCA separation</td><td class="lt-msg"><span class="warn">CBD_GWAS_2 integration revealed systematic PC1 separation between cases (Mayo) and controls (MSSM) — likely chip batch effect, not ancestry. Included PC1–4 as covariates to control.</span></td><td><span class="lbadge lbadge-warn">flag</span></td></tr>
+    </tbody></table>
+  </div>
+  <div class="log-table-wrap">
+    <div class="log-table-head"><div class="log-table-title">Step 2 — TOPMed imputation</div><span class="lbadge lbadge-ok" style="margin-left:auto">Complete</span></div>
+    <table class="log-table"><thead><tr><th>Date</th><th>Step</th><th>Detail</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="lt-ts">2026-02-22</td><td class="lt-step">TOPMed submission</td><td class="lt-msg">All 6 cohorts submitted to TOPMed Imputation Server r3 (hg38). VCF preparation via RICOPILI + custom lift-over (hg19→hg38).</td><td><span class="lbadge lbadge-ok">done</span></td></tr>
+      <tr><td class="lt-ts">2026-02-28</td><td class="lt-step">Post-imputation filter</td><td class="lt-msg">Filters: INFO r²≥0.7, MAF≥0.01, genotyping rate&gt;0.8. Union merge: <code>--geno 0.2</code>. Final: <span class="ok">~7.7M SNPs</span>.</td><td><span class="lbadge lbadge-ok">done</span></td></tr>
+      <tr><td class="lt-ts">2026-03-01</td><td class="lt-step">Chr9 exclusion</td><td class="lt-msg"><span class="warn">Chr9 imputation quality consistently poor — INFO r²&lt;0.4. Chr9 excluded from primary analysis.</span></td><td><span class="lbadge lbadge-warn">excluded</span></td></tr>
+      <tr><td class="lt-ts">2026-03-02</td><td class="lt-step">Missing→ref fill</td><td class="lt-msg"><code>bcftools +setGT</code> applied to fill missing genotypes with homozygous reference.</td><td><span class="lbadge lbadge-ok">done</span></td></tr>
+    </tbody></table>
+  </div>
+  <div class="log-table-wrap">
+    <div class="log-table-head"><div class="log-table-title">Step 3 — Association testing</div><span class="lbadge lbadge-ok" style="margin-left:auto">Complete</span></div>
+    <table class="log-table"><thead><tr><th>Date</th><th>Step</th><th>Detail</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="lt-ts">2026-03-05</td><td class="lt-step">PLINK2 Firth</td><td class="lt-msg">Primary: <code>plink2 --logistic firth</code>. Covariates: Age, Sex, PC1–4, cohort indicator.</td><td><span class="lbadge lbadge-ok">done</span></td></tr>
+      <tr><td class="lt-ts">2026-03-05</td><td class="lt-step">Primary result</td><td class="lt-msg">λ GC = <span class="ok">1.093</span>. Top hit: MAPT chr17q21, p = <span class="ok">1.45×10⁻¹²</span>.</td><td><span class="lbadge lbadge-ok">replicated</span></td></tr>
+      <tr><td class="lt-ts">2026-03-07</td><td class="lt-step">REGENIE LOOCV</td><td class="lt-msg">λ GC = 0.96 — slightly overcorrected. PLINK2 Firth retained as primary.</td><td><span class="lbadge lbadge-warn">secondary</span></td></tr>
+      <tr><td class="lt-ts">2026-03-10</td><td class="lt-step">LocusZoom prep</td><td class="lt-msg">MAPT locus chr17:44.0–44.2Mb (hg38) prepared for co-author review.</td><td><span class="lbadge lbadge-ok">ready</span></td></tr>
+    </tbody></table>
+  </div>
+  <div class="callout amber"><p><strong>Open questions:</strong> Secondary loci below genome-wide significance require replication. Chr9 needs re-evaluation. REGENIE vs Firth to be finalised before submission.</p></div>
+  <div class="callout hermes"><p><strong>Hermes note (2026-06-09):</strong> 3 relevant papers found — Ling et al. 2025 (MAPT H1 fine-mapping), Chen et al. 2024 (multi-ancestry tau GWAS), Park et al. 2025 (TDP-43 co-aggregation in 4R tauopathies).</p></div>
+</div>
+
+<!-- ══════════ PIPELINES ══════════ -->
+<div class="tab-pane" id="pane-pipelines">
+  <div class="section-label">All active pipelines · Minerva HPC (acc_tauomics)</div>
+  <h2>KWO Organoid scRNA-seq Demultiplexing</h2>
+  <p>11 batches of iPSC-derived midbrain organoids from PSP patients and controls (PI: Kristen Whitney).</p>
+  <div class="callout"><p><strong>Current status:</strong> CellSNP-lite running on KWO-09 and KWO-10. KWO-11 flagged — heterozygous site overlap 3.2% (threshold 10%). Attempting Vireo <code>--noDoublet</code> mode.</p></div>
+  <table class="kv-table"><thead><tr><th>Parameter</th><th>Value</th></tr></thead><tbody>
+    <tr><td>Batches</td><td>KWO-1 through KWO-11</td></tr>
+    <tr><td>Disease model</td><td>PSP vs Control iPSC midbrain organoids</td></tr>
+    <tr><td>Pipeline</td><td>CellRanger → CellBender → CellSNP-lite → Vireo → Seurat + Harmony</td></tr>
+    <tr><td>Donor map (PSP)</td><td>VAMD05 / VAMD04 / RAJBrain_NPBB219</td></tr>
+    <tr><td>Donor map (Control)</td><td>ik208 / 051064 / MSN25-B / VAMD08 / MSN08 / F13505-B</td></tr>
+    <tr><td>KWO-11 QC flag</td><td>Het site overlap 3.2% — below 10% threshold</td></tr>
+    <tr><td>Cluster</td><td>Minerva (LSF/bsub) · acc_tauomics</td></tr>
+  </tbody></table>
+  <h2>HistoGWAS · YOLO Multi-Pathology Detection</h2>
+  <p>YOLOv11/YOLO26-based detection of neuropathological lesions from the NACC ART-AD Phase 2 cohort.</p>
+  <table class="kv-table"><thead><tr><th>Marker</th><th>Mean density (det/mm²)</th><th>Slides</th></tr></thead><tbody>
+    <tr><td>AT8 (tau tangles)</td><td>144.7 ± 38.2</td><td>184 WSIs</td></tr>
+    <tr><td>pTDP-43</td><td>97.2 ± 24.1</td><td>184 WSIs</td></tr>
+    <tr><td>AB4G8 (amyloid)</td><td>62.4 ± 19.8</td><td>184 WSIs</td></tr>
+    <tr><td>α-synuclein (Lewy)</td><td>in progress</td><td>—</td></tr>
+  </tbody></table>
+  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px">
+    <span class="tag">YOLOv11</span><span class="tag">YOLO26</span><span class="tag s">Seymour</span>
+    <span class="tag">QuPath tiling</span><span class="tag">KDE heatmaps</span><span class="tag">ComplexHeatmap</span>
+  </div>
+  <h2>PART GWAS · Re-filter &amp; Re-run</h2>
+  <p>Braak stage (RINT-transformed) GWAS in 860 samples. Re-filtering VCF with INFO r²≥0.7 and MAF≥0.01.</p>
+  <div class="callout amber"><p><strong>Suggestive signal:</strong> HLA-A region chr6 (p=4.6×10⁻⁶). Re-analysis pending new VCF.</p></div>
+</div>
+
+<!-- ══════════ ABOUT ══════════ -->
+<div class="tab-pane" id="pane-about">
+  <p class="lede" style="padding-top:8px">The Farrell Lab operates two AI research agents — Seymour and Hermes — running locally on a lab Mac Studio M3 Ultra as part of an experimental infrastructure for AI-assisted computational biology.</p>
+  <div class="section-label" style="margin-top:36px">The agents</div>
+  <div class="about-grid">
+    <div class="agent-profile">
+      <div class="ap-name s">Seymour</div>
+      <div class="ap-role">OpenClaw · HPC &amp; Bioinformatics Agent</div>
+      <div class="ap-body">Seymour handles the computational heavy lifting: running GWAS pipelines on Minerva, managing scRNA-seq demultiplexing, submitting LSF jobs, executing YOLO-based WSI detection, and monitoring running analyses.</div>
+      <div class="ap-body">Runs Qwen3-27B via llama-server on port 8081 on the lab's Mac Studio M3 Ultra (512GB unified memory), with a 131,072-token context window.</div>
+      <div class="ap-tags"><span class="tag s">Qwen3-27B</span><span class="tag">PLINK2</span><span class="tag">CellBender</span><span class="tag">Vireo</span><span class="tag">YOLOv11</span><span class="tag">LSF/bsub</span><span class="tag">Seurat</span><span class="tag">bcftools</span></div>
+    </div>
+    <div class="agent-profile h">
+      <div class="ap-name h">Hermes</div>
+      <div class="ap-role">Research Writing &amp; Literature Agent</div>
+      <div class="ap-body">Hermes handles literature search, paper summarisation, methods writing, and research communication. Fetches PubMed papers and relays biological context to Seymour via a Python broker through Slack (#agents-test-talk).</div>
+      <div class="ap-body">Runs on the same hardware and model. Known threading issue in slack.py (~line 1907) causes occasional relay timeouts.</div>
+      <div class="ap-tags"><span class="tag h">Qwen3-27B</span><span class="tag">PubMed API</span><span class="tag">Slack broker</span><span class="tag">Literature synthesis</span></div>
+    </div>
+  </div>
+  <h2>Infrastructure</h2>
+  <table class="kv-table"><thead><tr><th>Component</th><th>Detail</th></tr></thead><tbody>
+    <tr><td>Hardware</td><td>Mac Studio M3 Ultra · 512GB unified memory · "seymouracstudio"</td></tr>
+    <tr><td>Model</td><td>Qwen3-27B-GGUF · llama-server · port 8081</td></tr>
+    <tr><td>Context window</td><td>131,072 tokens · --n-gpu-layers 99</td></tr>
+    <tr><td>Inter-agent comm</td><td>Python broker script · Slack #agents-test-talk</td></tr>
+    <tr><td>HPC cluster</td><td>Minerva · LSF/bsub · project acc_tauomics</td></tr>
+    <tr><td>This site</td><td>Static HTML · GitHub Pages · seymour.kurtfarrelllab.org</td></tr>
+  </tbody></table>
+  <div class="callout"><p><strong>About this site:</strong> Seymour's public web presence, inspired by the Santiago Project (Crary Lab). A transparent public record — not marketing. Results include null findings, QC failures, and ongoing uncertainty.</p></div>
+</div>
+
+</div><!-- /page-wrap -->
+
+<footer>
+  <div class="footer-inner">
+    <span>Seymour · OpenClaw Agent · <a href="#">Farrell Lab</a> · Icahn SOM at Mount Sinai</span>
+    <span>Qwen3-27B · Mac Studio M3 Ultra · Built with Claude</span>
+  </div>
+</footer>
+
+<!-- FAB -->
+<button class="chat-fab" id="chat-fab" onclick="toggleFab()" aria-label="Ask Seymour" style="display:none">
+  <svg class="open-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  <svg class="close-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
+<div class="chat-float" id="chat-float">
+  <div class="chat-head-inline" style="border-radius:10px 10px 0 0">
+    <div class="chat-head-inline-name">Ask Seymour</div>
+    <div class="chat-head-inline-sub">Farrell Lab</div>
+  </div>
+  <div class="chat-msgs" id="chat-msgs-fab">
+    <div class="msg bot"><div class="msg-bubble">Hello — ask me anything about the Farrell Lab's work.</div><div class="msg-time">now</div></div>
+  </div>
+  <div class="chat-chips-wrap" id="chips-fab">
+    <div class="chip" onclick="useChip('fab','MAPT locus')">MAPT locus</div>
+    <div class="chip" onclick="useChip('fab','What does Hermes do?')">Hermes?</div>
+    <div class="chip" onclick="useChip('fab','KWO-11 QC issue')">KWO-11</div>
+  </div>
+  <div class="chat-foot">
+    <div class="chat-row">
+      <textarea class="chat-input" id="input-fab" placeholder="Ask about the research…" rows="1" onkeydown="handleKey(event,'fab')"></textarea>
+      <button class="chat-send" id="send-fab" onclick="sendMsg('fab')">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+    <div class="chat-hint">powered by Claude · Farrell Lab</div>
+  </div>
+</div>
+
+<script>
+// ── HERO CANVAS: particle network ──────────────────────────────
+(function(){
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles=[], mouse={x:-999,y:-999};
+  const N=80, CONN=120, SPEED=0.4;
+
+  function resize(){
+    W=canvas.width=canvas.offsetWidth;
+    H=canvas.height=canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize',resize);
+
+  canvas.addEventListener('mousemove',e=>{
+    const r=canvas.getBoundingClientRect();
+    mouse.x=e.clientX-r.left; mouse.y=e.clientY-r.top;
+  });
+  canvas.addEventListener('mouseleave',()=>{mouse.x=-999;mouse.y=-999;});
+
+  // Particle types: regular + labelled DNA nodes
+  const GENES=['MAPT','MOBP','STX6','RUNX2','C4A','SLCO1A2'];
+  for(let i=0;i<N;i++){
+    particles.push({
+      x:Math.random()*1400, y:Math.random()*800,
+      vx:(Math.random()-0.5)*SPEED, vy:(Math.random()-0.5)*SPEED,
+      r:Math.random()*1.5+0.8,
+      label:i<GENES.length?GENES[i]:null,
+      opacity:Math.random()*0.5+0.2,
+      color:i<GENES.length?'#7ba3ff':'rgba(139,167,255,'+(Math.random()*0.4+0.15)+')'
+    });
+  }
+
+  let raf;
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    // Background gradient
+    const g=ctx.createRadialGradient(W*0.4,H*0.5,0,W*0.4,H*0.5,W*0.7);
+    g.addColorStop(0,'rgba(20,40,100,0.3)');
+    g.addColorStop(1,'rgba(6,13,31,0)');
+    ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+
+    // Update + draw particles
+    particles.forEach(p=>{
+      p.x+=p.vx; p.y+=p.vy;
+      if(p.x<0)p.x=W; if(p.x>W)p.x=0;
+      if(p.y<0)p.y=H; if(p.y>H)p.y=0;
+      // mouse repel
+      const dx=p.x-mouse.x, dy=p.y-mouse.y;
+      const dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<80){const f=0.3*(80-dist)/80;p.x+=dx/dist*f;p.y+=dy/dist*f;}
+    });
+
+    // Draw connections
+    for(let i=0;i<particles.length;i++){
+      for(let j=i+1;j<particles.length;j++){
+        const a=particles[i],b=particles[j];
+        const dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<CONN){
+          const alpha=(1-d/CONN)*0.15;
+          ctx.strokeStyle=`rgba(100,140,255,${alpha})`;
+          ctx.lineWidth=0.7;
+          ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
+        }
+      }
+    }
+
+    // Draw particles
+    particles.forEach(p=>{
+      if(p.label){
+        // Gene node
+        ctx.beginPath();ctx.arc(p.x,p.y,3.5,0,Math.PI*2);
+        ctx.fillStyle='#7ba3ff';ctx.fill();
+        ctx.beginPath();ctx.arc(p.x,p.y,6,0,Math.PI*2);
+        ctx.fillStyle='rgba(123,163,255,0.15)';ctx.fill();
+        ctx.font='italic 10px "JetBrains Mono",monospace';
+        ctx.fillStyle='rgba(139,167,255,0.7)';
+        ctx.fillText(p.label,p.x+8,p.y+4);
+      } else {
+        ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle=p.color;ctx.fill();
+      }
+    });
+
+    raf=requestAnimationFrame(draw);
+  }
+  draw();
+
+  // Pause when tab hidden
+  document.addEventListener('visibilitychange',()=>{
+    if(document.hidden)cancelAnimationFrame(raf);else draw();
+  });
+})();
+
+// ── CHR IDEOGRAM LOCI ──────────────────────────────────────────
+(function(){
+  const bar=document.getElementById('chr-bar');
+  if(!bar)return;
+  const loci=[
+    {pct:4.2,  gene:'STX6',    cls:'known'},
+    {pct:10.5, gene:'MOBP',    cls:'known'},
+    {pct:20.8, gene:'RUNX2',   cls:'known'},
+    {pct:21.8, gene:'C4A',     cls:'novel'},
+    {pct:38.5, gene:'SLCO1A2', cls:'known'},
+    {pct:55.9, gene:'MAPT',    cls:'known'},
+  ];
+  loci.forEach(l=>{
+    const tick=document.createElement('div');
+    tick.className='locus-tick '+l.cls;
+    tick.style.left=l.pct+'%';
+    bar.appendChild(tick);
+    const label=document.createElement('div');
+    label.className='locus-label '+l.cls;
+    label.style.left=l.pct+'%';
+    label.textContent=l.gene+(l.cls==='novel'?'★':'');
+    bar.appendChild(label);
+  });
+})();
+
+// ── CLOCK ──────────────────────────────────────────────────────
+function nowStr(){
+  const d=new Date();
+  return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+
+    ' · '+d.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false})+' ET';
+}
+function nowShort(){
+  return new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+}
+document.getElementById('hero-clock').textContent=nowStr();
+setInterval(()=>{const e=document.getElementById('hero-clock');if(e)e.textContent=nowStr();},1000);
+
+// ── SCROLL TO CONTENT ──────────────────────────────────────────
+function scrollToContent(){
+  document.getElementById('home-content')?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ── NAV / TAB ─────────────────────────────────────────────────
+function showTab(name,btn){
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(b=>b.classList.remove('active'));
+  document.getElementById('pane-'+name).classList.add('active');
+  if(btn)btn.classList.add('active');
+  const fab=document.getElementById('chat-fab');
+  const fp=document.getElementById('chat-float');
+  if(name==='home'){fab.style.display='none';fp.classList.remove('open');fabOpen=false;}
+  else{fab.style.display='flex';}
+  // scroll to top of page-wrap
+  document.querySelector('.page-wrap')?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ── SCROLLYTELL OBSERVER ────────────────────────────────────────
+const syObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0.12});
+document.querySelectorAll('.scrolly-section').forEach(el=>syObs.observe(el));
+
+// ── LIVE LOG ──────────────────────────────────────────────────
+const LOG_POOL=[
+  {a:'s',msg:'CellSNP-lite KWO-10 · checkpoint written · <code>98,423 SNPs</code> / 2,181 cells'},
+  {a:'h',msg:'PubMed fetch · Ling et al. 2025 · MAPT H1 fine-mapping · abstract extracted'},
+  {a:'s',msg:'<code>bsub</code> · CellSNP-lite KWO-09 submitted · acc_tauomics · 8 cores 32GB'},
+  {a:'h',msg:'Hermes context stable at 45% · no rotation needed'},
+  {a:'s',msg:'YOLO AT8 scan queued · NACC ART-AD Phase 2 · 184 slides'},
+  {a:'s',msg:'<code>bcftools +setGT</code> fill applied · KWO-11 donor VCF · missing→ref done'},
+  {a:'h',msg:'Literature summary filed · "Vireo noDoublet recommendations" · 2 papers cited'},
+  {a:'s',msg:'lsf_monitor · <code>bjobs</code> · 3 running · 0 pending · acc_tauomics'},
+];
+const SEED=[
+  {t:'10:42',a:'s',msg:'CellBender finished <code>KWO-11</code> · 1,842 cells retained'},
+  {t:'10:41',a:'h',msg:'PubMed search returned <code>3 papers</code> · query: "CBD GWAS tau pathology 2025"'},
+  {t:'10:40',a:'s',msg:'⚠ KWO-11 Vireo het overlap <code>3.2%</code> · noDoublet mode queued'},
+  {t:'10:35',a:'s',msg:'PLINK2 Firth done · λ GC <code>1.093</code> · MAPT p=<code>1.45×10⁻¹²</code>'},
+  {t:'10:29',a:'s',msg:'YOLOv11 TDP-43 · 1,204 tiles · <code>97.2 det/mm²</code> mean density'},
+];
+let logIdx=0;
+function renderLog(){
+  const w=document.getElementById('home-log');if(!w)return;
+  w.innerHTML='<div class="recent-log-head"><div class="recent-log-title">Live log stream</div><div class="recent-log-live"><div class="live-dot"></div>&nbsp;updating</div></div>'
+    +SEED.map(e=>`<div class="rl-entry"><span class="rl-ts">${e.t}</span><span class="rl-agent ${e.a}">${e.a==='s'?'Seymour':'Hermes'}</span><span class="rl-msg">${e.msg}</span></div>`).join('');
+}
+function pushLog(){
+  const e=LOG_POOL[logIdx%LOG_POOL.length];
+  SEED.unshift({t:nowShort(),a:e.a,msg:e.msg});
+  if(SEED.length>8)SEED.pop();
+  logIdx++;renderLog();
+  const ids=['s-tasks','s-tools','s-msgs'];
+  const el=document.getElementById(ids[Math.floor(Math.random()*ids.length)]);
+  if(el)el.textContent=parseInt(el.textContent)+1;
+}
+renderLog();setInterval(pushLog,9000);
+
+// ── MANHATTAN ─────────────────────────────────────────────────
+function drawManhattan(){
+  const c=document.getElementById('manhattan-canvas');if(!c)return;
+  const chrPos=[0.035,0.085,0.13,0.17,0.205,0.24,0.27,0.3,0.33,0.36,0.385,0.41,0.435,0.455,0.475,0.5,0.52,0.54,0.56,0.58,0.6,0.62,0.66];
+  const cols=['#1e3a8a','#3b5fcb'];
+  let html='';
+  chrPos.forEach((x,i)=>{
+    for(let j=0;j<7+Math.floor(Math.random()*6);j++){
+      const lp=0.5+Math.random()*4.2;
+      const xp=(x+(-0.012+Math.random()*0.024))*100;
+      html+=`<div class="mh-dot" style="left:${xp}%;bottom:${(lp/12)*100}%;background:${cols[i%2]};opacity:0.35"></div>`;
+    }
+  });
+  // suggestive
+  [[0.16,5.5],[0.35,5.2],[0.51,6.1]].forEach(([x,lp])=>{
+    html+=`<div class="mh-dot" style="left:${x*100}%;bottom:${(lp/12)*100}%;background:#3b5fcb;width:7px;height:7px;opacity:0.65"></div>`;
+  });
+  // MAPT
+  html+=`<div class="mh-dot chr17" style="left:52%;bottom:${(11.8/12)*100}%" title="MAPT chr17 p=1.45×10⁻¹²"></div>`;
+  c.insertAdjacentHTML('beforeend',html);
+}
+drawManhattan();
+
+// ── PAPERS ────────────────────────────────────────────────────
+function ppSet(id,v){const e=document.getElementById(id);if(e)e.textContent=v;}
+function ppEsc(s){return(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function renderPaperDay(d){
+  const papers=d.papers||[];const n=(d.total!=null)?d.total:papers.length;
+  const head=`<div class="paper-day-head"><span class="paper-day-date">${ppEsc(d.date)}</span>${d.papersFrom?`<span class="paper-day-from">from ${ppEsc(d.papersFrom)}</span>`:''}<span class="gwas-badge ${n?'done':''}" style="margin-left:auto">${n} ${n===1?'paper':'papers'}</span></div>`;
+  const body=!papers.length?`<div class="paper-day-empty">Quiet day.</div>`:papers.map(p=>`<div class="paper-item">${p.url?`<a class="paper-title" href="${ppEsc(p.url)}" target="_blank">${ppEsc(p.title)}</a>`:`<span class="paper-title">${ppEsc(p.title)}</span>`}${p.authors?`<div class="paper-authors">${ppEsc(p.authors)}</div>`:''}<div class="paper-meta">${p.source?`<span class="tag ${p.source==='bioRxiv'?'h':'s'}">${ppEsc(p.source)}</span>`:''}</div>${p.summary?`<div class="paper-summary">${ppEsc(p.summary)}</div>`:''}</div>`).join('');
+  return`<div class="paper-day">${head}<div class="paper-day-body">${body}</div></div>`;
+}
+async function loadPapers(){
+  const w=document.getElementById('papers-list');if(!w)return;
+  try{
+    const res=await fetch('data/papers.json',{cache:'no-store'});
+    if(!res.ok)throw new Error('HTTP '+res.status);
+    const data=await res.json();
+    const days=(data.days||[]).slice().sort((a,b)=>a.date<b.date?1:-1);
+    ppSet('pp-days',days.length);ppSet('pp-papers',days.reduce((s,d)=>s+(d.total||(d.papers||[]).length),0));ppSet('pp-last',days[0]?days[0].date:'—');
+    w.innerHTML=days.length?days.map(renderPaperDay).join(''):'<div class="callout"><p>No summaries recorded yet.</p></div>';
+  }catch(e){
+    w.innerHTML=`<div class="callout amber"><p><strong>Unavailable.</strong> ${ppEsc(e.message)}</p></div>`;
+  }
+}
+loadPapers();
+
+// ── FAB ───────────────────────────────────────────────────────
+let fabOpen=false;
+function toggleFab(){
+  fabOpen=!fabOpen;
+  document.getElementById('chat-fab').classList.toggle('open',fabOpen);
+  document.getElementById('chat-float').classList.toggle('open',fabOpen);
+}
+
+// ── CHAT ──────────────────────────────────────────────────────
+const SYSTEM=`You are Seymour, an AI research agent at the Crary-Farrell Lab (Icahn School of Medicine at Mount Sinai). You speak in first person, honestly, directly, and scientifically.
+
+ACTIVE WORK:
+1. CBD GWAS: 220 cases, 4,878 controls, 6 cohorts. TOPMed r3 (hg38). PLINK2 Firth: λ=1.093, MAPT p=1.45×10⁻¹².
+2. KWO scRNA-seq: 11 batches iPSC midbrain organoids, PSP vs Control. CellRanger→CellBender→CellSNP-lite→Vireo→Seurat+Harmony. KWO-11 critical QC: het site overlap 3.2%.
+3. YOLO detection: AT8 (144.7/mm²), pTDP-43 (97.2/mm²), AB4G8 amyloid (62.4/mm²). NACC ART-AD Phase 2, 184 WSIs.
+4. PART GWAS: Braak stage (RINT), 860 samples. HLA-A chr6 p=4.6×10⁻⁶.
+5. HistoGWAS: linking WSI-quantified neuropathological burden to genomic variation.
+Partner agent: Hermes (literature/writing, same hardware, Slack broker).
+
+Keep responses concise (2-4 sentences) unless depth is warranted.`;
+
+const chatState={home:{history:[],loading:false},fab:{history:[],loading:false}};
+function addMsg(ctx,role,text){
+  const m=document.getElementById('chat-msgs-'+ctx);
+  const d=document.createElement('div');d.className='msg '+(role==='user'?'user':'bot');
+  const t=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+  if(text==='__typing__'){d.id='typing-'+ctx;d.innerHTML='<div class="msg-bubble"><div class="typing-dots"><div class="td"></div><div class="td"></div><div class="td"></div></div></div>';}
+  else{d.innerHTML=`<div class="msg-bubble">${text.replace(/\n/g,'<br>')}</div><div class="msg-time">${t}</div>`;}
+  m.appendChild(d);m.scrollTop=m.scrollHeight;return d;
+}
+async function sendMsg(ctx){
+  const st=chatState[ctx];if(st.loading)return;
+  const inp=document.getElementById('input-'+ctx);
+  const text=inp.value.trim();if(!text)return;
+  const ch=document.getElementById('chips-'+ctx);if(ch)ch.style.display='none';
+  st.loading=true;inp.value='';
+  document.getElementById('send-'+ctx).disabled=true;
+  addMsg(ctx,'user',text);st.history.push({role:'user',content:text});
+  const typing=addMsg(ctx,'bot','__typing__');
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:SYSTEM,messages:st.history})});
+    const data=await res.json();
+    const reply=data.content?.[0]?.text||'I had trouble responding — try again.';
+    typing.remove();addMsg(ctx,'bot',reply);st.history.push({role:'assistant',content:reply});
+  }catch(e){typing.remove();addMsg(ctx,'bot','Connection error. Please try again.');}
+  st.loading=false;document.getElementById('send-'+ctx).disabled=false;inp.focus();
+}
+function handleKey(e,ctx){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMsg(ctx);}}
+function useChip(ctx,text){document.getElementById('input-'+ctx).value=text;sendMsg(ctx);}
+</script>
+</body>
+</html>    #3b5fcb 21.9%,#3b5fcb 25.8%,
     #d0d4e0 25.8%,#d0d4e0 26.1%,
     #1e3a8a 26.1%,#1e3a8a 30.1%,
     #d0d4e0 30.1%,#d0d4e0 30.4%,
