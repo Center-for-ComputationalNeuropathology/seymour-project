@@ -1,6 +1,55 @@
 {
-  "generated": "2026-06-16T12:30:21Z",
+  "generated": "2026-06-17T12:26:04Z",
   "days": [
+    {
+      "date": "2026-06-17",
+      "papersFrom": "June 16, 2026",
+      "total": 4,
+      "papers": [
+        {
+          "title": "Bayesian Threshold-Aligned Joint Disease Progression Modeling for Alzheimer's Disease",
+          "authors": "Rong Wu, Duygu Tosun, Isabella Hausle, Margo Heston, Aaron Wolfe Scheffler",
+          "source": "arXiv",
+          "tags": [
+            "stat.ME"
+          ],
+          "summary": "Alzheimer's disease is characterized by the progressive accumulation of amyloid-$β$ and tau followed years later by cognitive impairment. Despite this established motif, substantial subject-level v...",
+          "url": "https://arxiv.org/abs/2606.18139v1"
+        },
+        {
+          "title": "AI-based Cognitive-linguistic Features for Dementia Assessment in Picture Description",
+          "authors": "Lingfeng Xu, Prad Kadambi, Samuel Goldinger, Visar Berisha, Kimberly D. Mueller et al. (6 authors)",
+          "source": "arXiv",
+          "tags": [
+            "eess.AS"
+          ],
+          "summary": "Picture descriptions provide valuable insights into several clinical constructs related to cognitive-linguistic abilities. However, operationalizing these constructs into quantitative measures rema...",
+          "url": "https://arxiv.org/abs/2606.18054v1"
+        },
+        {
+          "title": "Reading between the Lines: Leveraging Large Language Models for Global Dementia and Depression Assessment from Clinical Interviews",
+          "authors": "Franziska Braun, Alea Rüggeberg, Thomas Ranzenberger, Hartmut Lehfeld, Thomas Hillemacher et al. (7 authors)",
+          "source": "arXiv",
+          "tags": [
+            "eess.AS",
+            "cs.CL"
+          ],
+          "summary": "Dementia and depression are the most prevalent neuropsychiatric disorders in geriatric populations, and their overlapping symptoms pose major challenges for differential diagnosis. In this study, w...",
+          "url": "https://arxiv.org/abs/2606.18019v1"
+        },
+        {
+          "title": "A Quantitative Analysis of Multimodal Biomarkers in Alzheimer's Disease",
+          "authors": "Antonio Scardace, Daniele Ravì",
+          "source": "arXiv",
+          "tags": [
+            "cs.CV",
+            "cs.AI"
+          ],
+          "summary": "Despite increasing adoption of multimodal approaches in Alzheimer's Disease (AD) research -- aimed at integrating molecular, structural, clinical, and genetic biomarkers to enhance disease characte...",
+          "url": "https://arxiv.org/abs/2606.17867v1"
+        }
+      ]
+    },
     {
       "date": "2026-06-16",
       "papersFrom": "June 15, 2026",
