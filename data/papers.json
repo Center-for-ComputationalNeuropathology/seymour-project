@@ -1,6 +1,46 @@
 {
-  "generated": "2026-06-17T12:30:21Z",
+  "generated": "2026-06-18T11:56:13Z",
   "days": [
+    {
+      "date": "2026-06-18",
+      "papersFrom": "June 17, 2026",
+      "total": 3,
+      "papers": [
+        {
+          "title": "A Taxonomy of Mental Health and Technology Needs for Alzheimer's and Dementia Caregivers",
+          "authors": "Keran Wang, Drishti Goel, Jiayue Melissa Shi, Violeta J. Rodriguez, Daniel S. Brown et al. (8 authors)",
+          "source": "arXiv",
+          "tags": [
+            "cs.HC",
+            "cs.AI"
+          ],
+          "summary": "Family members caring for individuals with Alzheimer's disease and related dementias (AD/ADRD) provide the foundation of long-term care worldwide. In 2023, more than 11 million U.S. family and frie...",
+          "url": "https://arxiv.org/abs/2606.19247v1"
+        },
+        {
+          "title": "Continuous-Speech Parkinson's Disease Detection Using Acoustic and Inharmonicity Features",
+          "authors": "Rujia Li, Niloofar Momeni, Susanna Whitling, Andreas Jakobsson",
+          "source": "arXiv",
+          "tags": [
+            "eess.AS",
+            "stat.ME"
+          ],
+          "summary": "Notable efforts have been made to identify Parkinson's disease (PD) from vocal data, primarily using sustained vowel phonations. In this work, we extend on these efforts introducing a PD identifica...",
+          "url": "https://arxiv.org/abs/2606.19125v1"
+        },
+        {
+          "title": "Mitigating Scoring Errors and Compensating for Nonverbal Subtests in Speech-Based Dementia Assessment",
+          "authors": "Franziska Braun, Christopher Witzl, Andreas Erzigkeit, Hartmut Lehfeld, Thomas Hillemacher et al. (7 authors)",
+          "source": "arXiv",
+          "tags": [
+            "eess.AS",
+            "cs.CL"
+          ],
+          "summary": "Early detection of cognitive impairment relies on neuropsychological tests to minimize subjectivity by assessing multiple cognitive domains. Speech-based evaluation can support diagnostics and impr...",
+          "url": "https://arxiv.org/abs/2606.18979v1"
+        }
+      ]
+    },
     {
       "date": "2026-06-17",
       "papersFrom": "June 16, 2026",
