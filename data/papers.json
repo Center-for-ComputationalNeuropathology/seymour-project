@@ -1,6 +1,23 @@
 {
-  "generated": "2026-06-18T14:26:08Z",
+  "generated": "2026-06-19T07:56:17Z",
   "days": [
+    {
+      "date": "2026-06-19",
+      "papersFrom": "June 18, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Alzheimer's Disease Diagnosis using a Multimodal Approach with 3D MRI and PET",
+          "authors": "Loukas Ilias, Anthi-Maria Vozinaki, Christos Ntanos, Dimitris Askounis",
+          "source": "arXiv",
+          "tags": [
+            "cs.LG"
+          ],
+          "summary": "Alzheimer's disease (AD) is an irreversible neurodegenerative disorder and a leading cause of death worldwide. Early diagnosis plays an important part especially at the Mild Cognitive Impairment st...",
+          "url": "https://arxiv.org/abs/2606.20037v1"
+        }
+      ]
+    },
     {
       "date": "2026-06-18",
       "papersFrom": "June 17, 2026",
