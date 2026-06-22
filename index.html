@@ -828,7 +828,7 @@ footer{background:#060d1f;border-top:1px solid rgba(255,255,255,0.06);padding:18
               <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             </button>
           </div>
-          <div class="chat-hint">powered by Claude · Farrell Lab</div>
+          <div class="chat-hint">live Seymour agent · Mac Studio · replies may take ~30s</div>
         </div>
       </div>
     </div>
@@ -1035,7 +1035,7 @@ footer{background:#060d1f;border-top:1px solid rgba(255,255,255,0.06);padding:18
         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
       </button>
     </div>
-    <div class="chat-hint">powered by Claude · Farrell Lab</div>
+    <div class="chat-hint">live Seymour agent · Mac Studio · replies may take ~30s</div>
   </div>
 </div>
 
@@ -1287,17 +1287,22 @@ function toggleFab(){
 }
 
 // ── CHAT ──────────────────────────────────────────────────────
-const SYSTEM=`You are Seymour, an AI research agent at the Crary-Farrell Lab (Icahn School of Medicine at Mount Sinai). You speak in first person, honestly, directly, and scientifically.
-
-ACTIVE WORK:
-1. CBD GWAS: 220 cases, 4,878 controls, 6 cohorts. TOPMed r3 (hg38). PLINK2 Firth: λ=1.093, MAPT p=1.45×10⁻¹².
-2. KWO scRNA-seq: 11 batches iPSC midbrain organoids, PSP vs Control. CellRanger→CellBender→CellSNP-lite→Vireo→Seurat+Harmony. KWO-11 critical QC: het site overlap 3.2%.
-3. YOLO detection: AT8 (144.7/mm²), pTDP-43 (97.2/mm²), AB4G8 amyloid (62.4/mm²). NACC ART-AD Phase 2, 184 WSIs.
-4. PART GWAS: Braak stage (RINT), 860 samples. HLA-A chr6 p=4.6×10⁻⁶.
-5. HistoGWAS: linking WSI-quantified neuropathological burden to genomic variation.
-Partner agent: Hermes (literature/writing, same hardware, Slack broker).
-
-Keep responses concise (2-4 sentences) unless depth is warranted.`;
+// Chat routes to the LIVE Seymour (OpenClaw) agent on the Mac Studio, via a
+// gated bridge proxy exposed through Tailscale Funnel. Access is password-gated:
+// the visitor types the password, which is sent per-request (X-Seymour-Key) and
+// validated server-side — it is never embedded in this page. The agent supplies
+// its own identity/knowledge (IDENTITY.md), so there is no client-side persona.
+const SEYMOUR_API='https://seymour-mac.taild59e01.ts.net/chat';
+function seymourSession(){
+  let s=localStorage.getItem('seymourSession');
+  if(!s){s=Date.now().toString(36)+Math.random().toString(36).slice(2,8);localStorage.setItem('seymourSession',s);}
+  return s;
+}
+function seymourKey(){
+  let k=sessionStorage.getItem('seymourKey');
+  if(!k){k=prompt('Enter the access password to chat with Seymour:');if(k){k=k.trim();sessionStorage.setItem('seymourKey',k);}}
+  return k;
+}
 
 const chatState={home:{history:[],loading:false},fab:{history:[],loading:false}};
 function addMsg(ctx,role,text){
@@ -1316,15 +1321,21 @@ async function sendMsg(ctx){
   st.loading=true;inp.value='';
   document.getElementById('send-'+ctx).disabled=true;
   addMsg(ctx,'user',text);st.history.push({role:'user',content:text});
+  const done=()=>{st.loading=false;document.getElementById('send-'+ctx).disabled=false;inp.focus();};
+  const key=seymourKey();
+  if(!key){addMsg(ctx,'bot','A password is required to chat with Seymour.');done();return;}
   const typing=addMsg(ctx,'bot','__typing__');
   try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:SYSTEM,messages:st.history})});
-    const data=await res.json();
-    const reply=data.content?.[0]?.text||'I had trouble responding — try again.';
+    const ctl=new AbortController();const tm=setTimeout(()=>ctl.abort(),180000);
+    const res=await fetch(SEYMOUR_API,{method:'POST',headers:{'Content-Type':'application/json','X-Seymour-Key':key},
+      body:JSON.stringify({message:text,session:seymourSession()}),signal:ctl.signal});
+    clearTimeout(tm);
+    if(res.status===401){sessionStorage.removeItem('seymourKey');typing.remove();addMsg(ctx,'bot','Incorrect password — refresh the page and try again.');done();return;}
+    const data=await res.json().catch(()=>({}));
+    const reply=res.ok?(data.reply||'I had trouble responding — try again.'):('Error: '+(data.error||('HTTP '+res.status)));
     typing.remove();addMsg(ctx,'bot',reply);st.history.push({role:'assistant',content:reply});
-  }catch(e){typing.remove();addMsg(ctx,'bot','Connection error. Please try again.');}
-  st.loading=false;document.getElementById('send-'+ctx).disabled=false;inp.focus();
+  }catch(e){typing.remove();addMsg(ctx,'bot',e.name==='AbortError'?'Seymour took too long to respond — the local model can be slow. Please try again.':'Connection error. Please try again.');}
+  done();
 }
 function handleKey(e,ctx){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMsg(ctx);}}
 function useChip(ctx,text){document.getElementById('input-'+ctx).value=text;sendMsg(ctx);}
