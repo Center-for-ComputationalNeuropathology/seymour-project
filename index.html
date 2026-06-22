@@ -1326,7 +1326,7 @@ async function sendMsg(ctx){
   if(!key){addMsg(ctx,'bot','A password is required to chat with Seymour.');done();return;}
   const typing=addMsg(ctx,'bot','__typing__');
   try{
-    const ctl=new AbortController();const tm=setTimeout(()=>ctl.abort(),180000);
+    const ctl=new AbortController();const tm=setTimeout(()=>ctl.abort(),280000);
     const res=await fetch(SEYMOUR_API,{method:'POST',headers:{'Content-Type':'application/json','X-Seymour-Key':key},
       body:JSON.stringify({message:text,session:seymourSession()}),signal:ctl.signal});
     clearTimeout(tm);
