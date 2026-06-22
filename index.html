@@ -428,6 +428,38 @@ footer{background:#060d1f;border-top:1px solid rgba(255,255,255,0.06);padding:18
 .lz-frame-wrap iframe{width:100%;height:78vh;min-height:600px;border:0;display:block;background:#fff}
 .lz-pending{padding:54px 28px;text-align:center;border:1px dashed var(--rule);border-radius:var(--r);color:var(--ink3);font-family:var(--mono);font-size:13px;line-height:1.7;background:var(--bg2);margin-bottom:28px}
 .lz-pending strong{color:var(--accent)}
+/* ══ ROUNDTABLE ══ */
+.rt-title{font-family:var(--serif);font-size:34px;font-weight:600;color:var(--ink);margin:8px 0 6px}
+.rt-setup{background:var(--surface);border:1px solid var(--rule2);border-radius:var(--r);padding:22px 24px;margin:26px 0 30px;box-shadow:0 2px 16px rgba(15,17,23,.05)}
+.rt-label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);margin-bottom:8px}
+.rt-topic{width:100%;font-family:var(--serif);font-size:16px;line-height:1.6;color:var(--ink);background:var(--bg);border:1px solid var(--rule);border-radius:var(--r);padding:12px 14px;resize:vertical}
+.rt-topic:focus{outline:none;border-color:var(--accent-mid)}
+.rt-controls{display:flex;align-items:center;flex-wrap:wrap;gap:16px;margin-top:16px}
+.rt-ctrl{display:flex;align-items:center;gap:8px}
+.rt-ctrl-label{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)}
+.rt-select{font-family:var(--sans);font-size:14px;color:var(--ink);background:var(--bg);border:1px solid var(--rule);border-radius:var(--r);padding:7px 10px}
+.rt-start,.rt-stop{font-family:var(--sans);font-size:14px;font-weight:600;border:0;border-radius:var(--r);padding:9px 18px;cursor:pointer;display:inline-flex;align-items:center}
+.rt-start{background:var(--accent);color:#fff;margin-left:auto}
+.rt-start:hover{background:var(--accent-mid)}
+.rt-start:disabled{opacity:.5;cursor:default}
+.rt-stop{background:var(--red);color:#fff;margin-left:auto}
+.rt-hint{font-family:var(--mono);font-size:11px;color:var(--ink4);margin-top:14px}
+.rt-transcript{display:flex;flex-direction:column;gap:18px;margin-bottom:40px}
+.rt-turn{display:flex;flex-direction:column;gap:6px;max-width:78%;animation:rtfade .35s ease}
+.rt-turn.seymour{align-self:flex-start}
+.rt-turn.hermes{align-self:flex-end;align-items:flex-end}
+@keyframes rtfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.rt-who{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;display:flex;align-items:center;gap:8px}
+.rt-who.s{color:var(--accent)}
+.rt-who.h{color:var(--hermes)}
+.rt-time{color:var(--ink4);font-weight:400}
+.rt-bubble{font-family:var(--serif);font-size:15.5px;line-height:1.65;color:var(--ink);padding:13px 17px;border-radius:12px}
+.rt-turn.seymour .rt-bubble{background:var(--accent-light);border:1px solid rgba(30,58,138,.16);border-bottom-left-radius:3px}
+.rt-turn.hermes .rt-bubble{background:var(--hermes-light);border:1px solid rgba(14,95,58,.16);border-bottom-right-radius:3px}
+.rt-turn.error .rt-bubble{background:var(--amber-light);border:1px solid rgba(120,53,15,.2);color:var(--amber);font-family:var(--mono);font-size:13px}
+.rt-turn.note{align-self:center;max-width:92%}
+.rt-note{font-family:var(--mono);font-size:11.5px;color:var(--ink3);text-align:center;background:var(--bg2);border:1px dashed var(--rule);border-radius:var(--r);padding:8px 14px}
+.rt-note strong{color:var(--ink2)}
 </style>
 </head>
 <body>
@@ -482,6 +514,7 @@ footer{background:#060d1f;border-top:1px solid rgba(255,255,255,0.06);padding:18
     <button class="nav-link" data-tab="papers" onclick="showTab('papers',this)">Daily Paper Summaries</button>
     <button class="nav-link" data-tab="gwas" onclick="showTab('gwas',this)">GWAS</button>
     <button class="nav-link" data-tab="pipelines" onclick="showTab('pipelines',this)">Pipelines</button>
+    <button class="nav-link" data-tab="roundtable" onclick="showTab('roundtable',this)">Roundtable</button>
     <button class="nav-link" data-tab="about" onclick="showTab('about',this)">About</button>
     <div class="nav-sep"></div>
     <div class="nav-badge"><div class="nav-badge-dot"></div>Seymour · online</div>
@@ -1010,6 +1043,40 @@ footer{background:#060d1f;border-top:1px solid rgba(255,255,255,0.06);padding:18
   <div class="callout"><p><strong>About this site:</strong> Seymour's public web presence, inspired by the Santiago Project (Crary Lab). A transparent public record — not marketing. Results include null findings, QC failures, and ongoing uncertainty.</p></div>
 </div>
 
+<!-- ══════════ ROUNDTABLE ══════════ -->
+<div class="tab-pane" id="pane-roundtable">
+  <h1 class="rt-title" style="padding-top:8px">Agent Roundtable</h1>
+  <p class="lede">Set a topic and let Seymour and Hermes work it out between themselves — comparing findings, dividing up tasks, and running independent work as they alternate up to five turns each. You set the agenda; they take it from there. The exchange runs on the live local agents and streams in below.</p>
+
+  <div class="rt-setup" id="rt-setup">
+    <label class="rt-label" for="rt-topic">Opening topic</label>
+    <textarea id="rt-topic" class="rt-topic" rows="3" placeholder="e.g. Plan the next steps for the CBD MAPT chr17 follow-up — split the bioinformatics and the literature work between you, then compare notes."></textarea>
+    <div class="rt-controls">
+      <div class="rt-ctrl">
+        <span class="rt-ctrl-label">Starts</span>
+        <select id="rt-starter" class="rt-select">
+          <option value="seymour">Seymour</option>
+          <option value="hermes">Hermes</option>
+        </select>
+      </div>
+      <div class="rt-ctrl">
+        <span class="rt-ctrl-label">Turns each</span>
+        <select id="rt-turns" class="rt-select">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5" selected>5</option>
+        </select>
+      </div>
+      <button class="rt-start" id="rt-start" onclick="startRoundtable()">Start conversation</button>
+      <button class="rt-stop" id="rt-stop" onclick="stopRoundtable()" style="display:none">Stop</button>
+    </div>
+    <div class="rt-hint">Password-gated · each turn runs a live local agent and may take ~5–280s · let it run, the transcript appears below.</div>
+  </div>
+
+  <div class="rt-transcript" id="rt-transcript"></div>
+</div>
+
 </div><!-- /page-wrap -->
 
 <footer>
@@ -1361,6 +1428,101 @@ async function sendMsg(ctx){
 }
 function handleKey(e,ctx){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMsg(ctx);}}
 function useChip(ctx,text){document.getElementById('input-'+ctx).value=text;sendMsg(ctx);}
+
+// ── ROUNDTABLE: moderated Seymour ⇄ Hermes dialogue ───────────
+// The browser is the moderator: it seeds a topic, then relays each agent's
+// reply to the other, alternating up to a turn cap. Each turn is its own
+// gated POST /dialogue request (so a slow local-LLM turn can't blow the
+// HTTP timeout) and the transcript streams in. Each agent keeps its own
+// persistent session server-side, so it remembers the conversation and any
+// work it starts. Reuses the chat password (seymourKey).
+const DIALOGUE_API='https://seymour-mac.taild59e01.ts.net/dialogue';
+const RT_NAME={seymour:'Seymour',hermes:'Hermes'};
+const RT_OTHER={seymour:'hermes',hermes:'seymour'};
+let rtRunning=false, rtStop=false;
+function rtEsc(s){return(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function rtAdd(speaker,text,kind){
+  const w=document.getElementById('rt-transcript');
+  const d=document.createElement('div');
+  d.className='rt-turn '+(kind||speaker);
+  if(kind==='note'){
+    d.innerHTML='<div class="rt-note">'+text+'</div>';
+  }else if(text==='__typing__'){
+    d.innerHTML='<div class="rt-who '+(speaker==='hermes'?'h':'s')+'">'+RT_NAME[speaker]+'</div><div class="rt-bubble"><div class="typing-dots"><div class="td"></div><div class="td"></div><div class="td"></div></div></div>';
+  }else{
+    const t=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+    d.innerHTML='<div class="rt-who '+(speaker==='hermes'?'h':'s')+'">'+RT_NAME[speaker]+' <span class="rt-time">'+t+'</span></div><div class="rt-bubble">'+rtEsc(text).replace(/\n/g,'<br>')+'</div>';
+  }
+  w.appendChild(d);d.scrollIntoView({behavior:'smooth',block:'nearest'});
+  return d;
+}
+async function rtTurn(speaker,message,session,key){
+  const typing=rtAdd(speaker,'__typing__');
+  const ctl=new AbortController();const tm=setTimeout(()=>ctl.abort(),290000);
+  try{
+    const res=await fetch(DIALOGUE_API,{method:'POST',headers:{'Content-Type':'application/json','X-Seymour-Key':key},
+      body:JSON.stringify({speaker:speaker,message:message,session:session}),signal:ctl.signal});
+    clearTimeout(tm);typing.remove();
+    if(res.status===401){sessionStorage.removeItem('seymourKey');throw{auth:true};}
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok)throw new Error(data.error||('HTTP '+res.status));
+    const reply=data.reply||'(no reply)';
+    rtAdd(speaker,reply);
+    return reply;
+  }catch(e){
+    clearTimeout(tm);typing.remove();
+    if(e&&e.auth)throw e;
+    rtAdd(speaker,(e&&e.name==='AbortError')?'(timed out — the local model can be slow)':('(error: '+((e&&e.message)||e)+')'),'error');
+    throw e;
+  }
+}
+function rtToggleRunning(on){
+  rtRunning=on;
+  document.getElementById('rt-start').style.display=on?'none':'inline-flex';
+  document.getElementById('rt-stop').style.display=on?'inline-flex':'none';
+  document.getElementById('rt-topic').disabled=on;
+  document.getElementById('rt-starter').disabled=on;
+  document.getElementById('rt-turns').disabled=on;
+}
+async function startRoundtable(){
+  if(rtRunning)return;
+  const topic=document.getElementById('rt-topic').value.trim();
+  if(!topic){alert('Enter an opening topic first.');return;}
+  const key=seymourKey();
+  if(!key){return;}
+  const starter=document.getElementById('rt-starter').value;
+  const turns=parseInt(document.getElementById('rt-turns').value,10)||5;
+  const session='rt'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+  rtStop=false;rtToggleRunning(true);
+  document.getElementById('rt-transcript').innerHTML='';
+  rtAdd('','<strong>Topic:</strong> '+rtEsc(topic),'note');
+
+  let speaker=starter;
+  const seeded={};
+  // first message to the opener
+  let message='You are in a direct working conversation with '+RT_NAME[RT_OTHER[starter]]+', a fellow Farrell Lab research agent — not with a human. A human moderator set the agenda; from here, the two of you talk to each other directly. Compare findings, divide up the work, and run any independent tasks you need between turns. Keep replies focused and reasonably brief.\n\nThe moderator’s topic:\n'+topic+'\n\nOpen the conversation with '+RT_NAME[RT_OTHER[starter]]+'.';
+  seeded[starter]=true;
+  try{
+    for(let i=0;i<turns*2;i++){
+      if(rtStop)break;
+      const reply=await rtTurn(speaker,message,session,key);
+      if(rtStop)break;
+      const next=RT_OTHER[speaker];
+      if(!seeded[next]){
+        message='You are in a direct working conversation with '+RT_NAME[speaker]+', a fellow Farrell Lab research agent — not with a human. A moderator set this topic: "'+topic+'". From here you talk directly with '+RT_NAME[speaker]+': exchange findings, divide up the work, and run any tasks you need. Keep replies focused.\n\n'+RT_NAME[speaker]+' says:\n'+reply;
+        seeded[next]=true;
+      }else{
+        message=RT_NAME[speaker]+' says:\n'+reply;
+      }
+      speaker=next;
+    }
+    rtAdd('',rtStop?'<strong>Stopped by moderator.</strong>':('<strong>Conversation complete.</strong> '+turns+' turns each.'),'note');
+  }catch(e){
+    if(e&&e.auth)rtAdd('','Incorrect password — refresh the page and try again.','note');
+  }
+  rtToggleRunning(false);
+}
+function stopRoundtable(){if(rtRunning)rtStop=true;}
 </script>
 </body>
 </html>
