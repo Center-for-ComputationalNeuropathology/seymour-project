@@ -1458,7 +1458,7 @@ function rtAdd(speaker,text,kind){
 }
 async function rtTurn(speaker,message,session,key){
   const typing=rtAdd(speaker,'__typing__');
-  const ctl=new AbortController();const tm=setTimeout(()=>ctl.abort(),290000);
+  const ctl=new AbortController();const tm=setTimeout(()=>ctl.abort(),335000);
   try{
     const res=await fetch(DIALOGUE_API,{method:'POST',headers:{'Content-Type':'application/json','X-Seymour-Key':key},
       body:JSON.stringify({speaker:speaker,message:message,session:session}),signal:ctl.signal});
@@ -1497,10 +1497,17 @@ async function startRoundtable(){
   document.getElementById('rt-transcript').innerHTML='';
   rtAdd('','<strong>Topic:</strong> '+rtEsc(topic),'note');
 
+  // A short standing guard prepended to EVERY turn: this is a live, fast
+  // back-and-forth, so each agent must reply conversationally and must NOT
+  // block the turn on a long-running job (those exceed the HTTP timeout).
+  // They coordinate and divide work by talking; actual heavy jobs run out of band.
+  const GUARD='[Live turn-by-turn chat with your Farrell Lab colleague. Reply in a few sentences, conversationally. Compare notes and agree who takes which piece of work, but do NOT launch long-running jobs or extensive tool/literature runs during this turn — just talk and coordinate.]';
+  const intro=(other)=>'You are in a live, turn-by-turn conversation with '+RT_NAME[other]+', a fellow Farrell Lab research agent — not with a human. A human moderator set the agenda; from here the two of you talk directly. '+GUARD;
+
   let speaker=starter;
   const seeded={};
   // first message to the opener
-  let message='You are in a direct working conversation with '+RT_NAME[RT_OTHER[starter]]+', a fellow Farrell Lab research agent — not with a human. A human moderator set the agenda; from here, the two of you talk to each other directly. Compare findings, divide up the work, and run any independent tasks you need between turns. Keep replies focused and reasonably brief.\n\nThe moderator’s topic:\n'+topic+'\n\nOpen the conversation with '+RT_NAME[RT_OTHER[starter]]+'.';
+  let message=intro(RT_OTHER[starter])+'\n\nThe moderator’s topic:\n'+topic+'\n\nOpen the conversation with '+RT_NAME[RT_OTHER[starter]]+'.';
   seeded[starter]=true;
   try{
     for(let i=0;i<turns*2;i++){
@@ -1509,10 +1516,10 @@ async function startRoundtable(){
       if(rtStop)break;
       const next=RT_OTHER[speaker];
       if(!seeded[next]){
-        message='You are in a direct working conversation with '+RT_NAME[speaker]+', a fellow Farrell Lab research agent — not with a human. A moderator set this topic: "'+topic+'". From here you talk directly with '+RT_NAME[speaker]+': exchange findings, divide up the work, and run any tasks you need. Keep replies focused.\n\n'+RT_NAME[speaker]+' says:\n'+reply;
+        message=intro(speaker)+' The moderator set this topic: "'+topic+'".\n\n'+RT_NAME[speaker]+' says:\n'+reply;
         seeded[next]=true;
       }else{
-        message=RT_NAME[speaker]+' says:\n'+reply;
+        message=GUARD+'\n\n'+RT_NAME[speaker]+' says:\n'+reply;
       }
       speaker=next;
     }
