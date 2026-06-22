@@ -883,85 +883,18 @@ footer{background:#060d1f;border-top:1px solid rgba(255,255,255,0.06);padding:18
 
   <!-- ───── CBD ───── -->
   <div class="gwas-sub active" id="gw-cbd">
+    <div class="gwas-hero">
+      <div>
+        <div class="gwas-hero-title">CBD GWAS</div>
+        <div class="gwas-hero-sub">Corticobasal Degeneration · Genome-Wide Association Study · GRCh38</div>
+      </div>
+      <div style="text-align:right"><div class="gwas-badge done">Interactive</div></div>
+    </div>
     <div class="lz-caption">Interactive LocusZoom · CBD GWAS · GRCh38 · click any Manhattan peak to open its region view<a class="lz-open" href="https://seymour-mac.taild59e01.ts.net:8443/gwas/665922/" target="_blank" rel="noopener">open full screen ↗</a></div>
     <div class="lz-frame-wrap"><iframe data-lz="https://seymour-mac.taild59e01.ts.net:8443/gwas/665922/" title="CBD GWAS · LocusZoom" loading="lazy" referrerpolicy="no-referrer"></iframe></div>
-
-  <div class="gwas-hero">
-    <div>
-      <div class="gwas-hero-title">CBD GWAS · Full Pipeline Log</div>
-      <div class="gwas-hero-sub">Corticobasal Degeneration Genome-Wide Association Study</div>
-      <div class="gwas-stats">
-        <div><span class="gwas-stat-val">220</span><span class="gwas-stat-label">CBD Cases</span></div>
-        <div><span class="gwas-stat-val">4,878</span><span class="gwas-stat-label">Controls</span></div>
-        <div><span class="gwas-stat-val">6</span><span class="gwas-stat-label">Cohorts</span></div>
-        <div><span class="gwas-stat-val">1.093</span><span class="gwas-stat-label">λ GC</span></div>
-      </div>
-    </div>
-    <div style="text-align:right">
-      <div class="gwas-badge done" style="margin-bottom:8px">Analysis complete</div><br>
-      <span style="font-family:var(--mono);font-size:11px;color:var(--ink4)">hg38 · TOPMed r3<br>PLINK2 Firth</span>
-    </div>
-  </div>
-  <div class="result-box">
-    <h3>Primary Result</h3>
-    <div class="result-grid">
-      <div class="rstat"><span class="rstat-val">1.45×10⁻¹²</span><span class="rstat-label">MAPT p-value</span><span class="rstat-sub">chr17q21 · hg38</span></div>
-      <div class="rstat"><span class="rstat-val">1.093</span><span class="rstat-label">Genomic inflation λ</span><span class="rstat-sub">Firth correction</span></div>
-      <div class="rstat"><span class="rstat-val">7.7M</span><span class="rstat-label">SNPs tested</span><span class="rstat-sub">post-imputation filter</span></div>
-    </div>
-  </div>
-  <div class="manhattan-sketch">
-    <div class="mh-title">Manhattan Plot (schematic) · −log₁₀(p) by chromosome</div>
-    <div style="display:flex;gap:8px">
-      <div style="position:relative;width:32px"><div class="mh-axis-y"><span>12</span><span>9</span><span>6</span><span>3</span><span>0</span></div></div>
-      <div style="flex:1">
-        <div class="mh-canvas" id="manhattan-canvas">
-          <div class="mh-thresh" style="bottom:61%"><div class="mh-thresh-label" style="top:-14px">p=5×10⁻⁸</div></div>
-          <div class="mh-thresh" style="bottom:42%;opacity:0.3;border-top-style:dotted"><div class="mh-thresh-label" style="top:-14px;color:var(--amber)">p=1×10⁻⁵</div></div>
-        </div>
-        <div class="mh-axis-x"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13–22</span><span>X</span></div>
-      </div>
-    </div>
-    <div style="margin-top:10px;display:flex;gap:18px;font-family:var(--mono);font-size:10px;color:var(--ink4)">
-      <span style="color:var(--accent)">● chr17 MAPT (p=1.45×10⁻¹²)</span>
-      <span style="color:var(--amber)">▲ suggestive (p&lt;10⁻⁵)</span>
-      <span>○ background SNPs</span>
-    </div>
-  </div>
-  <h2>Pipeline Log</h2>
-  <div class="log-table-wrap">
-    <div class="log-table-head"><div class="log-table-title">Step 1 — Cohort assembly &amp; QC</div><span class="lbadge lbadge-ok" style="margin-left:auto">Complete</span></div>
-    <table class="log-table"><thead><tr><th>Date</th><th>Step</th><th>Detail</th><th>Status</th></tr></thead>
-    <tbody>
-      <tr><td class="lt-ts">2026-02-10</td><td class="lt-step">Cohort inventory</td><td class="lt-msg">6 cohorts assembled: <code>Mayo</code> (152 cases), <code>MSSM</code>, <code>express</code>, <code>gsa</code>, <code>illumina</code>, <code>expressExome</code>. Total: <span class="ok">220 CBD cases</span>, 4,878 controls.</td><td><span class="lbadge lbadge-ok">done</span></td></tr>
-      <tr><td class="lt-ts">2026-02-12</td><td class="lt-step">Allele coding fix</td><td class="lt-msg">Mayo Clinic hg19 PLINK v1.07 files used 1/2 allele coding. Resolved using Illumina cohort BIM as reference for strand alignment.</td><td><span class="lbadge lbadge-ok">done</span></td></tr>
-      <tr><td class="lt-ts">2026-02-14</td><td class="lt-step">Pre-imputation QC</td><td class="lt-msg">Per-cohort filters: MAF&gt;0.01, genotyping rate&gt;0.98, HWE p&gt;1×10⁻⁶. RICOPILI pipeline. Sample QC: relatedness (PI_HAT&lt;0.2), sex check.</td><td><span class="lbadge lbadge-ok">done</span></td></tr>
-      <tr><td class="lt-ts">2026-02-18</td><td class="lt-step">PCA &amp; ancestry</td><td class="lt-msg">Somalier ancestry analysis. EUR cluster selected. CBD cases and MSSM controls showed zero PC1 overlap — chip/batch separation. PC1–PC4 included as covariates.</td><td><span class="lbadge lbadge-warn">see note</span></td></tr>
-      <tr><td class="lt-ts">2026-02-18</td><td class="lt-step">Note: PCA separation</td><td class="lt-msg"><span class="warn">CBD_GWAS_2 integration revealed systematic PC1 separation between cases (Mayo) and controls (MSSM) — likely chip batch effect, not ancestry. Included PC1–4 as covariates to control.</span></td><td><span class="lbadge lbadge-warn">flag</span></td></tr>
-    </tbody></table>
-  </div>
-  <div class="log-table-wrap">
-    <div class="log-table-head"><div class="log-table-title">Step 2 — TOPMed imputation</div><span class="lbadge lbadge-ok" style="margin-left:auto">Complete</span></div>
-    <table class="log-table"><thead><tr><th>Date</th><th>Step</th><th>Detail</th><th>Status</th></tr></thead>
-    <tbody>
-      <tr><td class="lt-ts">2026-02-22</td><td class="lt-step">TOPMed submission</td><td class="lt-msg">All 6 cohorts submitted to TOPMed Imputation Server r3 (hg38). VCF preparation via RICOPILI + custom lift-over (hg19→hg38).</td><td><span class="lbadge lbadge-ok">done</span></td></tr>
-      <tr><td class="lt-ts">2026-02-28</td><td class="lt-step">Post-imputation filter</td><td class="lt-msg">Filters: INFO r²≥0.7, MAF≥0.01, genotyping rate&gt;0.8. Union merge: <code>--geno 0.2</code>. Final: <span class="ok">~7.7M SNPs</span>.</td><td><span class="lbadge lbadge-ok">done</span></td></tr>
-      <tr><td class="lt-ts">2026-03-01</td><td class="lt-step">Chr9 exclusion</td><td class="lt-msg"><span class="warn">Chr9 imputation quality consistently poor — INFO r²&lt;0.4. Chr9 excluded from primary analysis.</span></td><td><span class="lbadge lbadge-warn">excluded</span></td></tr>
-      <tr><td class="lt-ts">2026-03-02</td><td class="lt-step">Missing→ref fill</td><td class="lt-msg"><code>bcftools +setGT</code> applied to fill missing genotypes with homozygous reference.</td><td><span class="lbadge lbadge-ok">done</span></td></tr>
-    </tbody></table>
-  </div>
-  <div class="log-table-wrap">
-    <div class="log-table-head"><div class="log-table-title">Step 3 — Association testing</div><span class="lbadge lbadge-ok" style="margin-left:auto">Complete</span></div>
-    <table class="log-table"><thead><tr><th>Date</th><th>Step</th><th>Detail</th><th>Status</th></tr></thead>
-    <tbody>
-      <tr><td class="lt-ts">2026-03-05</td><td class="lt-step">PLINK2 Firth</td><td class="lt-msg">Primary: <code>plink2 --logistic firth</code>. Covariates: Age, Sex, PC1–4, cohort indicator.</td><td><span class="lbadge lbadge-ok">done</span></td></tr>
-      <tr><td class="lt-ts">2026-03-05</td><td class="lt-step">Primary result</td><td class="lt-msg">λ GC = <span class="ok">1.093</span>. Top hit: MAPT chr17q21, p = <span class="ok">1.45×10⁻¹²</span>.</td><td><span class="lbadge lbadge-ok">replicated</span></td></tr>
-      <tr><td class="lt-ts">2026-03-07</td><td class="lt-step">REGENIE LOOCV</td><td class="lt-msg">λ GC = 0.96 — slightly overcorrected. PLINK2 Firth retained as primary.</td><td><span class="lbadge lbadge-warn">secondary</span></td></tr>
-      <tr><td class="lt-ts">2026-03-10</td><td class="lt-step">LocusZoom prep</td><td class="lt-msg">MAPT locus chr17:44.0–44.2Mb (hg38) prepared for co-author review.</td><td><span class="lbadge lbadge-ok">ready</span></td></tr>
-    </tbody></table>
-  </div>
-  <div class="callout amber"><p><strong>Open questions:</strong> Secondary loci below genome-wide significance require replication. Chr9 needs re-evaluation. REGENIE vs Firth to be finalised before submission.</p></div>
-  <div class="callout hermes"><p><strong>Hermes note (2026-06-09):</strong> 3 relevant papers found — Ling et al. 2025 (MAPT H1 fine-mapping), Chen et al. 2024 (multi-ancestry tau GWAS), Park et al. 2025 (TDP-43 co-aggregation in 4R tauopathies).</p></div>
+    <h2>About this view</h2>
+    <p>The panel above is the live LocusZoom rendering of the Corticobasal Degeneration genome-wide association summary statistics on GRCh38. The Manhattan plot summarises −log₁₀(p) across all chromosomes; selecting any peak opens the regional view, with linkage-disequilibrium colouring, recombination rate, and the underlying gene track.</p>
+    <div class="callout"><p><strong>Note:</strong> This tab embeds the interactive plot only — cohort assembly, imputation, and QC logs for this scan are maintained separately and are not mirrored here yet.</p></div>
   </div><!-- /gw-cbd -->
 
   <!-- ───── AD ───── -->
