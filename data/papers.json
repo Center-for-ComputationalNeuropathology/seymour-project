@@ -1,6 +1,33 @@
 {
-  "generated": "2026-06-23T13:26:07Z",
+  "generated": "2026-06-24T11:26:09Z",
   "days": [
+    {
+      "date": "2026-06-24",
+      "papersFrom": "June 23, 2026",
+      "total": 2,
+      "papers": [
+        {
+          "title": "Uncertainty-Aware Longitudinal Forecasting of Alzheimer's Disease Progression Using Deep Learning",
+          "authors": "Arya Hariharan, Shreyank N Gowda, Anala M R",
+          "source": "arXiv",
+          "tags": [
+            "cs.AI"
+          ],
+          "summary": "Longitudinal modelling of Alzheimer's disease progression is clinically useful only if it can describe not just the most likely next diagnosis, but how a patient may evolve over time and how reliab...",
+          "url": "https://arxiv.org/abs/2606.24604v1"
+        },
+        {
+          "title": "Machine learning-based modeling to predict inhibitors for targets of Alzheimer's Disease",
+          "authors": "Nalin Arora, Mehak Gopal",
+          "source": "arXiv",
+          "tags": [
+            "q-bio.QM"
+          ],
+          "summary": "Alzheimer's Disease is a chronic neurodegenerative disorder projected to affect 115 million people by 2050, driven by mechanisms like the cholinergic and amyloid hypotheses and insulin signaling di...",
+          "url": "https://arxiv.org/abs/2606.24372v1"
+        }
+      ]
+    },
     {
       "date": "2026-06-23",
       "papersFrom": "June 22, 2026",
