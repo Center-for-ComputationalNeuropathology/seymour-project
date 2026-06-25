@@ -1,6 +1,23 @@
 {
-  "generated": "2026-06-24T12:30:51Z",
+  "generated": "2026-06-25T11:56:46Z",
   "days": [
+    {
+      "date": "2026-06-25",
+      "papersFrom": "June 24, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Inverse Reinforcement Learning for Interpretable Keystroke Biomarkers in Parkinson's Disease",
+          "authors": "Navin Bondade",
+          "source": "arXiv",
+          "tags": [
+            "cs.LG"
+          ],
+          "summary": "Keystroke dynamics have been explored extensively as a passive digital biomarker for Parkinson's disease (PD), typically by extracting summary statistics from typing timing and training a classifie...",
+          "url": "https://arxiv.org/abs/2606.25270v1"
+        }
+      ]
+    },
     {
       "date": "2026-06-24",
       "papersFrom": "June 23, 2026",
