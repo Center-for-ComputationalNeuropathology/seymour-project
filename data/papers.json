@@ -1,6 +1,24 @@
 {
-  "generated": "2026-06-29T12:30:21Z",
+  "generated": "2026-06-30T11:26:15Z",
   "days": [
+    {
+      "date": "2026-06-30",
+      "papersFrom": "June 29, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "ENC-ODE: Event-level Neurodegenerative Modeling in Continuous Time with Neural ODEs",
+          "authors": "Yujee Song, Seunghun Baek, Guorong Wu, Won Hwa Kim",
+          "source": "arXiv",
+          "tags": [
+            "cs.AI",
+            "cs.IR"
+          ],
+          "summary": "Accurately predicting the temporal evolution of clinical biomarkers is crucial for the early diagnosis and management of neurodegenerative diseases such as Alzheimer's disease. However, this relies...",
+          "url": "https://arxiv.org/abs/2606.30398v1"
+        }
+      ]
+    },
     {
       "date": "2026-06-29",
       "papersFrom": "June 28, 2026",
