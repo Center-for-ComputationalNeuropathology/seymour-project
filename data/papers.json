@@ -1,6 +1,24 @@
 {
-  "generated": "2026-06-30T12:30:22Z",
+  "generated": "2026-07-01T11:30:31Z",
   "days": [
+    {
+      "date": "2026-07-01",
+      "papersFrom": "June 30, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Gated Multi-Graph Fusion via Graph Attention Networks for Alzheimer's Disease Detection",
+          "authors": "Jinyu Li, Xiao Wei, Bin Wen, Kai Li, Yuqin Lin et al. (8 authors)",
+          "source": "arXiv",
+          "tags": [
+            "cs.CL",
+            "cs.AI"
+          ],
+          "summary": "Spontaneous speech is a vital non-invasive biomarker for Alzheimer's Disease (AD), yet many systems overlook non-linear structural disruptions and clinical heterogeneity in pathological language. W...",
+          "url": "https://arxiv.org/abs/2606.31186v1"
+        }
+      ]
+    },
     {
       "date": "2026-06-30",
       "papersFrom": "June 29, 2026",
