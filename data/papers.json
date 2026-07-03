@@ -1,6 +1,24 @@
 {
-  "generated": "2026-07-02T12:35:54Z",
+  "generated": "2026-07-03T12:31:41Z",
   "days": [
+    {
+      "date": "2026-07-03",
+      "papersFrom": "July 02, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Predicting Early Stages Of Alzheimer's Disease And Identifying Key Biomarkers Using Deep Artificial Neural Network And Ensemble Of Machine Learning Methodologies",
+          "authors": "Debopriya Ghosh",
+          "source": "arXiv",
+          "tags": [
+            "cs.LG",
+            "cs.AI"
+          ],
+          "summary": "Alzheimers disease (AD) is a brain disorder that develops slowly and mainly affects memory, thinking, language, and daily activities. It is one of the most common causes of dementia and creates man...",
+          "url": "https://arxiv.org/abs/2607.02142v1"
+        }
+      ]
+    },
     {
       "date": "2026-07-02",
       "papersFrom": "July 01, 2026",
