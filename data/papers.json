@@ -1,6 +1,23 @@
 {
-  "generated": "2026-07-07T16:26:29Z",
+  "generated": "2026-07-08T11:00:34Z",
   "days": [
+    {
+      "date": "2026-07-08",
+      "papersFrom": "July 07, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Co-STAR: Cognitive Stimulation Therapy by an Autonomous Robot for Dementia -- A One-Week In-Home Study",
+          "authors": "Emmanuel Akinrintoyo, Nicole Salomons",
+          "source": "arXiv",
+          "tags": [
+            "cs.RO"
+          ],
+          "summary": "Cognitive therapies have been shown to enhance the quality of life and well-being of people living with dementia (PwDs). However, their use remains limited due to a shortage of trained professional...",
+          "url": "https://arxiv.org/abs/2607.05709v1"
+        }
+      ]
+    },
     {
       "date": "2026-07-07",
       "papersFrom": "July 06, 2026",
