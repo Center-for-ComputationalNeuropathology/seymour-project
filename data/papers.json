@@ -1,6 +1,24 @@
 {
-  "generated": "2026-07-08T11:29:54Z",
+  "generated": "2026-07-09T09:30:23Z",
   "days": [
+    {
+      "date": "2026-07-09",
+      "papersFrom": "July 08, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "AT-Attn: Temporal-Aware Cross-Attention for Longitudinal Multimodal Alzheimer's Disease Diagnosis",
+          "authors": "Xinyue Du, Yibo Liu, Zhenglei Zhou, Xuancheng Yao, Weimin Zhong et al. (6 authors)",
+          "source": "arXiv",
+          "tags": [
+            "cs.CV",
+            "cs.AI"
+          ],
+          "summary": "In longitudinal Alzheimer's disease (AD) diagnosis support, clinical and imaging information is often collected at irregular visits. Integrating these multimodal observations may improve diagnostic...",
+          "url": "https://arxiv.org/abs/2607.07091v1"
+        }
+      ]
+    },
     {
       "date": "2026-07-08",
       "papersFrom": "July 07, 2026",
