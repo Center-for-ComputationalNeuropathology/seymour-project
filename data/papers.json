@@ -1,6 +1,23 @@
 {
-  "generated": "2026-07-09T09:30:23Z",
+  "generated": "2026-07-10T08:56:03Z",
   "days": [
+    {
+      "date": "2026-07-10",
+      "papersFrom": "July 09, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Factors Influencing Conversational Engagement in Robot-Delivered Individual Cognitive Stimulation Therapy (iCST) for Dementia in Home Settings",
+          "authors": "Emmanuel Akinrintoyo, Nicole Salomons",
+          "source": "arXiv",
+          "tags": [
+            "cs.RO"
+          ],
+          "summary": "Social robots offer a promising means of supporting cognitive therapies for dementia care by guiding structured conversation and therapeutic activities. However, little is known about the conversat...",
+          "url": "https://arxiv.org/abs/2607.07998v1"
+        }
+      ]
+    },
     {
       "date": "2026-07-09",
       "papersFrom": "July 08, 2026",
