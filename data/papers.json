@@ -1,6 +1,24 @@
 {
-  "generated": "2026-07-13T12:01:59Z",
+  "generated": "2026-07-14T09:26:05Z",
   "days": [
+    {
+      "date": "2026-07-14",
+      "papersFrom": "July 13, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Imputation-free transformer learning enables robust Alzheimer's disease prediction and calibrated uncertainty quantification across heterogeneous clinical cohorts",
+          "authors": "Christelle Schneuwly Diaz, Narmina Baghirova, Duy-Thanh Vu, Duy-Cat Can, Gilles Allali et al. (7 authors)",
+          "source": "arXiv",
+          "tags": [
+            "q-bio.NC",
+            "cs.LG"
+          ],
+          "summary": "Accurate diagnostic classification and disease-severity prediction for Alzheimer's disease are hampered by the incompleteness and heterogeneity of real-world clinical data. Left unaddressed, these ...",
+          "url": "https://arxiv.org/abs/2607.11656v1"
+        }
+      ]
+    },
     {
       "date": "2026-07-13",
       "papersFrom": "July 12, 2026",
