@@ -1,11 +1,23 @@
 {
-  "generated": "2026-07-21T06:26:54Z",
+  "generated": "2026-07-21T06:56:09Z",
   "days": [
     {
       "date": "2026-07-21",
       "papersFrom": "July 20, 2026",
-      "total": 0,
-      "papers": []
+      "total": 1,
+      "papers": [
+        {
+          "title": "Calibrated Alzheimer's Conversion Risk in Mild Cognitive Impairment: Persistent Homology of Clinical Trajectories with Conformal Guarantees",
+          "authors": "Navin Bondade",
+          "source": "arXiv",
+          "tags": [
+            "cs.LG",
+            "stat.ML"
+          ],
+          "summary": "Background. Predicting conversion from mild cognitive impairment (MCI) to Alzheimer's disease (AD) is central to trial enrichment and care planning, yet existing models provide no individual-level ...",
+          "url": "https://arxiv.org/abs/2607.17442v1"
+        }
+      ]
     },
     {
       "date": "2026-07-20",
