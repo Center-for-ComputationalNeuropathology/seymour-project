@@ -1,6 +1,23 @@
 {
-  "generated": "2026-07-21T17:56:10Z",
+  "generated": "2026-07-22T04:26:02Z",
   "days": [
+    {
+      "date": "2026-07-22",
+      "papersFrom": "July 21, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Caring Over Computing: An Ethical and Sociotechnical Perspective on Generative AI for Social Connectedness in Dementia Care",
+          "authors": "Teis Arets, Giulia Perugia, Maarten Houben, Wijnand IJsselsteijn",
+          "source": "arXiv",
+          "tags": [
+            "cs.HC"
+          ],
+          "summary": "People with dementia in residential care often experience reduced social connectedness. Person-centered care approaches foreground meaningful social interactions to support well-being, but staff an...",
+          "url": "https://arxiv.org/abs/2607.19007v1"
+        }
+      ]
+    },
     {
       "date": "2026-07-21",
       "papersFrom": "July 20, 2026",
