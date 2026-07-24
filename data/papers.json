@@ -1,6 +1,44 @@
 {
-  "generated": "2026-07-23T21:56:10Z",
+  "generated": "2026-07-24T10:26:04Z",
   "days": [
+    {
+      "date": "2026-07-24",
+      "papersFrom": "July 23, 2026",
+      "total": 3,
+      "papers": [
+        {
+          "title": "SafeStep: AI-powered Travel Assistance for Elderly People with Frailty or Dementia",
+          "authors": "Elderly People with Frailty or Dementia Azul Debenedetti, David Gamez, Franco Such, Nik Kairinos",
+          "source": "arXiv",
+          "tags": [
+            "cs.AI",
+            "cs.MA"
+          ],
+          "summary": "More than a million people in the UK suffer from frailty or dementia, which severely compromise their ability to travel in urban environments. This paper presents SafeStep, an AI-driven travel syst...",
+          "url": "https://arxiv.org/abs/2607.21156v1"
+        },
+        {
+          "title": "A stability-preserving polytopal discontinuous Galerkin method for the Fisher-Kolmogorov model with applications to neurodegenerative diseases",
+          "authors": "Paola Francesca Antonietti, Francesca Bonizzoni, Mattia Corti, Nicola De March, Salvatore Di Noto et al. (6 authors)",
+          "source": "arXiv",
+          "tags": [
+            "math.NA"
+          ],
+          "summary": "The Fisher-Kolmogorov model is one of the most widely used models in the study of neurodegenerative diseases, owing to its simple structure as a nonlinear reaction-diffusion equation. In particular...",
+          "url": "https://arxiv.org/abs/2607.21108v1"
+        },
+        {
+          "title": "Decoding Parkinsonian Tremor: An Explainable Framework Integrating Multi-Revolution Spatial and Spectral Dynamics of Spiral Drawings",
+          "authors": "Tharaka Wijethunge, Maheshi Dissanayake, Sajitha Weerasinghe",
+          "source": "arXiv",
+          "tags": [
+            "eess.SP"
+          ],
+          "summary": "Parkinson's disease (PD) manifests in motor impairments that are detectable through digitized spiral drawings. This study introduces an explainable framework for PD screening using a novel radial-s...",
+          "url": "https://arxiv.org/abs/2607.20930v1"
+        }
+      ]
+    },
     {
       "date": "2026-07-23",
       "papersFrom": "July 22, 2026",
