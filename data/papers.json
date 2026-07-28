@@ -1,6 +1,44 @@
 {
-  "generated": "2026-07-27T13:29:31Z",
+  "generated": "2026-07-28T10:27:29Z",
   "days": [
+    {
+      "date": "2026-07-28",
+      "papersFrom": "July 27, 2026",
+      "total": 3,
+      "papers": [
+        {
+          "title": "RemiAssist: A Therapist-Supporting System for Photo-Based Reminiscence Therapy in Dementia Care",
+          "authors": "Shuchang Xu, Minglong Tang, Junyan Mao, Xiaofu Jin, Wazeer Zulfikar et al. (10 authors)",
+          "source": "arXiv",
+          "tags": [
+            "cs.HC"
+          ],
+          "summary": "Despite growing interest in applying AI to photo-based reminiscence therapy (PRT) for people with dementia (PwD), existing systems primarily focus on PwD-AI interaction and often overlook therapist...",
+          "url": "https://arxiv.org/abs/2607.24536v1"
+        },
+        {
+          "title": "From read-out geometry to in-silico stimulation: a distributed functional-connectivity signature of Alzheimer's disease",
+          "authors": "Cristiano Capone, Enza Cece, Andrea Ciardiello, Guido Gigante, Evaristo Cisbani et al. (6 authors)",
+          "source": "arXiv",
+          "tags": [
+            "q-bio.NC"
+          ],
+          "summary": "Resting-state functional connectivity (FC) is altered in Alzheimer's disease (AD), widely regarded as a distributed network process; whether its FC signature reduces to a few focal sites has not be...",
+          "url": "https://arxiv.org/abs/2607.24356v1"
+        },
+        {
+          "title": "Disentangling Acoustic Cues in Alzheimer's Pathology and Perception: The Roles of Language and Gender",
+          "authors": "Liu He, Yuanchao Li, Yin-Long Liu, Rui Feng, Yiming Wang et al. (8 authors)",
+          "source": "arXiv",
+          "tags": [
+            "cs.SD",
+            "cs.LG"
+          ],
+          "summary": "Acoustic biomarkers show promise for detecting Alzheimer's Disease (AD), yet whether the cues driving diagnostic AI align with those salient to human listeners is underexplored across languages and...",
+          "url": "https://arxiv.org/abs/2607.23977v1"
+        }
+      ]
+    },
     {
       "date": "2026-07-27",
       "papersFrom": "July 26, 2026",
