@@ -1,6 +1,24 @@
 {
-  "generated": "2026-07-29T10:26:06Z",
+  "generated": "2026-07-30T08:56:08Z",
   "days": [
+    {
+      "date": "2026-07-30",
+      "papersFrom": "July 29, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "An Attention-Based Framework for Alzheimers Disease Classification Using Resting-State fMRI",
+          "authors": "Harshiddhi Pathak, Gowtham Reddy N, Mrinal Acharya, Manjunatha Mahadevappa",
+          "source": "arXiv",
+          "tags": [
+            "eess.IV",
+            "cs.AI"
+          ],
+          "summary": "Accurate identification of Alzheimers disease (AD) using resting-state functional magnetic resonance imaging (rs-fMRI) remains challenging due to the high dimensionality, noise, and complex inter-r...",
+          "url": "https://arxiv.org/abs/2607.26746v1"
+        }
+      ]
+    },
     {
       "date": "2026-07-29",
       "papersFrom": "July 28, 2026",
