@@ -1,6 +1,24 @@
 {
-  "generated": "2026-08-03T10:27:26Z",
+  "generated": "2026-08-04T14:56:33Z",
   "days": [
+    {
+      "date": "2026-08-04",
+      "papersFrom": "August 03, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Deep Learning-Based Estimation of Ground Reaction Forces in Parkinsonian Gait Using an Optimized Set of IMU Data",
+          "authors": "Run Lin, Yingtian Tang, Jiawen Xu, Dongfei Huo, Lefan Wang et al. (9 authors)",
+          "source": "arXiv",
+          "tags": [
+            "cs.LG",
+            "eess.SP"
+          ],
+          "summary": "Accurate gait analysis in Parkinson's disease (PD) typically relies on laboratory-based systems to capture biomechanical data, such as ground reaction forces (GRFs). Estimating GRFs using inertial ...",
+          "url": "https://arxiv.org/abs/2608.02408v1"
+        }
+      ]
+    },
     {
       "date": "2026-08-03",
       "papersFrom": "August 02, 2026",
