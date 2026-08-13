@@ -1,6 +1,24 @@
 {
-  "generated": "2026-08-12T10:56:23Z",
+  "generated": "2026-08-13T10:56:06Z",
   "days": [
+    {
+      "date": "2026-08-13",
+      "papersFrom": "August 12, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "A comparison of CNN architectures for Alzheimer's disease detection in single-view MRI scans",
+          "authors": "Hiram Zuniga, Ulises Orozco-Rosas, Kenia Picos",
+          "source": "arXiv",
+          "tags": [
+            "eess.IV",
+            "cs.CV"
+          ],
+          "summary": "Alzheimer's disease is a leading cause of death with no cure. Therefore, early detection is critical to slow progression and preserve quality of life. Diagnosis relies on medical history, cognitive...",
+          "url": "https://arxiv.org/abs/2608.11762v1"
+        }
+      ]
+    },
     {
       "date": "2026-08-12",
       "papersFrom": "August 11, 2026",
