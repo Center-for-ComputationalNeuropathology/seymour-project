@@ -1,6 +1,24 @@
 {
-  "generated": "2026-08-13T10:56:06Z",
+  "generated": "2026-08-14T10:56:19Z",
   "days": [
+    {
+      "date": "2026-08-14",
+      "papersFrom": "August 13, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Motor, Cognitive, or Corpus? What Survives Cross-Lingual Transfer in Speech-Based Parkinsons Disease Detection",
+          "authors": "Serli Kopar, Sam Gijsen, Abner Hernandez, Paula Andrea Perez-Toro, Kerstin Ritter",
+          "source": "arXiv",
+          "tags": [
+            "cs.CL",
+            "eess.AS"
+          ],
+          "summary": "Self-supervised learning (SSL) speech representations achieve strong performance for Parkinson's disease (PD) detection within individual corpora. However, it remains unclear whether these models c...",
+          "url": "https://arxiv.org/abs/2608.13425v1"
+        }
+      ]
+    },
     {
       "date": "2026-08-13",
       "papersFrom": "August 12, 2026",
