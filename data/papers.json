@@ -1,6 +1,24 @@
 {
-  "generated": "2026-08-18T11:56:01Z",
+  "generated": "2026-08-19T11:56:02Z",
   "days": [
+    {
+      "date": "2026-08-19",
+      "papersFrom": "August 18, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Delta2Gamma: Band-Wise Adaptive Contrastive Learning of EEG for Alzheimer's Disease Detection",
+          "authors": "Chanwoo Park, Chanwoo Kim",
+          "source": "arXiv",
+          "tags": [
+            "cs.LG",
+            "cs.AI"
+          ],
+          "summary": "Low-cost, scalable screening for dementia remains an open problem. Imaging-based diagnosis is costly and hard to deploy widely. Electroencephalography (EEG) is portable and inexpensive, but its rec...",
+          "url": "https://arxiv.org/abs/2608.17231v1"
+        }
+      ]
+    },
     {
       "date": "2026-08-18",
       "papersFrom": "August 17, 2026",
