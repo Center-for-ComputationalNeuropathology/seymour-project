@@ -1,6 +1,24 @@
 {
-  "generated": "2026-08-26T15:05:03Z",
+  "generated": "2026-08-27T09:10:38Z",
   "days": [
+    {
+      "date": "2026-08-27",
+      "papersFrom": "August 26, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "PANDA - Prototype-Anchored Alignment for Partially Unpaired Multimodal Learning, with Applications to Alzheimers MRI and TCGA Pathology",
+          "authors": "Sheethal Bhat, Mahfuzur Rahman Chowdhury, Paula Andrea Perez-Toro, Stephan Wunderlich, Rose Dawn Bharat et al. (7 authors)",
+          "source": "arXiv",
+          "tags": [
+            "cs.CV",
+            "cs.AI"
+          ],
+          "summary": "Multimodal medical prediction often faces incomplete pairing: auxiliary modalities with complementary signal are available for only a subset of subjects (or none) and cannot be assumed at deploymen...",
+          "url": "https://arxiv.org/abs/2608.25970v1"
+        }
+      ]
+    },
     {
       "date": "2026-08-26",
       "papersFrom": "August 25, 2026",
