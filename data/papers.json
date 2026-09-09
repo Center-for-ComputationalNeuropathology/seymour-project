@@ -1,6 +1,33 @@
 {
-  "generated": "2026-09-08T09:38:47Z",
+  "generated": "2026-09-09T09:34:24Z",
   "days": [
+    {
+      "date": "2026-09-09",
+      "papersFrom": "September 08, 2026",
+      "total": 2,
+      "papers": [
+        {
+          "title": "An Evidence-Aware Framework for EEG Microstate Analysis: Improved Sensitivity to Alzheimer's Disease and Ageing",
+          "authors": "Kaidong Wu, Haili Ye, Ptolemaios G Sarrigiannis, Daniel J Blackburn, Fei He",
+          "source": "arXiv",
+          "tags": [
+            "q-bio.NC"
+          ],
+          "summary": "Electroencephalography (EEG) microstate analysis commonly converts each scalp topography into a winner-take-all hard label and summarises the resulting sequence using duration, occurrence, coverage...",
+          "url": "https://arxiv.org/abs/2609.08500v1"
+        },
+        {
+          "title": "Supervised Cross-Modal Feature Alignment for Zero-Wearable Freezing of Gait Detection in Parkinsonism",
+          "authors": "Aryan Singh, Chandan Biswas",
+          "source": "arXiv",
+          "tags": [
+            "cs.CV"
+          ],
+          "summary": "Objective assessment of Freezing of Gait (FoG) in Parkinson's disease (PD) relies predominantly on wearable Inertial Measurement Units (IMUs). While IMUs provide optimal kinematic precision, mandat...",
+          "url": "https://arxiv.org/abs/2609.08317v1"
+        }
+      ]
+    },
     {
       "date": "2026-09-08",
       "papersFrom": "September 07, 2026",
