@@ -1,6 +1,23 @@
 {
-  "generated": "2026-09-09T09:34:24Z",
+  "generated": "2026-09-10T09:32:36Z",
   "days": [
+    {
+      "date": "2026-09-10",
+      "papersFrom": "September 09, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Robust Rank Aggregation for Multimodal Speech-Based Alzheimer's Disease Detection",
+          "authors": "Zemin Jin, Tomoko Matsui",
+          "source": "arXiv",
+          "tags": [
+            "cs.SD"
+          ],
+          "summary": "Speech-based Alzheimer's disease (AD) detection has recently benefited from multimodal foundation-model representations that integrate complementary acoustic and linguistic information. However, co...",
+          "url": "https://arxiv.org/abs/2609.09948v1"
+        }
+      ]
+    },
     {
       "date": "2026-09-09",
       "papersFrom": "September 08, 2026",
