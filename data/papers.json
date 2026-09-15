@@ -1,11 +1,23 @@
 {
-  "generated": "2026-09-15T18:28:18Z",
+  "generated": "2026-09-15T21:27:40Z",
   "days": [
     {
       "date": "2026-09-15",
       "papersFrom": "September 14, 2026",
-      "total": 0,
-      "papers": []
+      "total": 1,
+      "papers": [
+        {
+          "title": "Anatomical Grounding and Leakage-Aware Multimodal Contrastive Learning for Alzheimer's Disease Classification from Structural MRI",
+          "authors": "Paul-Gabriel Nicolae, Irina Georgiana Mocanu",
+          "source": "arXiv",
+          "tags": [
+            "cs.CV",
+            "cs.AI"
+          ],
+          "summary": "Deep networks trained on structural MRI for Alzheimer's disease (AD) staging often reach reasonable accuracy while attending to anatomically irrelevant regions, and multimodal models that add clini...",
+          "url": "https://arxiv.org/abs/2609.15888v1"
+        }
+      ]
     },
     {
       "date": "2026-09-14",
