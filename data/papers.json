@@ -1,11 +1,23 @@
 {
-  "generated": "2026-09-16T03:01:39Z",
+  "generated": "2026-09-16T12:58:32Z",
   "days": [
     {
       "date": "2026-09-16",
       "papersFrom": "September 15, 2026",
-      "total": 0,
-      "papers": []
+      "total": 1,
+      "papers": [
+        {
+          "title": "CareMirror: Bringing Caregiver Wellbeing into the Dementia Care Ecosystem",
+          "authors": "Jiayue Melissa Shi, Ethan Nguyen, Drishti Goel, Upasana Natarajan, Shashwat Srivatsa et al. (10 authors)",
+          "source": "arXiv",
+          "tags": [
+            "cs.HC",
+            "cs.AI"
+          ],
+          "summary": "Family caregivers of people living with dementia shoulder emotional and practical responsibilities, yet their own wellbeing often remains peripheral to dementia care. We built CareMirror, an envisi...",
+          "url": "https://arxiv.org/abs/2609.17434v1"
+        }
+      ]
     },
     {
       "date": "2026-09-15",
