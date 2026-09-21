@@ -1,6 +1,12 @@
 {
-  "generated": "2026-09-20T12:56:24Z",
+  "generated": "2026-09-21T16:56:31Z",
   "days": [
+    {
+      "date": "2026-09-21",
+      "papersFrom": "September 20, 2026",
+      "total": 0,
+      "papers": []
+    },
     {
       "date": "2026-09-20",
       "papersFrom": "September 19, 2026",
