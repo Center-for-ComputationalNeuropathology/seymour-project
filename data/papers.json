@@ -1,6 +1,34 @@
 {
-  "generated": "2026-09-22T12:58:48Z",
+  "generated": "2026-09-23T12:56:24Z",
   "days": [
+    {
+      "date": "2026-09-23",
+      "papersFrom": "September 22, 2026",
+      "total": 2,
+      "papers": [
+        {
+          "title": "MMAP: Multimodal Missing-Aware Pretraining for Longitudinal Alzheimer's Prediction",
+          "authors": "Fiona Kekwick, Matthew Baugh, Bernhard Kainz, Paul M. Matthews, Wenjia Bai",
+          "source": "arXiv",
+          "tags": [
+            "cs.CV",
+            "cs.LG"
+          ],
+          "summary": "Clinical decision making heavily relies on predicting the disease progression trajectory by seeking to understand patient's health status which is characterised by multimodal medical data. AI holds...",
+          "url": "https://arxiv.org/abs/2609.26617v1"
+        },
+        {
+          "title": "Governed AI-Agent Coordination for Dementia Care: Architecture, Safety Contracts, and Evidence-Derived Workflow Verification",
+          "authors": "Francesca Medda, Hui Gong",
+          "source": "arXiv",
+          "tags": [
+            "cs.MA"
+          ],
+          "summary": "Dementia care increasingly involves connected sensors, medication devices, electronic records, and assistive technologies. Interoperability can transport observations but cannot maintain an account...",
+          "url": "https://arxiv.org/abs/2609.25956v1"
+        }
+      ]
+    },
     {
       "date": "2026-09-22",
       "papersFrom": "September 21, 2026",
