@@ -1,6 +1,24 @@
 {
-  "generated": "2026-09-23T12:56:24Z",
+  "generated": "2026-09-25T12:56:07Z",
   "days": [
+    {
+      "date": "2026-09-25",
+      "papersFrom": "September 24, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Segment-Level Risk Discovery in Online Handwriting for Alzheimer's Disease Detection",
+          "authors": "Changqing Gong, Huafeng Qin, Mounîm A. El-Yacoubi",
+          "source": "arXiv",
+          "tags": [
+            "cs.CV",
+            "cs.AI"
+          ],
+          "summary": "Online handwriting provides a non-invasive and low-cost behavioral biomarker for Alzheimer's disease (AD) detection, as it reflects both cognitive planning and fine motor control. Existing handwrit...",
+          "url": "https://arxiv.org/abs/2609.29384v1"
+        }
+      ]
+    },
     {
       "date": "2026-09-23",
       "papersFrom": "September 22, 2026",
