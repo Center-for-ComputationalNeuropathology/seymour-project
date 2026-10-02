@@ -1,6 +1,34 @@
 {
-  "generated": "2026-10-01T12:58:36Z",
+  "generated": "2026-10-02T12:56:26Z",
   "days": [
+    {
+      "date": "2026-10-02",
+      "papersFrom": "October 01, 2026",
+      "total": 2,
+      "papers": [
+        {
+          "title": "Beyond Decodability: Do Acoustic Factors Drive Predictions in Speech-Based Alzheimer's Assessment?",
+          "authors": "Serli Kopar, Alkis Koudounas, Roshan P. Rane, Sam Gijsen, Paula A. Perez-Toro et al. (6 authors)",
+          "source": "arXiv",
+          "tags": [
+            "cs.SD",
+            "cs.CL"
+          ],
+          "summary": "Speech-based Alzheimer's disease (AD) assessments increasingly rely on pretrained self-supervised learning (SSL) models that learn acoustic representations directly from raw audio, exposing the mod...",
+          "url": "https://arxiv.org/abs/2610.01846v1"
+        },
+        {
+          "title": "Quantitative Assessment of Hemispheric Asymmetry in Alzheimer's Disease and Healthy Brains via QSM-Derived Biomarkers: A Proof of Concept Study",
+          "authors": "Sadad Hasan, Prantik Paul, Maruf Ahmed",
+          "source": "arXiv",
+          "tags": [
+            "eess.SP"
+          ],
+          "summary": "Studying brain lateralization and the resulting hemispheric asymmetry has been a topic of interest for many researchers. Very few studies have focused on differences in brain lateralization and hem...",
+          "url": "https://arxiv.org/abs/2610.01341v1"
+        }
+      ]
+    },
     {
       "date": "2026-10-01",
       "papersFrom": "September 30, 2026",
