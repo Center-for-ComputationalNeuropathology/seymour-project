@@ -1,10 +1,27 @@
 {
-  "generated": "2026-10-06T12:56:31Z",
+  "generated": "2026-10-07T12:56:28Z",
   "days": [
     {
+      "date": "2026-10-07",
+      "papersFrom": "October 06, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Entropy-Guided Reverse-Causal AI to Identify Upstream Bottleneck Genes for Alzheimer's Drug Discovery",
+          "authors": "Victor O. K. Li, Jacqueline C. K. Lam, Yang Han, Lawrence Y. L. Cheung",
+          "source": "arXiv",
+          "tags": [
+            "cs.CE"
+          ],
+          "summary": "Identifying upstream regulators that connect several disease processes to therapeutic interventions is a central objective in Alzheimer's disease drug discovery. We propose an entropy-guided revers...",
+          "url": "https://arxiv.org/abs/2610.08736v1"
+        }
+      ]
+    },
+    {
       "date": "2026-10-06",
-      "papersFrom": "October 05, 2026",
-      "total": 0,
+      "papersFrom": "October 6, 2026",
+      "total": 5,
       "papers": []
     },
     {
