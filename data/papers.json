@@ -1,6 +1,34 @@
 {
-  "generated": "2026-10-07T12:56:28Z",
+  "generated": "2026-10-08T10:56:42Z",
   "days": [
+    {
+      "date": "2026-10-08",
+      "papersFrom": "October 07, 2026",
+      "total": 2,
+      "papers": [
+        {
+          "title": "Predicting Long-Term ADAS-Cog Change From Early Response After Repetitive Transcranial Magnetic Stimulation in Alzheimer Disease",
+          "authors": "Mohammad Alamgir Chowdhury, Hina Shaheen",
+          "source": "arXiv",
+          "tags": [
+            "stat.AP",
+            "q-bio.NC"
+          ],
+          "summary": "Early cognitive response after repetitive transcranial magnetic stimulation (rTMS) may predict later cognitive change in Alzheimer disease, but the incremental value of domain-specific response is ...",
+          "url": "https://arxiv.org/abs/2610.09629v1"
+        },
+        {
+          "title": "Connectome-Based Modeling of Mutation-Specific Amyloid-$β$ Aggregation in Familial Alzheimer's Disease",
+          "authors": "Mohammad Alamgir Chowdhury, Hina Shaheen",
+          "source": "arXiv",
+          "tags": [
+            "q-bio.NC"
+          ],
+          "summary": "Familial amyloid-$β$ (A$β$) variants alter aggregation kinetics, but their interaction with structural brain connectivity remains incompletely understood. We developed a mutation-aware mechanistic ...",
+          "url": "https://arxiv.org/abs/2610.09583v1"
+        }
+      ]
+    },
     {
       "date": "2026-10-07",
       "papersFrom": "October 06, 2026",
