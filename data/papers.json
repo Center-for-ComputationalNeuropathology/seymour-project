@@ -1,6 +1,24 @@
 {
-  "generated": "2026-10-08T10:56:42Z",
+  "generated": "2026-10-09T12:56:27Z",
   "days": [
+    {
+      "date": "2026-10-09",
+      "papersFrom": "October 08, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "CoPoE: Multimodal Fusion via Decomposable Disease-Coordinate Product-of-Experts for Missing-Modality Alzheimer's Diagnosis",
+          "authors": "Chihun An, Ikbeom Jang",
+          "source": "arXiv",
+          "tags": [
+            "cs.LG",
+            "cs.CV"
+          ],
+          "summary": "Multimodal Alzheimer's disease (AD) diagnosis benefits from integrating heterogeneous clinical, imaging, genomic, and biomarker evidence, but clinical cohorts frequently suffer from irregular modal...",
+          "url": "https://arxiv.org/abs/2610.11394v1"
+        }
+      ]
+    },
     {
       "date": "2026-10-08",
       "papersFrom": "October 07, 2026",
