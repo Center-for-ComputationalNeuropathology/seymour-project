@@ -1,6 +1,23 @@
 {
-  "generated": "2026-10-13T10:56:11Z",
+  "generated": "2026-10-14T10:56:16Z",
   "days": [
+    {
+      "date": "2026-10-14",
+      "papersFrom": "October 13, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Brain Age Gap Progression in Individuals at Risk for Neurodegeneration",
+          "authors": "Jason Scheffel, Saurabh Sihag",
+          "source": "arXiv",
+          "tags": [
+            "q-bio.QM"
+          ],
+          "summary": "Neuroimaging is a widely used modality for characterizing neurodegeneration in various health conditions. Brain age gap has emerged as a promising biomarker for monitoring brain health from neuroim...",
+          "url": "https://arxiv.org/abs/2610.18794v1"
+        }
+      ]
+    },
     {
       "date": "2026-10-13",
       "papersFrom": "October 12, 2026",
