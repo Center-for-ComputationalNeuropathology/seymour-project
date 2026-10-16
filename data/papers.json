@@ -1,6 +1,23 @@
 {
-  "generated": "2026-10-15T18:56:05Z",
+  "generated": "2026-10-16T10:56:17Z",
   "days": [
+    {
+      "date": "2026-10-16",
+      "papersFrom": "October 15, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Transferable conditional brain charts link cortico-subcortical structure to Alzheimer's disease progression",
+          "authors": "Nitin Sharma, Sicheng Dai, Francesco A. Mallus, Atharva Kand, Marc Lemnitzer et al. (32 authors)",
+          "source": "arXiv",
+          "tags": [
+            "q-bio.NC"
+          ],
+          "summary": "Normative models chart how brain measures vary across the lifespan, expressing each individual as a deviation from a healthy reference. However, most regional models of cortical thickness disregard...",
+          "url": "https://arxiv.org/abs/2610.21660v1"
+        }
+      ]
+    },
     {
       "date": "2026-10-15",
       "papersFrom": "October 14, 2026",
