@@ -1,11 +1,95 @@
 {
-  "generated": "2026-10-19T16:56:17Z",
+  "generated": "2026-10-20T14:56:20Z",
   "days": [
     {
+      "date": "2026-10-20",
+      "papersFrom": "October 19, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "ITU-DESC: a missingness-aware machine-learning dementia risk score in the UK Biobank cohort",
+          "authors": "Abdullah Kavaklı, Faik Boray Tek",
+          "source": "arXiv",
+          "tags": [
+            "cs.LG"
+          ],
+          "summary": "Background: Existing dementia risk scores rely on fixed, pre-selected features and linear models, or ignore bias from informative missingness in cohort data. Here we introduce the Istanbul Technica...",
+          "url": "https://arxiv.org/abs/2610.26604v1"
+        }
+      ]
+    },
+    {
       "date": "2026-10-19",
-      "papersFrom": "October 18, 2026",
-      "total": 0,
-      "papers": []
+      "papersFrom": "October 19, 2026",
+      "total": 7,
+      "papers": [
+        {
+          "title": "Ten protein panel predicts ALS from plasma with high accuracy",
+          "authors": "Kim et al.",
+          "source": null,
+          "tags": [
+            "Nature Communications (Oct 19, 2026)"
+          ],
+          "summary": "A 10-protein plasma panel achieves high accuracy for ALS diagnosis. Blood-based biomarker panel with strong clinical translation potential for early ALS detection.",
+          "url": ""
+        },
+        {
+          "title": "From prediction to mechanism: Explainable AI uncovers plasma and CSF proteomic signatures of Alzheimer's disease",
+          "authors": "_Journal of Proteomics (Oct 15, 2026)_",
+          "source": null,
+          "tags": [],
+          "summary": "Moves beyond black-box prediction — uses explainable AI to identify interpretable proteomic signatures in both plasma and CSF for AD. Bridges the gap between AI prediction and mechanistic understanding.",
+          "url": ""
+        },
+        {
+          "title": "Automated differentiation for parkinsonism using clinical structural MRI: A multicenter study",
+          "authors": "Zhou et al.",
+          "source": null,
+          "tags": [
+            "npj Digital Medicine (Oct 16, 2026)"
+          ],
+          "summary": "Multicenter validation of automated MRI-based differentiation of parkinsonian syndromes. Practical clinical tool for distinguishing PD from atypical parkinsonism using standard structural MRI.",
+          "url": ""
+        },
+        {
+          "title": "CircuitATLAS: Agentic reasoning over a systems neuroscience knowledge graph for target discovery in circuitopathies",
+          "authors": "Ocana-Santero",
+          "source": null,
+          "tags": [
+            "arXiv (Oct 2026)"
+          ],
+          "summary": "Uses agentic AI reasoning over a systems neuroscience knowledge graph to discover therapeutic targets for brain circuitopathies. Novel approach combining knowledge graphs with AI-driven hypothesis generation.",
+          "url": ""
+        },
+        {
+          "title": "HybridDualPathNet: Cross-Fusion Attention of EfficientNetV2 and Swin Transformer for Brain MRI Classification of Alzheimer's and Parkinson's Disease",
+          "authors": "_arXiv (Oct 12, 2026)_",
+          "source": null,
+          "tags": [],
+          "summary": "Dual-architecture deep learning model combining EfficientNetV2 and Swin Transformer with cross-fusion attention for differentiating AD from PD using brain MRI.",
+          "url": ""
+        },
+        {
+          "title": "Leakage-Controlled Multimodal Learning for Diagnosis and Progression Prediction in Alzheimer's Disease Research",
+          "authors": "Otapo et al.",
+          "source": null,
+          "tags": [
+            "Knowledge-Based Systems (arXiv)"
+          ],
+          "summary": "Addresses data leakage in multimodal AD studies — a common pitfall that inflates performance. Proposes leakage-controlled framework for diagnosis and progression prediction.",
+          "url": ""
+        },
+        {
+          "title": "Multimodal patch-based deep learning for early Alzheimer's disease classification using MRI and PET",
+          "authors": "Ke et al.",
+          "source": null,
+          "tags": [
+            "Scientific Reports (Oct 6, 2026)"
+          ],
+          "summary": "Patch-based deep learning combining MRI and PET for early AD classification. Patch-level analysis may capture subtle regional changes before whole-brain patterns emerge.",
+          "url": ""
+        }
+      ]
     },
     {
       "date": "2026-10-18",
