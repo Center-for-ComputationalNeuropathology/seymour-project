@@ -1,6 +1,33 @@
 {
-  "generated": "2026-10-20T14:56:20Z",
+  "generated": "2026-10-21T10:56:28Z",
   "days": [
+    {
+      "date": "2026-10-21",
+      "papersFrom": "October 20, 2026",
+      "total": 2,
+      "papers": [
+        {
+          "title": "NarraSpace: Multimodal Scene-Grounded Evidence for Picture-Description Dementia Classification",
+          "authors": "Qingming Li, Ruiyan Sun, Satoshi Nakamura",
+          "source": "arXiv",
+          "tags": [
+            "cs.CL"
+          ],
+          "summary": "Picture-description dementia classification uses a shared visual scene, but a transcript-level prediction alone does not identify the scene evidence underlying its inputs. NarraSpace links words an...",
+          "url": "https://arxiv.org/abs/2610.28616v1"
+        },
+        {
+          "title": "HypTI: Hyperbolic Geometry-Aware Multimodal Feature Fusion Framework for Dementia Detection Based on Tabular-Image Data",
+          "authors": "Jianfei Xu, Huizhi Liang, Judith Harrison, John-Paul Taylor, Jaume Bacardit et al. (6 authors)",
+          "source": "arXiv",
+          "tags": [
+            "cs.AI"
+          ],
+          "summary": "AI-assisted dementia detection usually requires multimodal fusion of diverse data, such as clinical tabular assessments and neuroimaging data. However, most existing approaches perform feature fusi...",
+          "url": "https://arxiv.org/abs/2610.27941v1"
+        }
+      ]
+    },
     {
       "date": "2026-10-20",
       "papersFrom": "October 19, 2026",
