@@ -1,6 +1,33 @@
 {
-  "generated": "2026-10-26T20:56:21Z",
+  "generated": "2026-10-27T10:56:44Z",
   "days": [
+    {
+      "date": "2026-10-27",
+      "papersFrom": "October 26, 2026",
+      "total": 2,
+      "papers": [
+        {
+          "title": "Faithful Explanations under Missing Modalities in Multimodal Dementia Prognosis",
+          "authors": "Firuz Kamalov",
+          "source": "arXiv",
+          "tags": [
+            "cs.AI"
+          ],
+          "summary": "Large language models are increasingly used to turn the feature attributions of multimodal prognostic models into narratives for clinicians, yet costly modalities such as amyloid PET and cerebrospi...",
+          "url": "https://arxiv.org/abs/2610.35430v1"
+        },
+        {
+          "title": "Retrieval-Augmented Parkinson's Disease Classification from Resting-State Functional Connectivity",
+          "authors": "Tara Niknam, Sana Hassan Imam, Daniel Kristanto",
+          "source": "arXiv",
+          "tags": [
+            "q-bio.NC"
+          ],
+          "summary": "Altered resting-state functional connectivity (FC) is a candidate marker for the diagnosis of Parkinson's disease (PD). Publicly available PD datasets, however, are small and fragmented across site...",
+          "url": "https://arxiv.org/abs/2610.35107v1"
+        }
+      ]
+    },
     {
       "date": "2026-10-26",
       "papersFrom": "October 25, 2026",
