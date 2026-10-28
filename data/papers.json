@@ -1,6 +1,24 @@
 {
-  "generated": "2026-10-27T10:56:44Z",
+  "generated": "2026-10-28T12:56:31Z",
   "days": [
+    {
+      "date": "2026-10-28",
+      "papersFrom": "October 27, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Systematic Morphometric Brain Autoencoding for Representation Learning in Neurodegenerative Diseases",
+          "authors": "Nuria Balbás-Esteban, Albert Belenguer-Llorens, Elaheh Moradi, Jussi Tohka, Vanessa Gómez-Verdejo et al. (6 authors)",
+          "source": "arXiv",
+          "tags": [
+            "cs.CV",
+            "cs.LG"
+          ],
+          "summary": "Early identification of neurodegenerative disorders using structural T1-weighted MRI is essential for timely clinical intervention, yet supervised deep learning models often struggle to generalize ...",
+          "url": "https://arxiv.org/abs/2610.37074v1"
+        }
+      ]
+    },
     {
       "date": "2026-10-27",
       "papersFrom": "October 26, 2026",
