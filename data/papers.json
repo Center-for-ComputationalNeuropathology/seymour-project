@@ -1,6 +1,23 @@
 {
-  "generated": "2026-10-29T12:56:58Z",
+  "generated": "2026-10-30T12:56:04Z",
   "days": [
+    {
+      "date": "2026-10-30",
+      "papersFrom": "October 29, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "BRIDGE: Learning Brain-Gut Metabolic Evidence for Alzheimer's Disease Diagnosis",
+          "authors": "Pengli Zhu, Ruxi Chang, Tianliang Yao, Yu Jiang, Shengyuan Liu et al. (10 authors)",
+          "source": "arXiv",
+          "tags": [
+            "cs.CV"
+          ],
+          "summary": "Alzheimer's disease (AD) diagnosis may benefit from gut metabolic information associated with brain-gut interactions, yet existing models largely analyze cerebral glucose metabolism alone. Although...",
+          "url": "https://arxiv.org/abs/2610.39520v1"
+        }
+      ]
+    },
     {
       "date": "2026-10-29",
       "papersFrom": "October 28, 2026",
