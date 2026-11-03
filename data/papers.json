@@ -1,6 +1,23 @@
 {
-  "generated": "2026-11-02T12:56:03Z",
+  "generated": "2026-11-03T12:56:03Z",
   "days": [
+    {
+      "date": "2026-11-03",
+      "papersFrom": "November 02, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Stage-aware Multimodal Brain Graph Contrastive Learning for Neurodegenerative Disorder Diagnosis",
+          "authors": "Jingjing Zhou, Chenxuan Meng, Ciyuan Peng, Jing Ren, Feng Xia",
+          "source": "arXiv",
+          "tags": [
+            "cs.AI"
+          ],
+          "summary": "Neurodegenerative disorders are characterized by their progressive nature, with distinct stages that require precise identification and tracking of progression trajectories for accurate diagnosis. ...",
+          "url": "https://arxiv.org/abs/2611.02771v1"
+        }
+      ]
+    },
     {
       "date": "2026-11-02",
       "papersFrom": "November 01, 2026",
