@@ -1,6 +1,23 @@
 {
-  "generated": "2026-11-04T16:56:04Z",
+  "generated": "2026-11-05T12:56:04Z",
   "days": [
+    {
+      "date": "2026-11-05",
+      "papersFrom": "November 04, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Uncertainty aware prediction from incomplete clinical records: a conformal prediction study of Parkinsonian classification using C-OPN data",
+          "authors": "Jiaqi Bi, Jialu Sun, Hanrui Dou, Jiaqi Yuan, Chengqian Xian et al. (7 authors)",
+          "source": "arXiv",
+          "tags": [
+            "stat.AP"
+          ],
+          "summary": "Background: Incomplete clinical records and imbalanced diagnostic groups complicate Parkinsonian classification. We examined whether incomplete records could support useful lists of diagnostic poss...",
+          "url": "https://arxiv.org/abs/2611.05812v1"
+        }
+      ]
+    },
     {
       "date": "2026-11-04",
       "papersFrom": "November 03, 2026",
