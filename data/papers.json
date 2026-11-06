@@ -1,6 +1,23 @@
 {
-  "generated": "2026-11-05T12:56:04Z",
+  "generated": "2026-11-06T12:56:11Z",
   "days": [
+    {
+      "date": "2026-11-06",
+      "papersFrom": "November 05, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Improving the Clinical Generalizability of Machine Learning-Based Alzheimer's Disease Detection Across Domains and Modalities: A Comprehensive Review",
+          "authors": "Yingchao Huang, Yuhan Su, Xin Wang, Shanshan Yao",
+          "source": "arXiv",
+          "tags": [
+            "eess.AS"
+          ],
+          "summary": "Objective: This review aims to provide a comprehensive synthesis of domain adaptation (DA) and domain general- ization (DG) strategies for AD detection. It focuses on their potential to improve the...",
+          "url": "https://arxiv.org/abs/2611.08188v1"
+        }
+      ]
+    },
     {
       "date": "2026-11-05",
       "papersFrom": "November 04, 2026",
