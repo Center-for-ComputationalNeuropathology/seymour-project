@@ -1,6 +1,34 @@
 {
-  "generated": "2026-11-09T12:56:03Z",
+  "generated": "2026-11-10T12:56:03Z",
   "days": [
+    {
+      "date": "2026-11-10",
+      "papersFrom": "November 09, 2026",
+      "total": 2,
+      "papers": [
+        {
+          "title": "A Computational Brainsphere Model for the Simulation of Alzheimer's Disease",
+          "authors": "Angela Kunoth, Anna Weller, Tolunay Yilmaz",
+          "source": "arXiv",
+          "tags": [
+            "math.NA"
+          ],
+          "summary": "Nowadays, there are different medical imaging techniques to collect data about the progression of",
+          "url": "https://arxiv.org/abs/2611.12084v1"
+        },
+        {
+          "title": "MambaPD: Bidirectional Selective State Space Model for Parkinson's Disease Detection from Resting-State EEG",
+          "authors": "Ayesha Zulfiqar",
+          "source": "arXiv",
+          "tags": [
+            "cs.LG",
+            "eess.SP"
+          ],
+          "summary": "Typical diagnosis of Parkinson's disease (PD) occurs only after significant dopaminergic loss, while resting-state EEG abnormalities like alpha slowing and reduced coherence occur earlier. While ma...",
+          "url": "https://arxiv.org/abs/2611.12026v1"
+        }
+      ]
+    },
     {
       "date": "2026-11-09",
       "papersFrom": "November 08, 2026",
