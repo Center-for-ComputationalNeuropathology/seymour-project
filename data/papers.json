@@ -1,6 +1,23 @@
 {
-  "generated": "2026-11-12T14:56:04Z",
+  "generated": "2026-11-13T12:56:03Z",
   "days": [
+    {
+      "date": "2026-11-13",
+      "papersFrom": "November 12, 2026",
+      "total": 1,
+      "papers": [
+        {
+          "title": "Morphological Simplification in Alzheimer's Disease: Computational Analysis and Identification From Connected Speech",
+          "authors": "Mohamed Zakaria Kurdi",
+          "source": "arXiv",
+          "tags": [
+            "cs.CL"
+          ],
+          "summary": "Purpose: Morphology is often regarded as relatively spared in Alzheimer's disease (AD) and is rarely modeled in connected speech. This study asked which morphological features distinguish speakers ...",
+          "url": "https://arxiv.org/abs/2611.16968v1"
+        }
+      ]
+    },
     {
       "date": "2026-11-12",
       "papersFrom": "November 11, 2026",
