@@ -1,11 +1,19 @@
 {
-  "generated": "2026-11-19T12:56:04Z",
+  "generated": "2026-11-19T13:18:47Z",
   "days": [
     {
       "date": "2026-11-19",
       "papersFrom": "November 18, 2026",
-      "total": 2,
+      "total": 3,
       "papers": [
+        {
+          "title": "N/A",
+          "authors": "_Unknown_",
+          "source": null,
+          "tags": [],
+          "summary": "",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43049192/"
+        },
         {
           "title": "One size does not fit all: session-specific effects of deep brain stimulation on hand-motor kinematics in Parkinson's disease",
           "authors": "Matthias Dold, Joana Pereira, Volker A. Coenen, Bastian Sajonz, Sophia Gimple et al. (8 authors)",
