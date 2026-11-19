@@ -1,18 +1,90 @@
 {
-  "generated": "2026-11-19T13:18:47Z",
+  "generated": "2026-11-19T15:00:32Z",
   "days": [
     {
       "date": "2026-11-19",
       "papersFrom": "November 18, 2026",
-      "total": 3,
+      "total": 10,
       "papers": [
         {
-          "title": "N/A",
-          "authors": "_Unknown_",
+          "title": "Digital Delivery of Apolipoprotein E Genotype and Phosphorylated Tau 217 Results: The eSMARTER Randomized Clinical Trial.",
+          "authors": "Jessica B Langbaum, Claire M Erickson, Carolyn M Langlois, Elisabeth M Wood, Brian L Egleston et al. (23 authors)",
           "source": null,
-          "tags": [],
-          "summary": "",
+          "tags": [
+            "JAMA neurology"
+          ],
+          "summary": "Patients are increasingly learning Alzheimer disease (AD) genetic and biomarker results through electronic health portals. Evaluation of alternative scalable delivery models for return of AD risk i...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43049195/"
+        },
+        {
+          "title": "The hippocampus as a latent diffusion engine for memory, perception and cognitive dysfunction.",
+          "authors": "David T Jones, Michael Breakspear",
+          "source": null,
+          "tags": [
+            "Brain : a journal of neurology"
+          ],
+          "summary": "The hippocampus is a central cognitive hub whose dysfunction contributes to most neurodegenerative dementias. Despite extensive knowledge of its anatomy, physiology and circuitry, a unifying accoun...",
           "url": "https://pubmed.ncbi.nlm.nih.gov/43049192/"
+        },
+        {
+          "title": "Context matters: serum neurofilament light chain, a diagnostic aid in amyotrophic lateral sclerosis.",
+          "authors": "Sean E Smith, Timothy M Miller, Robert C Bucelli",
+          "source": null,
+          "tags": [
+            "Brain : a journal of neurology"
+          ],
+          "summary": "",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43043867/"
+        },
+        {
+          "title": "TMEM106B analysis in diverse cohorts suggests no association with Parkinson's disease risk.",
+          "authors": "Henry Mauricio Chaparro-Solano, Sajanth Kanagasingam, Ziv Gan-Or, Konstantin Senkevich",
+          "source": null,
+          "tags": [
+            "Brain : a journal of neurology"
+          ],
+          "summary": "",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43043870/"
+        },
+        {
+          "title": "Hypothalamic volume and cell-type changes in ageing and Alzheimer's disease.",
+          "authors": "Doudou Yu, Jürgen Germann, Ghulam Murtaza, Kaitlyn H Hajdarovic, Kelsey R Babcock et al. (16 authors)",
+          "source": null,
+          "tags": [
+            "Nature"
+          ],
+          "summary": "Alterations in metabolism, stress response, sleep, circadian rhythms and neuroendocrine processes are key features of ageing and neurodegeneration",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43052445/"
+        },
+        {
+          "title": "Dual augmentation of STMN2 and GRN delays disease progression through coordinated axonal and neuroimmune support in ALS models.",
+          "authors": "Chen Liang, Tongtong Cui, Bingyu Cai, Yali Ding, Jinjie Chang et al. (12 authors)",
+          "source": null,
+          "tags": [
+            "Cell reports"
+          ],
+          "summary": "Amyotrophic lateral sclerosis (ALS) is a fatal neurodegenerative disorder primarily driven by TAR DNA-binding protein 43 (TDP-43) proteinopathy, which triggers early axonal disintegration and disru...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43043758/"
+        },
+        {
+          "title": "Generational gains in cognitive capacity and dementia incidence rates in Western countries.",
+          "authors": "Anders M Fjell, Edvard O S Grødem, Gabriela Lunansky, Didac Vidal-Piñeiro, Ole Rogeberg et al. (6 authors)",
+          "source": null,
+          "tags": [
+            "Nature medicine"
+          ],
+          "summary": "The risk of developing dementia at any given age has fallen steadily in Europe and the United States over recent decades. A key unresolved question is whether recent generations reach older age wit...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43045795/"
+        },
+        {
+          "title": "Integrated QTL mapping and CRISPR screening in pooled iPSC-derived microglia reveals genetic drivers of neurodegenerative risk.",
+          "authors": "Marta Perez-Alcantara, Sam J Washer, Yixi Chen, Juliette Steer, Daianna Gonzalez-Padilla et al. (16 authors)",
+          "source": null,
+          "tags": [
+            "Nature genetics"
+          ],
+          "summary": "Mounting evidence implicates microglia in neurodegeneration, but linking disease-associated genetic variants to target genes and cellular phenotypes is hindered by the inaccessibility of these cell...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43045849/"
         },
         {
           "title": "One size does not fit all: session-specific effects of deep brain stimulation on hand-motor kinematics in Parkinson's disease",
