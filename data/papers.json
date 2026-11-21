@@ -1,6 +1,33 @@
 {
-  "generated": "2026-11-20T13:31:12Z",
+  "generated": "2026-11-21T00:56:49Z",
   "days": [
+    {
+      "date": "2026-11-21",
+      "papersFrom": "November 20, 2026",
+      "total": 2,
+      "papers": [
+        {
+          "title": "Myelin pathology is a key feature of X-linked dystonia-parkinsonism.",
+          "authors": "Priya Prakash, Kerry C Limberg, Weimin Zhang, Yu Zhao, Klaudia F Laborc et al. (23 authors)",
+          "source": null,
+          "tags": [
+            "Cell"
+          ],
+          "summary": "X-linked dystonia-parkinsonism (XDP) is an adult-onset movement disorder predominantly affecting males of Filipino descent. It is caused by the insertion of a SINE-variable number of tandem repeat ...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43057229/"
+        },
+        {
+          "title": "Reinforced hippocampus-accumbens pathway marks a shift toward cognitive decline in aging.",
+          "authors": "Aurore Ribera, Brenda Fernandes-Dias, Larissa Yugay, Emma Deneuville, Manuel Dias-Silva et al. (14 authors)",
+          "source": null,
+          "tags": [
+            "Cell reports"
+          ],
+          "summary": "Aging triggers early functional alterations in brain circuits preceding cognitive impairment, yet the underlying mechanisms remain unaddressed. Spatial navigation and memory, among the earliest aff...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43056236/"
+        }
+      ]
+    },
     {
       "date": "2026-11-20",
       "papersFrom": "November 19, 2026",
