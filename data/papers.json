@@ -1,6 +1,33 @@
 {
-  "generated": "2026-11-22T13:30:19Z",
+  "generated": "2026-11-23T13:30:21Z",
   "days": [
+    {
+      "date": "2026-11-23",
+      "papersFrom": "November 22, 2026",
+      "total": 2,
+      "papers": [
+        {
+          "title": "Artificial Intelligence-Generated Content in Manuscripts Submitted to Annals of Neurology.",
+          "authors": "Robert G Kowalski, Stefan Sillau, Daniel Roe, Deborah A Hall, Kenneth L Tyler",
+          "source": null,
+          "tags": [
+            "Annals of neurology"
+          ],
+          "summary": "Since the large language model (LLM) program Chat Generative Pre-trained Transformer (ChatGPT) was introduced in November 2022, the use of artificial intelligence (AI) expanded rapidly in published...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43069559/"
+        },
+        {
+          "title": "Heparan sulfate sulfatases are essential for the patterning of human stem cell-derived midbrain dopaminergic neurons.",
+          "authors": "Chiara Tremolanti, Carmen Abaurre, Yu-Chun Chien, Luke F Gamon, Conor William Mitchell et al. (17 authors)",
+          "source": null,
+          "tags": [
+            "Nature communications"
+          ],
+          "summary": "Midbrain dopaminergic neurons (mDA) are selectively lost in Parkinson's disease, driving sustained efforts to generate bona fide mDA neurons from human-induced pluripotent stem cells (iPSCs) for re...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43069341/"
+        }
+      ]
+    },
     {
       "date": "2026-11-22",
       "papersFrom": "November 21, 2026",
