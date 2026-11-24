@@ -1,6 +1,83 @@
 {
-  "generated": "2026-11-23T13:30:21Z",
+  "generated": "2026-11-24T13:30:22Z",
   "days": [
+    {
+      "date": "2026-11-24",
+      "papersFrom": "November 23, 2026",
+      "total": 7,
+      "papers": [
+        {
+          "title": "Chromosome-scale genome assembly and annotation of",
+          "authors": "Jeffrey H Chiu, Nathan R Zemke, Xiaomeng Gao, B Maximiliano Garduño, Bing Yang et al. (16 authors)",
+          "source": null,
+          "tags": [
+            "Genome research"
+          ],
+          "summary": "High-quality reference genomes are essential for comparative and functional genomics yet remain unavailable for many emerging model organisms. Here, we report OctDeg2.0, a chromosome-scale genome a...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42933985/"
+        },
+        {
+          "title": "A step towards modelling amyotrophic lateral sclerosis in primates.",
+          "authors": "Albert C Ludolph, Liubov Novikova",
+          "source": null,
+          "tags": [
+            "eLife"
+          ],
+          "summary": "A new primate model offers a promising first step towards reproducing the spread of ALS pathology across synapses, although important differences from the stereotyped patterns observed in human dis...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43071439/"
+        },
+        {
+          "title": "Artificial Intelligence-Generated Content in Manuscripts Submitted to Annals of Neurology.",
+          "authors": "Robert G Kowalski, Stefan Sillau, Daniel Roe, Deborah A Hall, Kenneth L Tyler",
+          "source": null,
+          "tags": [
+            "Annals of neurology"
+          ],
+          "summary": "Since the large language model (LLM) program Chat Generative Pre-trained Transformer (ChatGPT) was introduced in November 2022, the use of artificial intelligence (AI) expanded rapidly in published...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43069559/"
+        },
+        {
+          "title": "High-throughput screening of patient iPSC-derived neurons identifies the gut microbial metabolites that attenuate Alzheimer's disease pathology.",
+          "authors": "Dhruv Gohel, Amit Kumar Gupta, Yichen Li, Zhibing Tan, Amy C Burrows et al. (15 authors)",
+          "source": null,
+          "tags": [
+            "Cell reports"
+          ],
+          "summary": "Gut microbiota-derived metabolites influence the gut-brain axis and may impact Alzheimer's disease (AD) pathology. However, the microbial metabolites involved in this process and their functional r...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43071539/"
+        },
+        {
+          "title": "snRNA-seq of a Huntington's disease mouse model indicates cell type-specific transcriptional disease signatures and disease-relevant pathways.",
+          "authors": "Dennis Feigenbutz, Miguel da Silva Padilha, Elena Evangelia Möller, Marco Niestroj, Kerstin Voelkl et al. (10 authors)",
+          "source": null,
+          "tags": [
+            "Cell reports"
+          ],
+          "summary": "A common feature of neurodegeneration is selective vulnerability, where certain neurons succumb to disease, while others remain spared. The molecular underpinnings of these differences remain elusi...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43071542/"
+        },
+        {
+          "title": "C16-ceramide exacerbates Tau pathology by interfering with Ppil2-mediated Grap2 degradation in Alzheimer's disease.",
+          "authors": "Xinhuang Lv, Tao Ye, Yunqiang Zhou, Xiaolan Liao, Zheyu Fang et al. (12 authors)",
+          "source": null,
+          "tags": [
+            "Cell reports"
+          ],
+          "summary": "Aberrant ceramide metabolism has been implicated in Alzheimer's disease (AD), but the underlying molecular mechanisms remain poorly understood. Here, we report that plasma C16-ceramide (C16) levels...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43071538/"
+        },
+        {
+          "title": "Heparan sulfate sulfatases are essential for the patterning of human stem cell-derived midbrain dopaminergic neurons.",
+          "authors": "Chiara Tremolanti, Carmen Abaurre, Yu-Chun Chien, Luke F Gamon, Conor William Mitchell et al. (17 authors)",
+          "source": null,
+          "tags": [
+            "Nature communications"
+          ],
+          "summary": "Midbrain dopaminergic neurons (mDA) are selectively lost in Parkinson's disease, driving sustained efforts to generate bona fide mDA neurons from human-induced pluripotent stem cells (iPSCs) for re...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43069341/"
+        }
+      ]
+    },
     {
       "date": "2026-11-23",
       "papersFrom": "November 22, 2026",
