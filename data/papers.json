@@ -1,6 +1,103 @@
 {
-  "generated": "2026-11-24T13:30:22Z",
+  "generated": "2026-11-25T13:31:09Z",
   "days": [
+    {
+      "date": "2026-11-25",
+      "papersFrom": "November 24, 2026",
+      "total": 9,
+      "papers": [
+        {
+          "title": "Clinical Impairment in Advanced Alzheimer's (High Alzheimer's Disease Neuropathological Change) Correlates with Quantitative Neurofibrillary Tangle Measures and Co-pathologies.",
+          "authors": "Paul A Yushkevich, John L Robinson, Helen Cai, Chinmayee Athalye, Xueying Lyu et al. (16 authors)",
+          "source": null,
+          "tags": [
+            "Annals of neurology"
+          ],
+          "summary": "The current diagnostic criteria for Alzheimer's disease (AD) define discrete biological stages of the disease. Whereas discrete staging simplifies diagnosis, treatment, and participant stratificati...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43080111/"
+        },
+        {
+          "title": "Motor neuron disease due to a novel PIK3R1 mutation.",
+          "authors": "Brice Calco, Colin L Sweeney, Joseph Steiner, Tongguang Wang, Tovah E Markowitz et al. (19 authors)",
+          "source": null,
+          "tags": [
+            "Brain : a journal of neurology"
+          ],
+          "summary": "Mutations in PIK3R1, which encodes the regulatory subunit (p85α) of class I phosphoinositide 3-kinase (PI3K), are associated with immunologic and developmental disorders, but their effects on the n...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43076871/"
+        },
+        {
+          "title": "Plasma Metabolic Proteomics Links Phenoconversion and Disease-Specific Brain",
+          "authors": "Ryul Kim, Heejung Kim, Seungmin Lee, Bora Jin, Seoyeon Kim et al. (9 authors)",
+          "source": null,
+          "tags": [
+            "Annals of neurology"
+          ],
+          "summary": "Cellular metabolic dysfunction has emerged as a key contributor to neurodegeneration, but its role in Lewy body disease (LBD), particularly during prodromal stages, remains unclear. We investigated...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43079749/"
+        },
+        {
+          "title": "Chromosome-scale genome assembly and annotation of",
+          "authors": "Jeffrey H Chiu, Nathan R Zemke, Xiaomeng Gao, B Maximiliano Garduño, Bing Yang et al. (16 authors)",
+          "source": null,
+          "tags": [
+            "Genome research"
+          ],
+          "summary": "High-quality reference genomes are essential for comparative and functional genomics yet remain unavailable for many emerging model organisms. Here, we report OctDeg2.0, a chromosome-scale genome a...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42933985/"
+        },
+        {
+          "title": "A step towards modelling amyotrophic lateral sclerosis in primates.",
+          "authors": "Albert C Ludolph, Liubov Novikova",
+          "source": null,
+          "tags": [
+            "eLife"
+          ],
+          "summary": "A new primate model offers a promising first step towards reproducing the spread of ALS pathology across synapses, although important differences from the stereotyped patterns observed in human dis...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43071439/"
+        },
+        {
+          "title": "Publisher Correction: Generational gains in cognitive capacity and dementia incidence rates in Western countries.",
+          "authors": "Anders M Fjell, Edvard O S Grødem, Gabriela Lunansky, Didac Vidal-Piñeiro, Ole Rogeberg et al. (6 authors)",
+          "source": null,
+          "tags": [
+            "Nature medicine"
+          ],
+          "summary": "",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43079096/"
+        },
+        {
+          "title": "High-throughput screening of patient iPSC-derived neurons identifies the gut microbial metabolites that attenuate Alzheimer's disease pathology.",
+          "authors": "Dhruv Gohel, Amit Kumar Gupta, Yichen Li, Zhibing Tan, Amy C Burrows et al. (15 authors)",
+          "source": null,
+          "tags": [
+            "Cell reports"
+          ],
+          "summary": "Gut microbiota-derived metabolites influence the gut-brain axis and may impact Alzheimer's disease (AD) pathology. However, the microbial metabolites involved in this process and their functional r...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43071539/"
+        },
+        {
+          "title": "snRNA-seq of a Huntington's disease mouse model indicates cell type-specific transcriptional disease signatures and disease-relevant pathways.",
+          "authors": "Dennis Feigenbutz, Miguel da Silva Padilha, Elena Evangelia Möller, Marco Niestroj, Kerstin Voelkl et al. (10 authors)",
+          "source": null,
+          "tags": [
+            "Cell reports"
+          ],
+          "summary": "A common feature of neurodegeneration is selective vulnerability, where certain neurons succumb to disease, while others remain spared. The molecular underpinnings of these differences remain elusi...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43071542/"
+        },
+        {
+          "title": "C16-ceramide exacerbates Tau pathology by interfering with Ppil2-mediated Grap2 degradation in Alzheimer's disease.",
+          "authors": "Xinhuang Lv, Tao Ye, Yunqiang Zhou, Xiaolan Liao, Zheyu Fang et al. (12 authors)",
+          "source": null,
+          "tags": [
+            "Cell reports"
+          ],
+          "summary": "Aberrant ceramide metabolism has been implicated in Alzheimer's disease (AD), but the underlying molecular mechanisms remain poorly understood. Here, we report that plasma C16-ceramide (C16) levels...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43071538/"
+        }
+      ]
+    },
     {
       "date": "2026-11-24",
       "papersFrom": "November 23, 2026",
