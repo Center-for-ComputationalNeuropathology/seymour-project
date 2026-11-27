@@ -1,6 +1,143 @@
 {
-  "generated": "2026-11-26T13:30:52Z",
+  "generated": "2026-11-27T13:30:50Z",
   "days": [
+    {
+      "date": "2026-11-27",
+      "papersFrom": "November 26, 2026",
+      "total": 13,
+      "papers": [
+        {
+          "title": "Investigation of disease-relevant lysine acetylation sites in α-synuclein enabled by non-canonical amino acid mutagenesis.",
+          "authors": "Marie Shimogawa, Ming-Hao Li, Grace Shin Hye Park, Jennifer Ramirez, Hudson S Lee et al. (15 authors)",
+          "source": null,
+          "tags": [
+            "eLife"
+          ],
+          "summary": "Aggregates of α-synuclein (αS) are hallmarks of synucleinopathies, including Parkinson's disease (PD) and multiple system atrophy (MSA). We have recently shown that αS lysine acetylation in the sol...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43100075/"
+        },
+        {
+          "title": "Longitudinal trajectories of plasma biomarkers, amyloid-β burden and cognitive decline in Alzheimer's disease.",
+          "authors": "Yara Yakoub, Ting Qiu, Clémence Peyrot, Alfonso Fajardo Valdez, Gemma Salvadó et al. (7 authors)",
+          "source": null,
+          "tags": [
+            "Brain : a journal of neurology"
+          ],
+          "summary": "Plasma p-tau217 biomarkers support Alzheimer's diagnosis but most evidence remains cross-sectional. Understanding how these biomarkers change over time, whether assays perform similarly, and how su...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43094361/"
+        },
+        {
+          "title": "Basal forebrain atrophy links short-latency afferent inhibition to cognition in Parkinson's disease.",
+          "authors": "Juan Francisco Martín-Rodríguez, Pablo Franco-Rosado, Cristina Perez-Calvo, Elena Iglesias-Camacho, Manuela San-Eufrasio et al. (22 authors)",
+          "source": null,
+          "tags": [
+            "Brain : a journal of neurology"
+          ],
+          "summary": "Cognitive impairment in Parkinson's disease is closely associated with degeneration of the cholinergic system, yet the precise structure-function relationships underlying this link remain incomplet...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43095792/"
+        },
+        {
+          "title": "Advanced Microstructural MRI and Clinical Characterization of Paramagnetic Rim Lesion Heterogeneity in Multiple Sclerosis.",
+          "authors": "Alessandro Cagol, Mario Ocampo-Pineda, Pascal Benkert, Batuhan Ayci, Po-Jui Lu et al. (23 authors)",
+          "source": null,
+          "tags": [
+            "Annals of neurology"
+          ],
+          "summary": "Paramagnetic rim lesions (PRLs) reflect chronic active lesions in multiple sclerosis (MS), but their microstructural heterogeneity remains unclear. We characterized quantitative magnetic resonance ...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43094289/"
+        },
+        {
+          "title": "Connecting Alzheimer's disease pathology with clinical symptoms as a basis for optimism for therapeutic approaches.",
+          "authors": "Bradley T Hyman",
+          "source": null,
+          "tags": [
+            "Brain communications"
+          ],
+          "summary": "The current era of therapeutics for patients with Alzheimer's disease promises true disease modification with direct attacks on the two major pathological features of the disease, plaques and tangl...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43095550/"
+        },
+        {
+          "title": "Spaceflight reshapes Alzheimer's disease-associated molecular programs in human brain organoids.",
+          "authors": "Natalia C S Moreira, Luisa B V Coelho, Luiz P Petroski, Stephanie S Almeida, Luiza P M Gaudio et al. (14 authors)",
+          "source": null,
+          "tags": [
+            "Science advances"
+          ],
+          "summary": "Spaceflight provides a unique environment to study neural responses relevant to neurodegenerative diseases. Here, human cortical organoids derived from induced pluripotent stem cells that carry fam...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43084677/"
+        },
+        {
+          "title": "The blood-brain barrier imports diverse neuroprotective proteins through pathways impaired early in Alzheimer's disease models.",
+          "authors": "Haoyue Zhou, Jason C Maynard, Alexander J Pennacchio, Amanda Apolonio, Xi Liu et al. (30 authors)",
+          "source": null,
+          "tags": [
+            "Cell"
+          ],
+          "summary": "The blood-brain barrier (BBB) has been defined primarily by what it excludes, yet the scale and function of physiological blood-to-brain protein transport remain largely unknown. Using bioorthogona...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43014307/"
+        },
+        {
+          "title": "A pericyte-to-myofibroblast transition links APOE4 to cerebrovascular degeneration.",
+          "authors": "Braxton R Schuldt, Dominic Haworth-Staines, Andrea Perez-Arevalo, Diede W M Broekaart, Ashley Harlock et al. (13 authors)",
+          "source": null,
+          "tags": [
+            "Cell"
+          ],
+          "summary": "Cerebrovascular disease is a major but poorly understood feature of Alzheimer's disease (AD). The strongest genetic AD risk factor, apolipoprotein E4 (APOE4), is associated with cerebrovascular deg...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42785300/"
+        },
+        {
+          "title": "CD47 checkpoint dysfunction in metabolic-associated cognitive impairment.",
+          "authors": "Jun Ju, Sheng Tao Hou",
+          "source": null,
+          "tags": [
+            "Cell reports"
+          ],
+          "summary": "CD47-SIRPα signaling forms a \"don't eat me\" checkpoint that restrains microglial synaptic pruning. In Cell Reports, Zhang et al.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43085353/"
+        },
+        {
+          "title": "Mechanistic insights into intracellular phase separation and maturation of FUS LC revealed by in-cell NMR.",
+          "authors": "Maiki Tamura, Qingci Zhao, Yusuke Yamaguchi, Manami Yasuda, Fumiyoshi Ishidate et al. (7 authors)",
+          "source": null,
+          "tags": [
+            "Nature communications"
+          ],
+          "summary": "Fused in sarcoma (FUS) forms dynamic biomolecular condensates through phase separation, a process associated with stress responses and neurodegenerative diseases. Here, we use in-cell NMR spectrosc...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43086275/"
+        },
+        {
+          "title": "Restoring neuronal CD47 alleviates microglia dependent synaptic loss and memory decline in diet-induced obesity mice.",
+          "authors": "Xuhong Zhang, Ye Zhu, Xinyu Peng, Le Zou, Feifan Lin et al. (10 authors)",
+          "source": null,
+          "tags": [
+            "Cell reports"
+          ],
+          "summary": "Healthy synapses are protected from elimination by inhibitory \"don't-eat-me\" signals, but how these checkpoints fail during metabolic disease is unknown. Here, we demonstrate that diet-induced obes...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43085352/"
+        },
+        {
+          "title": "Myelin pathology is a key feature of X-linked dystonia-parkinsonism.",
+          "authors": "Priya Prakash, Kerry C Limberg, Weimin Zhang, Yu Zhao, Klaudia F Laborc et al. (23 authors)",
+          "source": null,
+          "tags": [
+            "Cell"
+          ],
+          "summary": "X-linked dystonia-parkinsonism (XDP) is an adult-onset movement disorder predominantly affecting males of Filipino descent. It is caused by the insertion of a SINE-variable number of tandem repeat ...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43057229/"
+        },
+        {
+          "title": "You can't always get where you want: Selective protein entry into the brain.",
+          "authors": "Madison Sangster, Frederick C Bennett, Mariko L Bennett",
+          "source": null,
+          "tags": [
+            "Cell"
+          ],
+          "summary": "Brain health depends on the blood-brain barrier blocking neurotoxins while allowing essential proteins to pass, but which proteins cross this barrier remains poorly understood. In this issue of Cel...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43085329/"
+        }
+      ]
+    },
     {
       "date": "2026-11-26",
       "papersFrom": "November 25, 2026",
