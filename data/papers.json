@@ -1,6 +1,83 @@
 {
-  "generated": "2026-11-27T13:30:50Z",
+  "generated": "2026-11-28T13:30:46Z",
   "days": [
+    {
+      "date": "2026-11-28",
+      "papersFrom": "November 27, 2026",
+      "total": 7,
+      "papers": [
+        {
+          "title": "Intraindividual Fluctuations of Neurofilament Light Chain in Amyotrophic Lateral Sclerosis: Implications for Repeated Measurements.",
+          "authors": "Philipp Schmitt, Peggy Schumann, Torsten Grehl, Ute Weyen, Annekathrin Rödiger et al. (32 authors)",
+          "source": null,
+          "tags": [
+            "Annals of neurology"
+          ],
+          "summary": "Neurofilament light chain (NfL) is increasingly used for prognostication, trial stratification, and pharmacodynamic monitoring in amyotrophic lateral sclerosis (ALS). We sought to quantify intraind...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43104715/"
+        },
+        {
+          "title": "Investigation of disease-relevant lysine acetylation sites in α-synuclein enabled by non-canonical amino acid mutagenesis.",
+          "authors": "Marie Shimogawa, Ming-Hao Li, Grace Shin Hye Park, Jennifer Ramirez, Hudson S Lee et al. (15 authors)",
+          "source": null,
+          "tags": [
+            "eLife"
+          ],
+          "summary": "Aggregates of α-synuclein (αS) are hallmarks of synucleinopathies, including Parkinson's disease (PD) and multiple system atrophy (MSA). We have recently shown that αS lysine acetylation in the sol...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43100075/"
+        },
+        {
+          "title": "Combination Antiretroviral Therapy in Amyotrophic Lateral Sclerosis Targeting HML-2: Non-randomized Clinical Trial.",
+          "authors": "Marta Garcia-Montojo, Darshan Pandya, Bryan R Smith, Justin Kwan, Amanda Wiebold et al. (15 authors)",
+          "source": null,
+          "tags": [
+            "Annals of neurology"
+          ],
+          "summary": "A subset of individuals with amyotrophic lateral sclerosis (ALS) have activation of an endogenous retrovirus, HML-2, which has been implicated in the pathogenesis of the disease. Antiretroviral the...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43104703/"
+        },
+        {
+          "title": "Longitudinal trajectories of plasma biomarkers, amyloid-β burden and cognitive decline in Alzheimer's disease.",
+          "authors": "Yara Yakoub, Ting Qiu, Clémence Peyrot, Alfonso Fajardo Valdez, Gemma Salvadó et al. (7 authors)",
+          "source": null,
+          "tags": [
+            "Brain : a journal of neurology"
+          ],
+          "summary": "Plasma p-tau217 biomarkers support Alzheimer's diagnosis but most evidence remains cross-sectional. Understanding how these biomarkers change over time, whether assays perform similarly, and how su...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43094361/"
+        },
+        {
+          "title": "Basal forebrain atrophy links short-latency afferent inhibition to cognition in Parkinson's disease.",
+          "authors": "Juan Francisco Martín-Rodríguez, Pablo Franco-Rosado, Cristina Perez-Calvo, Elena Iglesias-Camacho, Manuela San-Eufrasio et al. (22 authors)",
+          "source": null,
+          "tags": [
+            "Brain : a journal of neurology"
+          ],
+          "summary": "Cognitive impairment in Parkinson's disease is closely associated with degeneration of the cholinergic system, yet the precise structure-function relationships underlying this link remain incomplet...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43095792/"
+        },
+        {
+          "title": "Spaceflight reshapes Alzheimer's disease-associated molecular programs in human brain organoids.",
+          "authors": "Natalia C S Moreira, Luisa B V Coelho, Luiz P Petroski, Stephanie S Almeida, Luiza P M Gaudio et al. (14 authors)",
+          "source": null,
+          "tags": [
+            "Science advances"
+          ],
+          "summary": "Spaceflight provides a unique environment to study neural responses relevant to neurodegenerative diseases. Here, human cortical organoids derived from induced pluripotent stem cells that carry fam...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43084677/"
+        },
+        {
+          "title": "Structural and functional modulation of GluA1 AMPA receptor by type I TARP γ4 and type II TARP γ7.",
+          "authors": "Laura Y Yen, Thomas P Newton, Maria V Yelshanskaya, Muhammed Aktolun, Maria G Kurnikova et al. (6 authors)",
+          "source": null,
+          "tags": [
+            "Science advances"
+          ],
+          "summary": "AMPA receptors (AMPARs) facilitate fast excitatory neurotransmission, while their dysregulation is associated with neurological conditions, including epilepsy, schizophrenia, and Alzheimer's diseas...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/43102933/"
+        }
+      ]
+    },
     {
       "date": "2026-11-27",
       "papersFrom": "November 26, 2026",
